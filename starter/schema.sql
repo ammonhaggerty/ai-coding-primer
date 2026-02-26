@@ -1,0 +1,12 @@
+-- Database schema for starter
+-- Add table definitions here, then apply with:
+--   wrangler d1 execute starter-db --local --file=./schema.sql
+--   wrangler d1 execute starter-db --remote --file=./schema.sql
+
+-- Example table (uncomment and modify):
+-- CREATE TABLE IF NOT EXISTS items (
+--   id INTEGER PRIMARY KEY AUTOINCREMENT,
+--   name TEXT NOT NULL,
+--   description TEXT,
+--   created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+-- );

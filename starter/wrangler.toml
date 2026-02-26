@@ -1,0 +1,16 @@
+name = "starter"
+main = "src/index.ts"
+compatibility_date = "2024-12-01"
+compatibility_flags = ["nodejs_compat"]
+
+[[d1_databases]]
+binding = "DB"
+database_name = "starter-db"
+database_id = "local"
+
+[[r2_buckets]]
+binding = "BUCKET"
+bucket_name = "starter-bucket"
+
+[ai]
+binding = "AI"
