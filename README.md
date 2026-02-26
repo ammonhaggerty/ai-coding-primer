@@ -44,6 +44,7 @@ This guide teaches one specific, opinionated stack:
 - **HTMX + Alpine.js** — Interactivity without a framework
 - **D1** — SQLite database, zero config
 - **R2** — File storage, zero egress fees
+- **Vectorize** — Vector database for smart search and RAG
 
 ## Status
 
