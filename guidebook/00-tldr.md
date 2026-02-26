@@ -65,8 +65,44 @@ Claude builds it. You look at it. You say what to change. Claude changes it. You
 
 ---
 
-That's the whole loop. Everything else in this guide is context — the *why* behind the *what*. Read it when you're curious. For now: build something.
+That's the whole loop. Everything else in this guide is context — the *why* behind the *what*.
 
 ---
+
+## What's in the Rest of the Guide
+
+**[About the Author](01-about-the-author.md)** — Thirty years of building things on screens, from BASIC on an Apple II+ to creative direction at agencies and studios, to the moment AI collapsed the barrier between imagining something and shipping it. Why a designer is writing a guide about full-stack development, and why that's exactly the point.
+
+---
+
+**[Part 1: The Landscape](02-the-landscape.md)** — The barrier to building software was never really about code — it was the iceberg of infrastructure underneath it. AI didn't just help with the code part. It dissolved the iceberg. This section explains what changed (Claude Opus 4.6 is the specific step change), what the mental model looks like (you're the dreamer, AI is the builder), and what the complete toolkit costs. The single most important idea: the skills that matter now are imagination and curiosity, not syntax.
+
+---
+
+**[Part 2: Setting Up](03-setting-up.md)** — Three commands by hand, then Claude takes over. This section walks through the full environment setup — terminal, Claude Code, MCP servers, skills, CLAUDE.md, the docs/ folder, and the starter project. It explains what each piece is *after* you've installed it, so the explanation feels like context rather than homework. Also covers optional upgrades (Ghostty, VS Code) for a nicer experience.
+
+---
+
+**[Part 3: The Cloud](04-the-cloud.md)** — Your app needs to live somewhere other than your laptop. This section covers why Cloudflare (simple, fast, generous free tier), your first deploy, and the building blocks you'll actually use: Workers (runs your code), D1 (database), R2 (file storage), Workers AI (built-in intelligence), and KV (fast key-value store). Also covers secrets and security.
+
+---
+
+**[Part 4: Building](05-building.md)** — From idea to working product. Starts with intent ("what do you want to exist?"), moves through design with Figma and Claude, explains the stack in plain terms (Hono, HTML, Tailwind, DaisyUI, HTMX, Alpine), then walks through building a complete feature end-to-end — including the database, the UI, and adding AI. This is the longest section because it's the core of the experience.
+
+---
+
+**[Part 5: The Daily Practice](06-daily-practice.md)** — The most important chapter for long-term success. The single biggest idea: *always plan before you build* — write the plan to a file, review it, then let Claude execute. Also covers reading what Claude builds (understanding the shape, not every line), evolving your CLAUDE.md (keep it lean), using the docs/ folder for memory across sessions, screenshots and browser DevTools for debugging, the recovery loop when things break, and when to revert and start smaller instead of patching.
+
+---
+
+**[Part 6: Where This Is Going](07-where-this-is-going.md)** — A step back from the practical to trace the trajectory. AI as an abstraction layer (like the shift from assembly to high-level languages), the coming specialization of AI tools, what it feels like to have a 50-person team in one seat, and where this goes beyond the web. Short, forward-looking, meant to leave you thinking.
+
+---
+
+**[Appendices](08-appendices.md)** — The reference section you'll keep coming back to. Claude Code commands and keyboard shortcuts (with the essentials starred), AI model pricing and capabilities (for coding and for your product), the Cloudflare free tier at a glance, every link you'll need (Claude, Cloudflare, tools, frameworks), a glossary of terms, and symptom-based troubleshooting for common issues.
+
+---
+
+The best time to read the full guide is after you've built something. The steps above give you the experience. The chapters below give you the understanding. Both are better with the other.
 
 **Next:** [About the Author](01-about-the-author.md)

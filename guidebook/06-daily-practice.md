@@ -10,11 +10,17 @@ The biggest shift isn't learning tools. It's learning to think out loud with a c
 
 ### Plan Before You Build
 
-Claude has a plan mode. Before building something complex, ask Claude to think it through first: "Before you build this, walk me through how you'd approach it." Claude will lay out the steps — what files it would create, what data structures it needs, what edge cases to consider. You review the plan, adjust it, and then Claude executes.
+This is the single most important habit in the entire workflow. It's more important than any tool, any keyboard shortcut, any configuration. The habit is simple: never let Claude write code until you've reviewed a plan.
 
-This matters more than it sounds. When you skip planning and jump straight to "build me this feature," Claude makes reasonable assumptions. But they're *Claude's* assumptions, not yours. Spending two minutes reviewing a plan is cheaper than spending twenty minutes undoing something built on a misunderstanding.
+When you describe a feature you want, Claude's instinct is to start building immediately. It'll make reasonable assumptions and produce something that works — but those assumptions are *Claude's*, not yours. Maybe you wanted the form on the settings page, not a new page. Maybe you wanted three fields, not five. Maybe you wanted it simple, and Claude built something elaborate. Catching these mismatches in a plan takes seconds. Catching them after the code is written takes real time to undo.
 
-The prompt is simple: *"Plan this before you build it."* Or for something bigger: *"Think through the architecture for this feature. What files need to change? What data do we need? What could go wrong?"*
+The prompt is: *"Write a plan for this before you build it. Save it to docs/plans/. Don't implement yet."* That last phrase — "don't implement yet" — is the critical guard. Without it, Claude will start coding the moment it thinks the plan is good enough. It's not good enough until you say it is.
+
+Claude writes the plan to a file, not just in the chat. This matters because chat messages scroll away and get lost. A file in `docs/plans/` persists — you can read it, think about it, come back to it later, and point Claude at it when you're ready to build. It also survives context compaction, which means if a long session gets summarized, the plan is still there in full.
+
+For small changes — fix this typo, adjust that spacing, move this button — you don't need a plan. But for anything that involves new pages, new data, new features, or changes to how things work: plan first. Every time. The ten minutes you spend reviewing a plan saves the hour you'd spend undoing a bad assumption.
+
+As you get more comfortable, you'll develop a sense for when to point Claude at existing work: *"Make the settings page feel like the check-in page"* or *"This table should work like the history table."* Referencing what already exists communicates implicit requirements — spacing, style, behavior — without spelling them all out.
 
 ### Reading What Claude Builds
 
@@ -86,6 +92,20 @@ Don't. Copy the error message and paste it to Claude. Say: *"I'm seeing this err
 
 Over time, you'll start recognizing common patterns. "Oh, that's a null reference — something didn't return data." But even if you never learn to read error messages yourself, it doesn't matter. Claude reads them for you. Your job is to notice them and relay them.
 
+### Screenshots
+
+Sometimes a problem is visual — a button is in the wrong place, a layout is broken, text is overlapping. Describing these in words is slow and imprecise. Instead, take a screenshot and send it to Claude. Claude can see images. A screenshot of a misaligned table communicates the problem faster than three sentences trying to describe it.
+
+This is one of those habits that feels unusual at first — sending a picture to a text-based tool — but it's remarkably effective. Screenshots work especially well for layout issues, styling problems, and "this doesn't look right but I can't explain why" moments. On a Mac, `Cmd+Shift+4` lets you select a region of the screen and saves it to your desktop. Drag it into the terminal or paste it, and Claude sees exactly what you see.
+
+### Browser Developer Tools
+
+Every web browser has a hidden panel called Developer Tools (or "DevTools") that shows what's happening behind the scenes — network requests, error messages, page structure, and more. You don't need to learn DevTools. But you should know it exists, because it's the single most useful debugging surface for web applications.
+
+If you hit a problem that Claude can't diagnose from the code alone — say, the page loads but data isn't showing up — ask Claude: *"Can you walk me through how to open Developer Tools and check for errors?"* Claude will give you step-by-step instructions for your browser. The Console tab shows JavaScript errors. The Network tab shows whether data requests succeeded or failed. Just reading what's there and relaying it to Claude often cracks the problem immediately.
+
+You don't need to understand what DevTools is showing you. Open it, look for red text or failed requests, screenshot it or copy it, and send it to Claude. That's the entire workflow.
+
 ### The Common Culprits
 
 Most problems in this workflow fall into a handful of categories:
@@ -113,6 +133,10 @@ When something breaks, the pattern is always the same:
 **Continue building.**
 
 This loop takes minutes, not hours. The time between "something's broken" and "it's fixed" shrinks dramatically when you have a partner who can read every file in your project instantly and understands the entire stack.
+
+But sometimes the fix-it loop isn't working. You've tried two or three things and the problem is getting worse, not better. When that happens, stop patching and revert. Tell Claude: *"Revert everything back to the last working state. Let's try this with a smaller scope."* Then describe a narrower version of what you wanted.
+
+This feels drastic the first time. It's actually the fastest path forward. Narrowing scope after a revert almost always produces better results than incrementally fixing a broken approach. And it's not failure — it's a routine workflow move. Professional developers revert constantly. Git makes it free.
 
 ---
 
