@@ -151,3 +151,7 @@ You have a practice, not just a project. You know how to plan before building, h
 The tools are the same ones you set up in Part 2. The infrastructure is the same as Part 3. The building loop is the same as Part 4. What's changed is you — you're more fluent in the rhythm, more confident in the process, more willing to experiment because you know recovery is quick and iteration is cheap.
 
 That's the daily practice. It compounds.
+
+---
+
+**Next:** [Part 6: Where This Is Going](07-where-this-is-going.md)

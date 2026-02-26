@@ -71,3 +71,7 @@ The only prerequisites are the two things this article has emphasized from the b
 This article is a starting point. The open-source repo is a scaffold. The skills and tools will evolve. What you build on all of it is yours.
 
 The cliff dive looked scary from the top. Now you're in the water. The hard part was stepping off. Everything from here is swimming.
+
+---
+
+**Next:** [Appendices](08-appendices.md)

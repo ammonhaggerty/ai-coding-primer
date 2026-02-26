@@ -14,7 +14,7 @@ This guide uses Cloudflare, and it's a deliberate choice.
 
 Cloudflare puts everything under one roof. Compute, storage, database, AI models, DNS, security — one account, one dashboard, one set of tools. That matters more than it sounds like it should. Every time your stack spans multiple providers, you're managing multiple accounts, multiple billing pages, multiple sets of credentials, and multiple points where things can break. With Cloudflare, when Claude needs to set up a database, it's right there. When it needs file storage, same account. When it needs to deploy your code, one command. The surface area for confusion shrinks dramatically.
 
-The free tier is genuinely generous. A hundred thousand requests per day. Ten gigabytes of storage. Five million database reads per month. You won't hit these limits while learning, and you probably won't hit them for your first several real projects either.
+Cloudflare has a free tier, and it's enough to get started. But the $5/month Workers Paid plan is what I recommend from day one. It's not about needing the capacity right away — it's about removing friction. The free tier has real limits: 10ms CPU per request, daily caps that reset at midnight, and no access to some features you'll want (like longer-running Workers and higher AI quotas). The paid plan lifts all of that — unlimited requests, 30-second CPU time, higher storage and database limits, and full access to Workers AI and AI Gateway. Five dollars a month for that is genuinely remarkable. Think of it as turning on the lights in the workshop instead of working by flashlight.
 
 Deployments take seconds. Not minutes, not "building..." spinners that make you wonder if something broke. You run a command, and within ten seconds, your code is live on servers around the world. That speed changes how you build — you deploy constantly, after every meaningful change, because there's no penalty for it.
 
@@ -86,11 +86,19 @@ KV (Key-Value) is the simplest storage option. It's a dictionary: you store a va
 
 Feature flags, user preferences, cached API responses, configuration settings — anything where you need to look up a single value very fast. It's not a replacement for a database (it can't do complex queries), but for simple lookups, nothing is faster.
 
+### Vectorize — Smart Search and Matching
+
+Vectorize is Cloudflare's vector database. If that sounds abstract, think of it this way: a regular database finds things by exact matches — "show me all users named Sarah." A vector database finds things by *meaning* — "show me products similar to this one" or "find articles related to this question."
+
+This is the technology behind RAG (retrieval-augmented generation), which is how you give AI models access to your own data. Instead of the AI relying only on its training, it searches your content first, finds the most relevant pieces, and uses those to generate a grounded response. Many services charge a premium for RAG features. With Vectorize and Workers AI, you can build your own — and the Cloudflare MCP server helps Claude set up highly optimized vector stores directly from your conversation.
+
+Practical uses: semantic search across your content, recommendation engines, finding related items, matching users to resources, Q&A over your own documents, and any feature where "similar to" matters more than "exactly equals." You won't need it on day one, but when you want your app to feel genuinely intelligent, Vectorize is how you get there.
+
 ### How They Work Together
 
 Here's the flow for a typical request:
 
-A user visits your app. The request hits a **Worker**, which is your application logic. The Worker might check **KV** for a cached response. If there isn't one, it queries **D1** for data from the database, maybe pulls an image URL from **R2**, and possibly calls **Workers AI** to generate a personalized summary. Then it assembles all of that into an HTML page and sends it back to the user's browser.
+A user visits your app. The request hits a **Worker**, which is your application logic. The Worker might check **KV** for a cached response. If there isn't one, it queries **D1** for data from the database, maybe pulls an image URL from **R2**, and possibly calls **Workers AI** to generate a personalized summary or searches **Vectorize** for semantically related content. Then it assembles all of that into an HTML page and sends it back to the user's browser.
 
 All of this happens in milliseconds, on servers close to the user, within a single platform. Claude orchestrates all of it when building your features. Your job is to describe what should happen — "when someone visits their profile, show their name, their photo, and a summary of their recent activity" — and Claude figures out which building blocks to use.
 
@@ -128,8 +136,12 @@ The habit to build: whenever you see a long string of characters that looks like
 
 ## Where You Are Now
 
-Your app is deployed. You have a URL that works. You understand — at least loosely — what the building blocks do: Workers run your code, D1 stores your data, R2 holds your files, Workers AI adds intelligence, and KV handles fast lookups. You know that secrets live in environment variables, not in code.
+Your app is deployed. You have a URL that works. You understand — at least loosely — what the building blocks do: Workers run your code, D1 stores your data, R2 holds your files, Workers AI adds intelligence, KV handles fast lookups, and Vectorize powers smart search and matching. You know that secrets live in environment variables, not in code.
 
 You haven't had to configure any of this by hand. Claude set up the database, created the storage bucket, configured the secrets, and deployed the code. Your role was to say yes and to understand, at a high level, what was happening.
 
 The next section is where it gets fun. You have an environment. You have infrastructure. Now you build something real.
+
+---
+
+**Next:** [Part 4: Building](05-building.md)

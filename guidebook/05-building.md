@@ -50,7 +50,7 @@ Every tool in the building stack exists for a reason. You don't need to master a
 
 **Tailwind CSS** is styling without separate files. Instead of writing design rules in one place and applying them elsewhere, you add descriptive classes directly to elements: `class="text-lg font-bold text-gray-800"` means "large text, bold, dark gray." It reads almost like English. Claude uses it fluently, and you'll start recognizing patterns quickly — `mt-4` means "margin top, size 4," `rounded-lg` means "large rounded corners."
 
-**DaisyUI** is a component library built on Tailwind. It gives you pre-built, styled components: `class="btn btn-primary"` produces a polished button. `class="card"` produces a card container. `class="alert alert-error"` produces a red error banner. Instead of designing every element from scratch, Claude reaches for these building blocks and assembles them. Consistent, good-looking UI with minimal effort.
+**DaisyUI** (version 5) is a component library built on Tailwind. It gives you pre-built, styled components: `class="btn btn-primary"` produces a polished button. `class="card"` produces a card container. `class="alert alert-error"` produces a red error banner. Instead of designing every element from scratch, Claude reaches for these building blocks and assembles them. Consistent, good-looking UI with minimal effort. Projects in this guide use the "emerald" theme, which gives you a clean, professional look out of the box.
 
 **HTMX** makes pages interactive without writing JavaScript. Traditional web development requires JavaScript for anything dynamic — loading new content, submitting forms without refreshing the page, updating parts of the UI. HTMX does this through HTML attributes. `hx-post="/api/submit"` means "when this form is submitted, send the data to this URL." `hx-swap="innerHTML"` means "replace this element's content with the response." It's remarkably powerful for how simple it is.
 
@@ -92,7 +92,7 @@ Claude updates the template. You refresh. Better.
 
 ### Iterating
 
-"Can the mood be an emoji instead of text? 😊 for great, 😐 for okay, 😔 for rough."
+"Can the mood be an emoji instead of text? A happy face for great, a neutral face for okay, a sad face for rough."
 
 Claude makes the change. You refresh.
 
@@ -204,3 +204,7 @@ You've built a feature from start to finish. You've seen the loop — dream, des
 None of this required you to write code by hand. All of it required you to think clearly about what you wanted, describe it precisely, and iterate on the result. The skills that mattered were imagination, taste, and the willingness to say "close, but not quite" until it felt right.
 
 That's building. It's not magic. It's conversation — with a partner that happens to be extraordinarily good at the implementation part.
+
+---
+
+**Next:** [Part 5: The Daily Practice](06-daily-practice.md)

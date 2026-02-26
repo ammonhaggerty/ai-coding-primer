@@ -126,7 +126,7 @@ Before we set anything up, here's a transparent look at every tool involved, wha
 
 **A word on monitoring usage:** Even on Max plans, it's worth paying attention to your consumption. Heavy subagent usage can burn through your allocation faster than you expect. Keep an eye on your usage dashboard so you're not surprised by the pace.
 
-**Typical monthly spend once you're going:** $105-125. Claude Max ($100) plus some Cloudflare usage beyond the free tier, plus optionally Figma Pro if you're designing screens.
+**Typical monthly spend once you're going:** $105-120. Claude Max ($100) plus Cloudflare Workers Paid ($5/mo — strongly recommended for the higher limits and reliability), plus optionally Figma Pro if you're designing screens.
 
 **Why not the API?** Developers often use Claude through the API, paying per token. For the kind of sustained, back-and-forth building this guide describes, the subscription is simpler and usually cheaper. If you're sending thousands of messages a day — which you will be when building — flat-rate wins.
 
@@ -141,3 +141,7 @@ The starter project we'll build together is small but real — a full-stack web 
 "Full stack" can sound intimidating. All it means is: the complete set of layers that make an application work. The part users see (front-end). The part that processes logic (back-end). The part that remembers things (database). The part that thinks (AI). The part that makes it accessible (deployment and domain). Most applications built by companies have entire teams dedicated to each of these layers. You'll handle all of them — because Claude handles the implementation details, and you handle the decisions.
 
 The next section walks through setting up each piece. If it feels like a lot, remember: Claude is going to be right there helping with every step. Your job is to show up with curiosity. The tools will meet you where you are.
+
+---
+
+**Next:** [Part 2: Setting Up Your Workshop](03-setting-up.md)

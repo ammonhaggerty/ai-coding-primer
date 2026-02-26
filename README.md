@@ -31,7 +31,7 @@ ai-coding-primer/
 | 05 | [Building](guidebook/05-building.md) | Your first feature, end to end |
 | 06 | [Daily Practice](guidebook/06-daily-practice.md) | The ongoing rhythm of building |
 | 07 | [Where This Is Going](guidebook/07-where-this-is-going.md) | What comes next |
-| 08 | [Appendices](guidebook/08-appendices.md) | Links, models, glossary, reference |
+| 08 | [Appendices](guidebook/08-appendices.md) | Claude Code features, AI models & pricing, Cloudflare free tier, links, glossary, troubleshooting |
 
 ## The Stack
 

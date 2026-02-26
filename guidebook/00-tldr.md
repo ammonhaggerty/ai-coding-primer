@@ -66,3 +66,7 @@ Claude builds it. You look at it. You say what to change. Claude changes it. You
 ---
 
 That's the whole loop. Everything else in this guide is context — the *why* behind the *what*. Read it when you're curious. For now: build something.
+
+---
+
+**Next:** [About the Author](01-about-the-author.md)

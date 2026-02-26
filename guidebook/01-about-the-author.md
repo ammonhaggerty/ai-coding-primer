@@ -25,3 +25,7 @@ This article comes from that experience. Not from a weekend experiment or a thou
 ---
 
 *Ammon Haggerty is a creative technologist, designer, and three-time founder based in the San Francisco Bay Area. He currently leads R&D at Bumble and advises several startups in the AI space. He has 50+ design awards, 8 patents in spatial computing, and has been building at the intersection of design and technology since the early web. He is also a DJ of thirty years, a member of the Ambient Mafia and Love Bizarre collectives, and a fifth-generation Bay Area native.*
+
+---
+
+**Next:** [Part 1: The Landscape](02-the-landscape.md)

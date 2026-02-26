@@ -1,76 +1,136 @@
 # Appendices
 
+- [Appendix A: Claude Code Features](#appendix-a-claude-code-features) — Commands, keyboard shortcuts, permission modes, and skills
+- [Appendix B: AI Models — For Coding and For Your Product](#appendix-b-ai-models--for-coding-and-for-your-product) — Model tiers, pricing, capabilities, and when to use what
+- [Appendix C: Cloudflare Free Tier at a Glance](#appendix-c-cloudflare-free-tier-at-a-glance) — What you get without paying
+- [Appendix D: Every Link You'll Need](#appendix-d-every-link-youll-need) — All apps, services, dashboards, and docs in one place
+- [Appendix E: Glossary](#appendix-e-glossary) — Plain-English definitions of every technical term
+- [Appendix F: Common Issues](#appendix-f-common-issues) — Symptom-based troubleshooting
+
 ---
 
-## Appendix A: Every Link You'll Need
+## Appendix A: Claude Code Features
 
-All the apps, services, dashboards, and documentation referenced in this guide, in one place.
+Everything you can do inside Claude Code — built-in commands, keyboard shortcuts, and the skills added by this tutorial. Items marked with ★ are the ones you'll use most often.
 
-### Claude & Anthropic
+### Built-In Slash Commands
 
-| What | URL |
+These come with Claude Code out of the box. Type `/` to see the full list.
+
+**Everyday essentials:**
+
+| Command | What It Does |
 |---|---|
-| Claude (chat interface) | [claude.ai](https://claude.ai) |
-| Claude Code (web) | [claude.ai/code](https://claude.ai/code) |
-| Plans & pricing | [claude.com/pricing](https://claude.com/pricing) |
-| Your subscription & billing | [claude.ai/settings/billing](https://claude.ai/settings/billing) |
-| Anthropic Console (developer/API) | [console.anthropic.com](https://console.anthropic.com) |
-| API keys | [console.anthropic.com/settings/keys](https://console.anthropic.com/settings/keys) |
-| API billing & credits | [console.anthropic.com/settings/billing](https://console.anthropic.com/settings/billing) |
-| API usage dashboard | [console.anthropic.com/settings/usage](https://console.anthropic.com/settings/usage) |
-| API pricing (per model) | [platform.claude.com/docs/en/about-claude/pricing](https://platform.claude.com/docs/en/about-claude/pricing) |
-| Models overview | [platform.claude.com/docs/en/about-claude/models/overview](https://platform.claude.com/docs/en/about-claude/models/overview) |
-| Claude Code docs | [code.claude.com/docs](https://code.claude.com/docs) |
-| Claude Code model config | [code.claude.com/docs/en/model-config](https://code.claude.com/docs/en/model-config) |
-| Help center | [support.claude.com](https://support.claude.com) |
+| ★ `/help` | Shows all available commands and usage tips |
+| ★ `/model` | Switch between Opus, Sonnet, and Haiku mid-session. Use left/right arrows to adjust effort level |
+| ★ `/compact` | Shrinks your conversation to free up context when sessions get long. Add instructions to focus the summary: `/compact keep the database discussion` |
+| ★ `/clear` | Wipes the conversation and starts fresh. Your files aren't touched — just the chat history |
+| ★ `/plan` | Enters plan mode — Claude thinks through an approach and shows it to you before writing any code |
+| ★ `/init` | Creates a `CLAUDE.md` file for your project. Run this once at the start of any new project |
+| ★ `/memory` | Opens your `CLAUDE.md` for editing. Add rules and constraints — keep it lean (see Part 5) |
+| `/cost` | Shows how many tokens you've used in this session |
+| `/usage` | Shows your plan limits and rate limit status |
+| `/stats` | Visualizes your daily usage, session history, and streaks |
 
-### Cloudflare
+**Session management:**
 
-| What | URL |
+| Command | What It Does |
 |---|---|
-| Sign up | [dash.cloudflare.com/sign-up](https://dash.cloudflare.com/sign-up) |
-| Dashboard | [dash.cloudflare.com](https://dash.cloudflare.com) |
-| Workers & Pages | [dash.cloudflare.com → Workers & Pages](https://dash.cloudflare.com) |
-| D1 databases | [dash.cloudflare.com → Storage & Databases → D1](https://dash.cloudflare.com) |
-| R2 storage | [dash.cloudflare.com → Storage & Databases → R2](https://dash.cloudflare.com) |
-| Workers AI | [dash.cloudflare.com → AI → Workers AI](https://dash.cloudflare.com) |
-| Domain registration | [dash.cloudflare.com → Domain Registration](https://dash.cloudflare.com) |
-| Workers pricing | [developers.cloudflare.com/workers/platform/pricing](https://developers.cloudflare.com/workers/platform/pricing/) |
-| D1 pricing | [developers.cloudflare.com/d1/platform/pricing](https://developers.cloudflare.com/d1/platform/pricing/) |
-| R2 pricing | [developers.cloudflare.com/r2/pricing](https://developers.cloudflare.com/r2/pricing/) |
-| Workers AI pricing | [developers.cloudflare.com/workers-ai/platform/pricing](https://developers.cloudflare.com/workers-ai/platform/pricing/) |
-| Wrangler CLI docs | [developers.cloudflare.com/workers/wrangler](https://developers.cloudflare.com/workers/wrangler/) |
+| ★ `/resume` | Pick up a previous conversation where you left off. Sessions auto-save |
+| `/rename` | Give your session a name so you can find it later |
+| `/rewind` | Undo recent conversation turns and/or code changes |
+| `/export` | Save the conversation to a file |
+| `/copy` | Copy Claude's last response to your clipboard |
 
-### Development Tools
+**Configuration:**
 
-| What | URL |
+| Command | What It Does |
 |---|---|
-| Node.js (download) | [nodejs.org](https://nodejs.org) |
-| Ghostty (terminal, Mac) | [ghostty.org](https://ghostty.org) |
-| VS Code (editor) | [code.visualstudio.com](https://code.visualstudio.com) |
-| Git (download) | [git-scm.com](https://git-scm.com) |
-| GitHub | [github.com](https://github.com) |
-| Homebrew (Mac package manager) | [brew.sh](https://brew.sh) |
+| `/config` | Open Claude Code settings |
+| `/permissions` | View or change what Claude is allowed to do without asking |
+| `/mcp` | Manage MCP server connections |
+| `/theme` | Change the color scheme |
+| `/status` | See your version, model, account, and connection status |
+| `/doctor` | Health check — diagnoses problems with your installation |
+| `/debug` | Reads session logs to troubleshoot issues |
 
-### Design & Frameworks
+**Tasks and background work:**
 
-| What | URL |
+| Command | What It Does |
 |---|---|
-| Figma | [figma.com](https://www.figma.com) |
-| Hono (web framework) | [hono.dev](https://hono.dev) |
-| Tailwind CSS | [tailwindcss.com](https://tailwindcss.com) |
-| DaisyUI (components) | [daisyui.com](https://daisyui.com) |
-| HTMX | [htmx.org](https://htmx.org) |
-| Alpine.js | [alpinejs.dev](https://alpinejs.dev) |
+| `/tasks` | List and manage background tasks Claude is running |
+| `/todos` | View your current task list |
 
-### MCP Servers
+### Keyboard Shortcuts
 
-| What | URL |
+You don't need to memorize these. Learn the starred ones first; the rest you'll pick up naturally.
+
+**The essentials:**
+
+| Shortcut | What It Does |
 |---|---|
-| context7 | [github.com/upstash/context7](https://github.com/upstash/context7) |
-| Cloudflare MCP | [github.com/cloudflare/mcp-server-cloudflare](https://github.com/cloudflare/mcp-server-cloudflare) |
-| Playwright MCP | [github.com/anthropics/anthropic-quickstarts](https://github.com/anthropics/anthropic-quickstarts) |
-| Figma MCP | [github.com/nichochar/figma-mcp](https://github.com/nichochar/figma-mcp) |
+| ★ `Shift+Tab` | Cycle between permission modes: normal → auto-accept → plan mode. This is how you toggle plan mode on and off |
+| ★ `Ctrl+C` | Stop whatever Claude is currently doing |
+| ★ `Tab` | Accept Claude's suggested next step |
+| ★ `Esc Esc` (double-tap) | Rewind — undo the last turn or restore code to a previous state |
+| `Ctrl+L` | Clear the terminal screen (conversation stays intact) |
+| `Up/Down arrows` | Browse your command history |
+| `Option+Enter` (Mac) | Start a new line without sending your message |
+| `Option+P` (Mac) / `Alt+P` (Win) | Quick model switch |
+| `Option+T` (Mac) / `Alt+T` (Win) | Toggle extended thinking mode |
+| `Ctrl+T` | Show/hide the task list |
+
+**Useful but not urgent:**
+
+| Shortcut | What It Does |
+|---|---|
+| `Ctrl+G` | Open your message in a text editor (for long, complex prompts) |
+| `Ctrl+R` | Search your command history |
+| `Ctrl+B` | Send a running task to the background |
+| `Ctrl+F` (twice) | Kill all background tasks |
+| `Ctrl+V` / `Cmd+V` | Paste an image from your clipboard into the conversation |
+| `!` (at start) | Run a bash command directly and add the output to your conversation |
+| `@` | Autocomplete a file path — mention files for Claude to look at |
+
+### Permission Modes
+
+Claude Code has three modes that control how much autonomy Claude has. Cycle through them with `Shift+Tab`.
+
+**Normal mode** (default) — Claude asks permission before running commands, editing files, or taking actions. You approve each step. This is the right mode when you're learning or working on something sensitive.
+
+**Plan mode** — Claude plans but doesn't execute. It shows you what it *would* do, and you approve the plan before anything happens. Use this for complex features where you want to review the approach first.
+
+**Auto-accept mode** — Claude runs commands and edits files without asking. Use this when you're in a flow and trust what Claude is doing — like iterating on styling or running tests repeatedly. Switch back to normal mode when the task changes.
+
+### Skills Added by This Tutorial
+
+When you install the `a-primer-skills` plugin, these skills become available. They work in two ways: some are slash commands (like `/a-new-project`), and others are instruction sets that Claude draws on automatically when relevant. You can also invoke skills explicitly: *"Use the brainstorming skill to help me think through this feature."*
+
+| Skill | What It Does |
+|---|---|
+| ★ **a-primer-skills** (`/a-new-project`) | The core skill for this guide. The `/a-new-project` slash command scaffolds a new project with the full stack, CLAUDE.md, docs/ folder, and configuration. Also handles environment setup, tool installation, and project patterns |
+| ★ **brainstorming** | Structured ideation. When you're exploring ideas — feature concepts, product directions, creative approaches — this skill gives Claude a framework for helping you think expansively before narrowing down |
+| ★ **frontend-design** | UI and UX patterns. Claude uses this when building interfaces — component layout, responsive behavior, visual hierarchy, interaction patterns. Makes Claude better at producing good-looking, usable pages |
+| ★ **systematic-debugging** | Methodical problem diagnosis. When something breaks, this skill gives Claude a structured approach: reproduce, isolate, diagnose, fix, verify. Prevents the "let me try random things" anti-pattern |
+| **writing-skills** | Clear, effective writing. Claude uses this when generating documentation, content, or copy for your app. Focuses on concision, clarity, and appropriate tone |
+| **writing-plans** | Planning features and projects before building. Structures Claude's thinking into phases: understand the goal, identify the pieces, sequence the work, flag risks. Pairs well with plan mode |
+| **subagent-driven-development** | Using parallel Claude instances for complex tasks. When a job has independent parts, Claude can spawn background agents that work simultaneously — one building the UI while another sets up the database. Advanced but powerful |
+| **using-superpowers** | Getting the most from Claude's advanced capabilities — extended thinking, multi-file edits, complex reasoning, context management. A meta-skill that makes Claude better at being Claude |
+
+### Quick Reference: The Commands You'll Actually Use
+
+If you remember nothing else from this appendix:
+
+| Situation | What to Do |
+|---|---|
+| Starting a new project | `/a-new-project` to scaffold everything, or `/init` for just CLAUDE.md |
+| Want Claude to plan first | `/plan` or `Shift+Tab` to enter plan mode |
+| Conversation getting long | `/compact` to free up space |
+| Want to try a different model | `/model` or `Option+P` |
+| Need to undo something | `Esc Esc` to rewind |
+| Picking up where you left off | `/resume` — Claude checks `docs/` for progress notes |
+| Something broke | Paste the error to Claude. It handles the rest |
+| Curious about usage | `/cost` for this session, `/usage` for your plan |
 
 ---
 
@@ -195,23 +255,94 @@ For basic speech-to-text, Workers AI's Whisper model is free and built in. For h
 
 ## Appendix C: Cloudflare Free Tier at a Glance
 
-What you get without paying anything beyond your Claude subscription.
+The $5/month Workers Paid plan is strongly recommended. The free tier works for initial exploration, but the paid plan removes limits that will slow you down quickly — especially CPU time per request, daily request caps, and restricted access to Workers AI features. For five dollars, the upgrade is significant.
 
-| Service | Free Tier | Paid Plan (from $5/mo total) |
+| Service | Free Tier | Workers Paid ($5/mo) |
 |---|---|---|
-| **Workers** (compute) | 100,000 requests/day, 10ms CPU | Unlimited requests, 5 min CPU |
+| **Workers** (compute) | 100,000 requests/day, 10ms CPU | Unlimited requests, 30s CPU |
 | **D1** (database) | 500 MB storage, 5M rows read/day, 100K rows written/day | 10 GB/database, 25B rows read/mo, 50M rows written/mo |
 | **R2** (file storage) | 10 GB storage, 10M reads/mo, 1M writes/mo, **zero egress** | $0.015/GB storage, same zero egress |
 | **KV** (key-value) | 1 GB storage, 100K reads/day, 1K writes/day | Unlimited storage, 10M reads/mo, 1M writes/mo |
-| **Workers AI** | 10,000 Neurons/day | $0.011 per 1,000 Neurons above free |
+| **Vectorize** (vector DB) | 5M stored vectors, 30M queried dimensions/mo | $0.01/M stored vectors, $0.01/M queried dimensions |
+| **Workers AI** | 10,000 Neurons/day | $0.011 per 1,000 Neurons above free, plus AI Gateway access |
 
 Zero egress on R2 means you're never charged for people *reading* your files — only for storing them. This is unusually generous in the cloud storage world and means traffic spikes don't spike your bill.
 
-For most projects in this guide, you'll stay within the free tier for months. The $5/mo paid plan kicks in when you need more database capacity or higher request limits.
+---
+
+## Appendix D: Every Link You'll Need
+
+All the apps, services, dashboards, and documentation referenced in this guide, in one place.
+
+### Claude & Anthropic
+
+| What | URL |
+|---|---|
+| Claude (chat interface) | [claude.ai](https://claude.ai) |
+| Claude Code (web) | [claude.ai/code](https://claude.ai/code) |
+| Plans & pricing | [claude.com/pricing](https://claude.com/pricing) |
+| Your subscription & billing | [claude.ai/settings/billing](https://claude.ai/settings/billing) |
+| Anthropic Console (developer/API) | [console.anthropic.com](https://console.anthropic.com) |
+| API keys | [console.anthropic.com/settings/keys](https://console.anthropic.com/settings/keys) |
+| API billing & credits | [console.anthropic.com/settings/billing](https://console.anthropic.com/settings/billing) |
+| API usage dashboard | [console.anthropic.com/settings/usage](https://console.anthropic.com/settings/usage) |
+| API pricing (per model) | [platform.claude.com/docs/en/about-claude/pricing](https://platform.claude.com/docs/en/about-claude/pricing) |
+| Models overview | [platform.claude.com/docs/en/about-claude/models/overview](https://platform.claude.com/docs/en/about-claude/models/overview) |
+| Claude Code docs | [code.claude.com/docs](https://code.claude.com/docs) |
+| Claude Code model config | [code.claude.com/docs/en/model-config](https://code.claude.com/docs/en/model-config) |
+| Help center | [support.claude.com](https://support.claude.com) |
+
+### Cloudflare
+
+| What | URL |
+|---|---|
+| Sign up | [dash.cloudflare.com/sign-up](https://dash.cloudflare.com/sign-up) |
+| Dashboard | [dash.cloudflare.com](https://dash.cloudflare.com) |
+| Workers & Pages | [dash.cloudflare.com → Workers & Pages](https://dash.cloudflare.com) |
+| D1 databases | [dash.cloudflare.com → Storage & Databases → D1](https://dash.cloudflare.com) |
+| R2 storage | [dash.cloudflare.com → Storage & Databases → R2](https://dash.cloudflare.com) |
+| Workers AI | [dash.cloudflare.com → AI → Workers AI](https://dash.cloudflare.com) |
+| Domain registration | [dash.cloudflare.com → Domain Registration](https://dash.cloudflare.com) |
+| Workers pricing | [developers.cloudflare.com/workers/platform/pricing](https://developers.cloudflare.com/workers/platform/pricing/) |
+| D1 pricing | [developers.cloudflare.com/d1/platform/pricing](https://developers.cloudflare.com/d1/platform/pricing/) |
+| R2 pricing | [developers.cloudflare.com/r2/pricing](https://developers.cloudflare.com/r2/pricing/) |
+| Workers AI pricing | [developers.cloudflare.com/workers-ai/platform/pricing](https://developers.cloudflare.com/workers-ai/platform/pricing/) |
+| Wrangler CLI docs | [developers.cloudflare.com/workers/wrangler](https://developers.cloudflare.com/workers/wrangler/) |
+
+### Development Tools
+
+| What | URL |
+|---|---|
+| Node.js (download) | [nodejs.org](https://nodejs.org) |
+| Ghostty (terminal, Mac) | [ghostty.org](https://ghostty.org) |
+| VS Code (editor) | [code.visualstudio.com](https://code.visualstudio.com) |
+| Git (download) | [git-scm.com](https://git-scm.com) |
+| GitHub | [github.com](https://github.com) |
+| Homebrew (Mac package manager) | [brew.sh](https://brew.sh) |
+
+### Design & Frameworks
+
+| What | URL |
+|---|---|
+| Figma | [figma.com](https://www.figma.com) |
+| Hono (web framework) | [hono.dev](https://hono.dev) |
+| Tailwind CSS | [tailwindcss.com](https://tailwindcss.com) |
+| DaisyUI (components) | [daisyui.com](https://daisyui.com) |
+| HTMX | [htmx.org](https://htmx.org) |
+| Alpine.js | [alpinejs.dev](https://alpinejs.dev) |
+
+### MCP Servers
+
+| What | URL |
+|---|---|
+| context7 | [github.com/upstash/context7](https://github.com/upstash/context7) |
+| Cloudflare MCP | [github.com/cloudflare/mcp-server-cloudflare](https://github.com/cloudflare/mcp-server-cloudflare) |
+| Playwright MCP | [github.com/anthropics/anthropic-quickstarts](https://github.com/anthropics/anthropic-quickstarts) |
+| Figma MCP | [github.com/nichochar/figma-mcp](https://github.com/nichochar/figma-mcp) |
 
 ---
 
-## Appendix D: Glossary
+## Appendix E: Glossary
 
 Plain-English definitions of every technical term in this guide.
 
@@ -263,7 +394,7 @@ Plain-English definitions of every technical term in this guide.
 
 ---
 
-## Appendix E: Common Issues
+## Appendix F: Common Issues
 
 Symptom-based troubleshooting from real experience. When something goes wrong, find your symptom below.
 
@@ -327,128 +458,3 @@ Symptom-based troubleshooting from real experience. When something goes wrong, f
 
 **Cause:** Changes haven't been staged (added to Git's tracking).
 **Fix:** Ask Claude to commit your changes — it handles staging and committing together. Or run `git add .` then `git commit`.
-
----
-
-## Appendix F: Claude Code Features
-
-Everything you can do inside Claude Code — built-in commands, keyboard shortcuts, and the skills added by this tutorial. Items marked with ★ are the ones you'll use most often.
-
-### Built-In Slash Commands
-
-These come with Claude Code out of the box. Type `/` to see the full list.
-
-**Everyday essentials:**
-
-| Command | What It Does |
-|---|---|
-| ★ `/help` | Shows all available commands and usage tips |
-| ★ `/model` | Switch between Opus, Sonnet, and Haiku mid-session. Use left/right arrows to adjust effort level |
-| ★ `/compact` | Shrinks your conversation to free up context when sessions get long. Add instructions to focus the summary: `/compact keep the database discussion` |
-| ★ `/clear` | Wipes the conversation and starts fresh. Your files aren't touched — just the chat history |
-| ★ `/plan` | Enters plan mode — Claude thinks through an approach and shows it to you before writing any code |
-| ★ `/init` | Creates a `CLAUDE.md` file for your project. Run this once at the start of any new project |
-| ★ `/memory` | Opens your `CLAUDE.md` for editing. Add rules and constraints — keep it lean (see Part 5) |
-| `/cost` | Shows how many tokens you've used in this session |
-| `/usage` | Shows your plan limits and rate limit status |
-| `/stats` | Visualizes your daily usage, session history, and streaks |
-
-**Session management:**
-
-| Command | What It Does |
-|---|---|
-| ★ `/resume` | Pick up a previous conversation where you left off. Sessions auto-save |
-| `/rename` | Give your session a name so you can find it later |
-| `/rewind` | Undo recent conversation turns and/or code changes |
-| `/export` | Save the conversation to a file |
-| `/copy` | Copy Claude's last response to your clipboard |
-
-**Configuration:**
-
-| Command | What It Does |
-|---|---|
-| `/config` | Open Claude Code settings |
-| `/permissions` | View or change what Claude is allowed to do without asking |
-| `/mcp` | Manage MCP server connections |
-| `/theme` | Change the color scheme |
-| `/status` | See your version, model, account, and connection status |
-| `/doctor` | Health check — diagnoses problems with your installation |
-| `/debug` | Reads session logs to troubleshoot issues |
-
-**Tasks and background work:**
-
-| Command | What It Does |
-|---|---|
-| `/tasks` | List and manage background tasks Claude is running |
-| `/todos` | View your current task list |
-
-### Keyboard Shortcuts
-
-You don't need to memorize these. Learn the starred ones first; the rest you'll pick up naturally.
-
-**The essentials:**
-
-| Shortcut | What It Does |
-|---|---|
-| ★ `Shift+Tab` | Cycle between permission modes: normal → auto-accept → plan mode. This is how you toggle plan mode on and off |
-| ★ `Ctrl+C` | Stop whatever Claude is currently doing |
-| ★ `Tab` | Accept Claude's suggested next step |
-| ★ `Esc Esc` (double-tap) | Rewind — undo the last turn or restore code to a previous state |
-| `Ctrl+L` | Clear the terminal screen (conversation stays intact) |
-| `Up/Down arrows` | Browse your command history |
-| `Option+Enter` (Mac) | Start a new line without sending your message |
-| `Option+P` (Mac) / `Alt+P` (Win) | Quick model switch |
-| `Option+T` (Mac) / `Alt+T` (Win) | Toggle extended thinking mode |
-| `Ctrl+T` | Show/hide the task list |
-
-**Useful but not urgent:**
-
-| Shortcut | What It Does |
-|---|---|
-| `Ctrl+G` | Open your message in a text editor (for long, complex prompts) |
-| `Ctrl+R` | Search your command history |
-| `Ctrl+B` | Send a running task to the background |
-| `Ctrl+F` (twice) | Kill all background tasks |
-| `Ctrl+V` / `Cmd+V` | Paste an image from your clipboard into the conversation |
-| `!` (at start) | Run a bash command directly and add the output to your conversation |
-| `@` | Autocomplete a file path — mention files for Claude to look at |
-
-### Permission Modes
-
-Claude Code has three modes that control how much autonomy Claude has. Cycle through them with `Shift+Tab`.
-
-**Normal mode** (default) — Claude asks permission before running commands, editing files, or taking actions. You approve each step. This is the right mode when you're learning or working on something sensitive.
-
-**Plan mode** — Claude plans but doesn't execute. It shows you what it *would* do, and you approve the plan before anything happens. Use this for complex features where you want to review the approach first.
-
-**Auto-accept mode** — Claude runs commands and edits files without asking. Use this when you're in a flow and trust what Claude is doing — like iterating on styling or running tests repeatedly. Switch back to normal mode when the task changes.
-
-### Skills Added by This Tutorial
-
-When you install the `a-primer-skills` plugin, these skills become available. They work in two ways: some are slash commands (like `/a-new-project`), and others are instruction sets that Claude draws on automatically when relevant. You can also invoke skills explicitly: *"Use the brainstorming skill to help me think through this feature."*
-
-| Skill | What It Does |
-|---|---|
-| ★ **a-primer-skills** (`/a-new-project`) | The core skill for this guide. The `/a-new-project` slash command scaffolds a new project with the full stack, CLAUDE.md, docs/ folder, and configuration. Also handles environment setup, tool installation, and project patterns |
-| ★ **brainstorming** | Structured ideation. When you're exploring ideas — feature concepts, product directions, creative approaches — this skill gives Claude a framework for helping you think expansively before narrowing down |
-| ★ **frontend-design** | UI and UX patterns. Claude uses this when building interfaces — component layout, responsive behavior, visual hierarchy, interaction patterns. Makes Claude better at producing good-looking, usable pages |
-| ★ **systematic-debugging** | Methodical problem diagnosis. When something breaks, this skill gives Claude a structured approach: reproduce, isolate, diagnose, fix, verify. Prevents the "let me try random things" anti-pattern |
-| **writing-skills** | Clear, effective writing. Claude uses this when generating documentation, content, or copy for your app. Focuses on concision, clarity, and appropriate tone |
-| **writing-plans** | Planning features and projects before building. Structures Claude's thinking into phases: understand the goal, identify the pieces, sequence the work, flag risks. Pairs well with plan mode |
-| **subagent-driven-development** | Using parallel Claude instances for complex tasks. When a job has independent parts, Claude can spawn background agents that work simultaneously — one building the UI while another sets up the database. Advanced but powerful |
-| **using-superpowers** | Getting the most from Claude's advanced capabilities — extended thinking, multi-file edits, complex reasoning, context management. A meta-skill that makes Claude better at being Claude |
-
-### Quick Reference: The Commands You'll Actually Use
-
-If you remember nothing else from this appendix:
-
-| Situation | What to Do |
-|---|---|
-| Starting a new project | `/a-new-project` to scaffold everything, or `/init` for just CLAUDE.md |
-| Want Claude to plan first | `/plan` or `Shift+Tab` to enter plan mode |
-| Conversation getting long | `/compact` to free up space |
-| Want to try a different model | `/model` or `Option+P` |
-| Need to undo something | `Esc Esc` to rewind |
-| Picking up where you left off | `/resume` — Claude checks `docs/` for progress notes |
-| Something broke | Paste the error to Claude. It handles the rest |
-| Curious about usage | `/cost` for this session, `/usage` for your plan |

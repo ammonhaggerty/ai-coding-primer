@@ -27,7 +27,7 @@ What changed, why it matters, and the mental model for building with AI. The too
 Installing everything you need — Claude Code, the terminal, MCP servers, skills, and your first project scaffold. The goal: type one command and Claude handles the rest.
 
 ### Part 3: [The Cloud](04-the-cloud.md)
-Why Cloudflare, your first deploy, and the building blocks — Workers, D1, R2, Workers AI, KV. Security and secrets.
+Why Cloudflare, your first deploy, and the building blocks — Workers, D1, R2, Workers AI, KV, Vectorize. Security and secrets.
 
 ### Part 4: [Building](05-building.md)
 Starting with intent, designing with Figma and Claude, the stack explained, building a feature end-to-end, working with data, and adding AI to your product.
@@ -39,7 +39,12 @@ How to think alongside Claude, what to do when things break, iterating and shipp
 AI as an abstraction layer, the coming specialization, the 50-person team, and beyond the web.
 
 ### [Appendices](08-appendices.md)
-Every link you'll need, AI model reference (coding and in-app), Cloudflare free tier, glossary, common issues, and Claude Code features.
+- [A: Claude Code Features](08-appendices.md#appendix-a-claude-code-features) — Commands, keyboard shortcuts, permission modes, and skills
+- [B: AI Models — For Coding and For Your Product](08-appendices.md#appendix-b-ai-models--for-coding-and-for-your-product) — Model tiers, pricing, capabilities, and when to use what
+- [C: Cloudflare Free Tier at a Glance](08-appendices.md#appendix-c-cloudflare-free-tier-at-a-glance) — What you get without paying
+- [D: Every Link You'll Need](08-appendices.md#appendix-d-every-link-youll-need) — All apps, services, dashboards, and docs in one place
+- [E: Glossary](08-appendices.md#appendix-e-glossary) — Plain-English definitions of every technical term
+- [F: Common Issues](08-appendices.md#appendix-f-common-issues) — Symptom-based troubleshooting
 
 ---
 

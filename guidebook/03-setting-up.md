@@ -65,7 +65,7 @@ Now start Claude:
 claude
 ```
 
-Claude will greet you and ask you to authenticate. Follow the link, sign in with your Anthropic account (Pro or Max), and authorize the connection. This happens once.
+Claude will greet you and ask you to authenticate. Follow the link, sign in with your Anthropic account (Pro or Max — this guide recommends Max with Opus 4.6), and authorize the connection. This happens once.
 
 You're now talking to Claude, in your workspace. Everything from here on out, you can do in this conversation.
 
@@ -250,3 +250,7 @@ You ran three commands by hand. Claude did the rest. You now have:
 - **Optionally:** a nicer terminal (Ghostty) and a code viewer (VS Code)
 
 This is your workshop. The next section puts it to use — we'll set up your cloud infrastructure and put your first piece of code on the internet.
+
+---
+
+**Next:** [Part 3: The Cloud](04-the-cloud.md)
