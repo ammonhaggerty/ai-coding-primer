@@ -1,0 +1,252 @@
+# Part 2: Setting Up Your Workshop
+
+Here's the honest truth about what you need to do by hand: three commands. After that, Claude takes over and sets up everything else for you. The tools, the connections, the configuration, the project scaffold — Claude handles it, explains what it's doing, and asks permission before each step.
+
+This section covers those three commands, then walks you through what happens when Claude takes the wheel. After your environment is running, we'll circle back and explain what all the pieces are and why they matter. But you'll already have a working setup by then — and that changes how the explanation feels. Instead of "learn this before you can start," it's "here's what just happened."
+
+---
+
+## The Three Steps
+
+Open your terminal. On a Mac, that's the Terminal app — find it in Applications > Utilities, or search for "Terminal" in Spotlight. On Windows, open Windows Terminal or PowerShell. You'll see a window with a blinking cursor. That's it. That's where this starts.
+
+### 1. Install Node.js
+
+Claude Code needs a JavaScript runtime to operate. Node.js is that runtime. You install it once and never think about it again.
+
+**Mac:**
+```
+brew install node
+```
+
+If you don't have Homebrew (the Mac package manager), install it first — paste this and follow the prompts:
+```
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+
+**Windows:**
+```
+winget install OpenJS.NodeJS.LTS
+```
+
+**Or, on any platform:** Download the installer from [nodejs.org](https://nodejs.org) — click the big green "LTS" button, run it, click through the steps. Done.
+
+No version number to pin. These always install the current long-term support release.
+
+### 2. Install Claude Code
+
+```
+npm install -g @anthropic-ai/claude-code
+```
+
+Claude Code is now on your machine.
+
+### 3. Create Your Workspace and Start Claude
+
+Before starting Claude, create a home for your projects. This is the folder where all your work will live — and where you'll launch Claude from.
+
+**Mac:**
+```
+mkdir -p ~/Development
+cd ~/Development
+```
+
+**Windows:**
+```
+mkdir %USERPROFILE%\Development
+cd %USERPROFILE%\Development
+```
+
+This creates a `Development` folder in your home directory. You can name it whatever you want, but the convention is useful: every project you build will live inside this folder, and when you start Claude here, it has access to everything in your workspace.
+
+Now start Claude:
+
+```
+claude
+```
+
+Claude will greet you and ask you to authenticate. Follow the link, sign in with your Anthropic account (Pro or Max), and authorize the connection. This happens once.
+
+You're now talking to Claude, in your workspace. Everything from here on out, you can do in this conversation.
+
+**Important:** Always start Claude from your workspace folder. Claude's awareness is rooted in wherever you launch it — if you start Claude in your Downloads folder, it'll be looking at your downloads, not your projects. Make `cd ~/Development` (or `cd %USERPROFILE%\Development` on Windows) a habit before typing `claude`.
+
+---
+
+## Let Claude Set Up Your Environment
+
+Type this — it downloads the AI Primer skill, which teaches Claude how to set up everything else for you:
+
+```
+npx degit ammonhaggerty/a-primer-skills ~/.claude/plugins/a-primer-skills
+```
+
+Then restart Claude with the skill loaded:
+
+```
+claude --plugin-dir ~/.claude/plugins/a-primer-skills
+```
+
+Now tell Claude:
+
+*"Use the primer setup skill to set up my development environment."*
+
+Watch.
+
+Claude will start by checking your system — what's installed, what's missing, what needs configuration. It will explain what it finds in plain English. Then it will start working through the setup, one step at a time, asking your permission along the way:
+
+**"You don't have Git installed. I can install it for you — this is version control, which tracks every change to your project and lets you undo mistakes. Want me to go ahead?"**
+
+Yes.
+
+**"I'm going to install Wrangler, which is Cloudflare's command-line tool. This is how we'll deploy your app to the internet."**
+
+Yes.
+
+**"I'm setting up MCP connections — these let me interact directly with external services. I'll configure context7 for documentation lookup, Cloudflare for your cloud infrastructure, Playwright for browser automation and testing, and Figma if you use it for design."**
+
+Yes.
+
+**"Now I'm installing the skills that will guide different parts of your workflow — brainstorming, writing, frontend design, debugging, working with subagents, and writing plans. These teach me your patterns so I can be more effective."**
+
+Yes.
+
+**"Everything is set up. When you're ready to create your first project, type `/a-new-project` and I'll walk you through it."**
+
+That's it. The whole process takes five to ten minutes. When it's done, you have a complete development environment: every tool installed, every connection configured, and all the skills Claude needs to do its best work. From here, you create projects with `/a-new-project` — Claude scaffolds the code, sets up the database and storage, initializes Git and GitHub, and starts the local dev server. You'll have a running app in your browser before you've written a single line of anything.
+
+---
+
+## What Just Happened
+
+Now that you have a working environment, let's unpack what Claude set up and why each piece matters. You don't need to memorize any of this — Claude knows it all. But understanding the shape of your setup makes you a better collaborator.
+
+### Git — Your Undo Button
+
+Git is version control software. Every time Claude makes changes to your project, it saves a snapshot called a "commit." Each commit has a message describing what changed and why. Together, they form a complete history of your project — every addition, every fix, every experiment.
+
+Why this matters: you can always go back. If Claude makes a change that breaks something, you rewind to the last working state. If you want to try an experimental approach, you create a "branch" — a parallel version of your project that doesn't affect the main one. If the experiment works, you merge it in. If it doesn't, you throw it away.
+
+Claude handles all of this for you. You'll see it making commits as it works, and over time you'll start reading the commit messages like a journal of your project's evolution.
+
+### MCP Servers — Claude's Connections to the World
+
+Out of the box, Claude is smart but isolated. MCP (Model Context Protocol) servers are connections that let Claude reach out to external services directly.
+
+**context7** — Documentation lookup. When Claude needs to know how a library works, it pulls the latest documentation instead of relying on training data that might be outdated. This seems small but it matters enormously — libraries change constantly, and outdated documentation produces broken code.
+
+**Cloudflare** — Your cloud infrastructure. Claude can search Cloudflare's documentation, inspect your workers, check your databases, and help manage your deployment directly.
+
+**Playwright** — Browser automation. Claude can open a browser, navigate pages, fill forms, click buttons, and take screenshots. This is invaluable for testing your app and for automating workflows that involve web interfaces.
+
+**Figma** — Your design tool (optional). If you design screens in Figma, Claude can read them and generate matching code — layout, spacing, colors, typography.
+
+Think of MCP servers as Claude's senses. Without them, Claude is working from memory. With them, Claude can see and interact with the real world of your project.
+
+### Skills — Claude's Playbooks
+
+The setup also installed a suite of skills that teach Claude specific workflows. Each one makes Claude better at a particular aspect of building:
+
+- **primer-skills** — The environment setup and project patterns for this guide
+- **brainstorming** — Structured ideation and exploration
+- **writing-skills** — Clear, effective writing for documentation and content
+- **writing-plans** — Planning features and projects before building
+- **frontend-design** — UI/UX patterns, component design, layout
+- **systematic-debugging** — Methodical problem diagnosis when things break
+- **subagent-driven-development** — Using parallel Claude instances for complex tasks
+- **using-superpowers** — Getting the most from Claude's advanced capabilities
+
+You don't need to invoke these directly — Claude draws on the right skill for the situation. When you ask Claude to help debug a problem, it uses the debugging skill's approach. When you're brainstorming a feature, it uses the brainstorming patterns. They work in the background, making Claude more effective at each part of the workflow.
+
+### CLAUDE.md — Your Project's Rulebook
+
+This is the most important file in your project, and Claude created one for you during setup.
+
+`CLAUDE.md` lives at the root of your project. Claude reads it at the start of every session. It contains the rules and constraints Claude needs to follow — things it would get wrong without being told.
+
+Here's why it matters: Claude doesn't remember previous conversations. Each time you start a new session, Claude is starting fresh. CLAUDE.md is how critical knowledge survives between sessions. But — and this is important — it should stay focused. Recent research on AI coding agents found that bloated context files actually *hurt* performance. When Claude is told to follow rules that don't apply to the current task, it burns effort complying with irrelevant instructions. The sweet spot is minimal and specific.
+
+Think of CLAUDE.md less like a journal and more like a rulebook. It shouldn't describe what your project is (Claude can read the code for that). It should describe what Claude needs to do *differently* than it would by default. Constraints it wouldn't know: "Cookies must use `secure: false` in local dev." Gotchas it would hit: "`card-border` doesn't work from the CDN — use `border border-base-300`." Decisions it should respect: "Always use D1, never Turso."
+
+The starter kit includes a CLAUDE.md pre-configured for our stack. As your project grows, you'll add rules to it — but you'll also prune it. If a gotcha has been properly fixed in the code, remove the note. If Claude already follows a pattern without being told, don't add an instruction for it. Every line should earn its place.
+
+### The Starter Project
+
+Claude created a project scaffold with files already in place:
+
+- **`src/index.ts`** — Your application's entry point. This is where URLs map to responses. When someone visits your site, this file decides what they see.
+- **`wrangler.toml`** — Configuration for Cloudflare. Tells Cloudflare what your project is called, what services it uses, and how to deploy it.
+- **`package.json`** — A manifest of your project's dependencies and scripts.
+- **`CLAUDE.md`** — Your project's rulebook, as described above.
+- **`docs/`** — A folder for your project's working memory. This is where Claude saves brainstorming notes, plans, progress updates, and design decisions.
+
+You don't need to understand these files yet. Claude will work with them, and you'll learn what they do naturally as you watch Claude modify them.
+
+### The docs/ Folder — Your Project's Long-Term Memory
+
+If CLAUDE.md is the rulebook, the `docs/` folder is the journal.
+
+Here's the problem CLAUDE.md alone can't solve: Claude's conversations have limited context. Long sessions get compacted — Claude summarizes what happened and continues with that summary instead of the full history. If you close a session and start a new one, Claude starts completely fresh. In both cases, the nuance of what you were thinking, what you tried, what you decided and why — that can get lost.
+
+The `docs/` folder fixes this. Claude is instructed to save working notes there as you go: brainstorming sessions, feature plans, progress logs, design rationale, research findings. When Claude starts a new session or recovers from a compaction, it can read the `docs/` folder and pick up the thread.
+
+This is different from CLAUDE.md in an important way. CLAUDE.md is read *automatically* at the start of every interaction — so it needs to stay lean. The `docs/` folder is read *on demand* — when Claude needs to remember what you were working on, it looks there. The size doesn't matter because Claude only pulls in what's relevant.
+
+You don't need to manage the `docs/` folder yourself. Claude creates and updates files there as part of its workflow. But knowing it exists explains why Claude can pick up where you left off even across sessions — it's reading its own notes.
+
+### Wrangler — Cloudflare's Tool
+
+Wrangler is a command-line tool that connects your local project to Cloudflare's cloud infrastructure. When you're ready to deploy, Wrangler is how your code gets from your machine to the internet. Claude manages Wrangler entirely — you'll rarely interact with it directly.
+
+---
+
+## Making It Nicer (Optional)
+
+Everything above works with the default terminal that came with your computer. But if you're going to spend time in this environment — and you will — a few upgrades make the experience noticeably better.
+
+### Ghostty — A Better Terminal
+
+Ghostty is a terminal app for Mac that's fast, clean, and purpose-built for this kind of work. It's free. Download it from [ghostty.org](https://ghostty.org), drag it to Applications, and use it instead of the default Terminal. The difference is subtle but real — faster rendering, better font support, cleaner interface. Once you've used it for a day, you won't go back.
+
+*(Windows users: Windows Terminal is the equivalent upgrade. Linux users: your default terminal is probably already good.)*
+
+### VS Code — Seeing What Claude Builds
+
+VS Code is a code editor. For our purposes, it's a window into your project's files with syntax highlighting that makes code readable. You won't *write* code here, but you'll *read* it — and over time, reading becomes a genuinely useful skill. You start recognizing patterns, understanding how files connect, developing intuition about your project's structure.
+
+Download it from [code.visualstudio.com](https://code.visualstudio.com). Open your project folder in it. Browse around. You'll be surprised how much of the code Claude writes is readable even without programming experience.
+
+**Why not Cursor?** Cursor is VS Code with an AI layer built in. Since Claude Code runs in your terminal and is more capable than Cursor's built-in AI, the extra layer is redundant — and can sometimes conflict. Two AI systems trying to help with the same file creates confusion. VS Code gives you a clean, quiet window. That's what you want.
+
+---
+
+## What About iPad and Mobile?
+
+Claude Code currently requires a desktop or laptop — Mac, Windows, or Linux. There's no native iOS or Android version of Claude Code, and the terminal-based workflow needs a real filesystem and the ability to run commands locally.
+
+That said, there are options if you want to work from an iPad or phone:
+
+**Claude Code on the web** — Anthropic offers a web-based version of Claude Code at `claude.ai/code`. It runs in the cloud rather than on your local machine, so you don't get local filesystem access, but you can start and manage coding tasks from any browser, including on iPad.
+
+**Remote access** — If you have Claude Code running on your Mac or PC at home, you can connect to it remotely from an iPad using the Remote Control feature or SSH. This gives you the full Claude Code experience from a mobile device — just with a network connection in between.
+
+For this guide, we'll assume you're working on a Mac or Windows machine. The mobile story is evolving quickly, and by the time you're comfortable with the desktop workflow, there may be more options.
+
+---
+
+## Where You Are Now
+
+You ran three commands by hand. Claude did the rest. You now have:
+
+- **Claude Code** — an AI partner in your terminal
+- **A workspace** — `~/Development`, where all your projects live
+- **Git** — tracking every change to your project
+- **MCP servers** — connecting Claude to documentation, Cloudflare, Playwright, and Figma
+- **Skills** — teaching Claude your workflows for brainstorming, designing, debugging, writing, and more
+- **CLAUDE.md** — your project's rulebook for Claude
+- **A docs/ folder** — your project's long-term memory for plans, progress, and decisions
+- **A starter project** — with working code, ready to run
+- **Wrangler** — connected to Cloudflare, ready to deploy
+- **Optionally:** a nicer terminal (Ghostty) and a code viewer (VS Code)
+
+This is your workshop. The next section puts it to use — we'll set up your cloud infrastructure and put your first piece of code on the internet.
