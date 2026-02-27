@@ -61,7 +61,7 @@ Now start Claude:
 claude
 ```
 
-Sign in when prompted. You do this once.
+If this is your first time, Claude will walk you through a short setup — choose the defaults, say yes to trusting the folder, and sign in when prompted. You do this once.
 
 ### 6. Install the primer skill
 

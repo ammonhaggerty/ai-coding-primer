@@ -72,7 +72,7 @@ Now start Claude:
 claude
 ```
 
-Claude will greet you and ask you to authenticate. Follow the link, sign in with your Anthropic account (Pro or Max — this guide recommends Max with Opus 4.6), and authorize the connection. This happens once.
+If this is your first time running Claude Code, it will walk you through a short setup. Choose the defaults for each prompt and say yes when it asks you to trust the folder — this lets Claude read and work with your project files. Then follow the link to sign in with your Anthropic account (Pro or Max — this guide recommends Max with Opus 4.6) and authorize the connection. This all happens once.
 
 You're now talking to Claude, in your workspace. Everything from here on out, you can do in this conversation.
 
