@@ -71,6 +71,8 @@ Exit Claude first (type `/exit` or press `Ctrl+C`), then run:
 npx -y degit ammonhaggerty/a-primer-skills ~/.claude/plugins/a-primer-skills
 ```
 
+You may see warnings in the output — ignore them. As long as you see a line that says "cloned," it worked.
+
 Restart Claude with the skill loaded:
 
 ```

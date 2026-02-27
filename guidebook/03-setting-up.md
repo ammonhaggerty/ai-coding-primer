@@ -85,8 +85,10 @@ You're now talking to Claude, in your workspace. Everything from here on out, yo
 Type this — it downloads my Claude Skill I created, which teaches Claude how to set up everything else for you and helps you as you learn:
 
 ```
-npx degit ammonhaggerty/a-primer-skills ~/.claude/plugins/a-primer-skills
+npx -y degit ammonhaggerty/a-primer-skills ~/.claude/plugins/a-primer-skills
 ```
+
+You may see warnings in the output — ignore them. As long as you see a line that says "cloned," it worked.
 
 Then restart Claude with the skill loaded:
 
