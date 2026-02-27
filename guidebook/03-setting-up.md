@@ -14,7 +14,7 @@ Open your terminal. On a Mac, that's the Terminal app — find it in Application
 
 Homebrew is the standard way to install developer tools on a Mac. Claude will use it throughout this guide to install and manage software for you. If you already have it, skip to step 2.
 
-The first install takes 5-10 minutes because it also downloads Apple's command-line developer tools in the background. This is normal — it's a one-time setup. Let it run, follow any prompts that appear, and wait for it to finish:
+The first install takes 5-15 minutes because it also downloads Apple's command-line developer tools in the background. Older Macs may take longer — this is normal. It's a one-time setup. Let it run, follow any prompts that appear, and wait for it to finish:
 
 ```
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
@@ -24,7 +24,7 @@ The first install takes 5-10 minutes because it also downloads Apple's command-l
 
 ### 2. Install Node.js
 
-Claude Code needs a JavaScript runtime to operate. Node.js is that runtime. You install it once and never think about it again. This takes another 5-10 minutes on a fresh machine.
+Claude Code needs a JavaScript runtime to operate. Node.js is that runtime. You install it once and never think about it again. This takes another 5-15 minutes on a fresh machine (longer on older Macs).
 
 **Mac:**
 ```

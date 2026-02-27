@@ -10,7 +10,7 @@ Go to [claude.ai](https://claude.ai) and subscribe. Start with Pro ($20/mo). Upg
 
 ### 2. Install Homebrew (Mac only)
 
-Homebrew is the standard way to install developer tools on a Mac. Claude will use it throughout this guide. This is a one-time install that takes 5-10 minutes — it downloads Apple's command-line developer tools in the background. Let it run and follow any prompts:
+Homebrew is the standard way to install developer tools on a Mac. Claude will use it throughout this guide. This is a one-time install that takes 5-15 minutes — it downloads Apple's command-line developer tools in the background (older Macs may take longer). Let it run and follow any prompts:
 
 ```
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
@@ -20,7 +20,7 @@ Homebrew is the standard way to install developer tools on a Mac. Claude will us
 
 ### 3. Install Node.js
 
-Node.js is the engine that runs JavaScript outside a browser — Claude Code and most web development tools depend on it. Another 5-10 minutes on a fresh machine.
+Node.js is the engine that runs JavaScript outside a browser — Claude Code and most web development tools depend on it. Another 5-15 minutes on a fresh machine (longer on older Macs).
 
 **Mac:**
 ```
