@@ -118,6 +118,8 @@ Claude will then ask for your **Git Identity** — a name and email to label you
 
 Yes.
 
+Claude will then ask you to **connect to Cloudflare**. A browser window will open for you to sign in. If you already have a Cloudflare account, go ahead — sign in and click "Allow" when it asks to authorize the connection, then come back to the terminal. If you don't have one yet, choose "Skip for now." You'll create an account and connect later when you're ready to deploy. Everything works locally without it.
+
 **"I'm setting up MCP connections — these let me interact directly with external services. I'll configure context7 for documentation lookup, Cloudflare for your cloud infrastructure, Playwright for browser automation and testing, and Figma if you use it for design."**
 
 Yes.
