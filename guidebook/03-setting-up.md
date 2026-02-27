@@ -102,7 +102,9 @@ Now tell Claude:
 
 Watch.
 
-Claude will start by checking your system — what's installed, what's missing, what needs configuration. It will explain what it finds in plain English. Then it will start working through the setup, one step at a time, asking your permission along the way:
+Claude will start by checking your system — what's installed, what's missing, what needs configuration. It will explain what it finds in plain English. Then it will start working through the setup, one step at a time, asking your permission along the way.
+
+**Don't be alarmed by red text.** As Claude explores your system, you'll see red "Error" messages in the output. This is normal — Claude is checking what exists and what doesn't, and missing tools show up as errors during detection. Claude will clearly tell you if something actually needs your attention.
 
 **"You don't have Git installed. I can install it for you — this is version control, which tracks every change to your project and lets you undo mistakes. Want me to go ahead?"**
 
