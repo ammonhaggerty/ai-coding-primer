@@ -92,6 +92,8 @@ Now you'll install a custom skill I built for this primer. It teaches Claude how
 /plugin install a-primer-skills@a-primer
 ```
 
+When it asks about install scope, choose **"Install for you (user scope)"** — this makes the skills available in all your projects, not just the current folder.
+
 Restart Claude so the new plugin loads. Type `/exit` (or press `Ctrl+C`), then:
 
 ```

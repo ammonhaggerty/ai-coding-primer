@@ -75,6 +75,8 @@ Inside Claude, type these two commands — they add my custom skill marketplace 
 /plugin install a-primer-skills@a-primer
 ```
 
+When it asks about install scope, choose **"Install for you (user scope)"** — this makes the skills available in all your projects.
+
 Now restart Claude so the new plugin loads. Type `/exit` (or press `Ctrl+C`), then:
 
 ```
