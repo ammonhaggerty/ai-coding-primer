@@ -40,7 +40,7 @@ Even without Figma, describing your UI to Claude works well. "A centered card wi
 
 ---
 
-## The Stack (Explained for Humans)
+## The Stack
 
 Every tool in the building stack exists for a reason. You don't need to master any of them — Claude handles the syntax — but understanding what each one does helps you have better conversations about what you're building.
 

@@ -1,12 +1,12 @@
 # Part 2: Setting Up Your Workshop
 
-Here's the honest truth about what you need to do by hand: three commands. After that, Claude takes over and sets up everything else for you. The tools, the connections, the configuration, the project scaffold — Claude handles it, explains what it's doing, and asks permission before each step.
+I challenged myself to simplify the setup process to the absolute minimum — four steps, and you don't need to know what they do or mean. After that, Claude takes over using a custom skill I built for this primer and sets up everything else for you. The tools, the connections, the configuration, the project scaffold — Claude handles it, explains what it's doing, and asks permission before each step.
 
-This section covers those three commands, then walks you through what happens when Claude takes the wheel. After your environment is running, we'll circle back and explain what all the pieces are and why they matter. But you'll already have a working setup by then — and that changes how the explanation feels. Instead of "learn this before you can start," it's "here's what just happened."
+This section covers those four steps, then walks you through what happens when Claude takes the wheel. After your environment is running, we'll circle back and explain what all the pieces are and why they matter. But you'll already have a working setup by then — and that changes how the explanation feels. Instead of "learn this before you can start," it's "here's what just happened."
 
 ---
 
-## The Three Steps
+## The Four Steps
 
 Open your terminal. On a Mac, that's the Terminal app — find it in Applications > Utilities, or search for "Terminal" in Spotlight. On Windows, open Windows Terminal or PowerShell. You'll see a window with a blinking cursor. That's it. That's where this starts.
 
@@ -43,7 +43,7 @@ Claude Code is now on your machine.
 
 ### 3. Create Your Workspace and Start Claude
 
-Before starting Claude, create a home for your projects. This is the folder where all your work will live — and where you'll launch Claude from.
+Before starting Claude, create a home for your projects. This is the folder where all your work will live — and where you'll launch Claude from. (Tip: when you see multiple commands like below, you can copy/paste them all together - commands run in sequence)
 
 **Mac:**
 ```
@@ -73,9 +73,9 @@ You're now talking to Claude, in your workspace. Everything from here on out, yo
 
 ---
 
-## Let Claude Set Up Your Environment
+## 4. Let Claude Set Up Your Environment
 
-Type this — it downloads the AI Primer skill, which teaches Claude how to set up everything else for you:
+Type this — it downloads my Claude Skill I created, which teaches Claude how to set up everything else for you and helps you as you learn:
 
 ```
 npx degit ammonhaggerty/a-primer-skills ~/.claude/plugins/a-primer-skills
@@ -147,7 +147,7 @@ Think of MCP servers as Claude's senses. Without them, Claude is working from me
 
 The setup also installed a suite of skills that teach Claude specific workflows. Each one makes Claude better at a particular aspect of building:
 
-- **primer-skills** — The environment setup and project patterns for this guide
+- **a-primer-skills** — The environment setup and project patterns for this guide
 - **brainstorming** — Structured ideation and exploration
 - **writing-skills** — Clear, effective writing for documentation and content
 - **writing-plans** — Planning features and projects before building
@@ -172,11 +172,12 @@ The starter kit includes a CLAUDE.md pre-configured for our stack. As your proje
 
 ### The Starter Project
 
-Claude created a project scaffold with files already in place:
+Claude created a project scaffold — a clean, well-designed web application with a welcome page, an AI-powered chat, a light/dark theme toggle, and a solid foundation for building anything. It includes:
 
 - **`src/index.ts`** — Your application's entry point. This is where URLs map to responses. When someone visits your site, this file decides what they see.
+- **`src/chat.ts`** — An AI chat page powered by Cloudflare Workers AI. A working example of how to add intelligence to your app.
+- **`src/layout.ts`** — The shared page layout — navigation, fonts, styling, and the theme toggle. Every page uses this wrapper.
 - **`wrangler.toml`** — Configuration for Cloudflare. Tells Cloudflare what your project is called, what services it uses, and how to deploy it.
-- **`package.json`** — A manifest of your project's dependencies and scripts.
 - **`CLAUDE.md`** — Your project's rulebook, as described above.
 - **`docs/`** — A folder for your project's working memory. This is where Claude saves brainstorming notes, plans, progress updates, and design decisions.
 
@@ -216,27 +217,12 @@ VS Code is a code editor. For our purposes, it's a window into your project's fi
 
 Download it from [code.visualstudio.com](https://code.visualstudio.com). Open your project folder in it. Browse around. You'll be surprised how much of the code Claude writes is readable even without programming experience.
 
-**Why not Cursor?** Cursor is VS Code with an AI layer built in. Since Claude Code runs in your terminal and is more capable than Cursor's built-in AI, the extra layer is redundant — and can sometimes conflict. Two AI systems trying to help with the same file creates confusion. VS Code gives you a clean, quiet window. That's what you want.
-
----
-
-## What About iPad and Mobile?
-
-Claude Code currently requires a desktop or laptop — Mac, Windows, or Linux. There's no native iOS or Android version of Claude Code, and the terminal-based workflow needs a real filesystem and the ability to run commands locally.
-
-That said, there are options if you want to work from an iPad or phone:
-
-**Claude Code on the web** — Anthropic offers a web-based version of Claude Code at `claude.ai/code`. It runs in the cloud rather than on your local machine, so you don't get local filesystem access, but you can start and manage coding tasks from any browser, including on iPad.
-
-**Remote access** — If you have Claude Code running on your Mac or PC at home, you can connect to it remotely from an iPad using the Remote Control feature or SSH. This gives you the full Claude Code experience from a mobile device — just with a network connection in between.
-
-For this guide, we'll assume you're working on a Mac or Windows machine. The mobile story is evolving quickly, and by the time you're comfortable with the desktop workflow, there may be more options.
 
 ---
 
 ## Where You Are Now
 
-You ran three commands by hand. Claude did the rest. You now have:
+You ran four commands by hand. Claude did the rest. You now have:
 
 - **Claude Code** — an AI partner in your terminal
 - **A workspace** — `~/Development`, where all your projects live
