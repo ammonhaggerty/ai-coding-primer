@@ -10,11 +10,13 @@ This section covers those five steps, then walks you through what happens when C
 
 Open your terminal. On a Mac, that's the Terminal app — find it in Applications > Utilities, or search for "Terminal" in Spotlight. On Windows, open Windows Terminal or PowerShell. You'll see a window with a blinking cursor. That's it. That's where this starts.
 
+**A note on hardware:** This guide works best on Apple Silicon Macs (M1 or newer). On Apple Silicon, the setup steps below take a few minutes each. On older Intel Macs, Homebrew and Node.js compile packages from source rather than using pre-built binaries, which can take 30 minutes or more. If you're on an Intel Mac, everything will still work — just be patient with the first two steps.
+
 ### 1. Install Homebrew (Mac only)
 
 Homebrew is the standard way to install developer tools on a Mac. Claude will use it throughout this guide to install and manage software for you. If you already have it, skip to step 2.
 
-The first install takes 5-15 minutes because it also downloads Apple's command-line developer tools in the background. Older Macs may take longer — this is normal. It's a one-time setup. Let it run, follow any prompts that appear, and wait for it to finish:
+This is a one-time install. It downloads Apple's command-line developer tools in the background — a few minutes on Apple Silicon, longer on Intel Macs. Let it run, follow any prompts that appear, and wait for it to finish:
 
 ```
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
@@ -24,7 +26,7 @@ The first install takes 5-15 minutes because it also downloads Apple's command-l
 
 ### 2. Install Node.js
 
-Claude Code needs a JavaScript runtime to operate. Node.js is that runtime. You install it once and never think about it again. This takes another 5-15 minutes on a fresh machine (longer on older Macs).
+Claude Code needs a JavaScript runtime to operate. Node.js is that runtime. You install it once and never think about it again. A couple of minutes on Apple Silicon, potentially much longer on Intel Macs.
 
 **Mac:**
 ```
