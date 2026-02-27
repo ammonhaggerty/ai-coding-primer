@@ -1,27 +1,34 @@
 # Part 2: Setting Up Your Workshop
 
-I challenged myself to simplify the setup process to the absolute minimum — four steps, and you don't need to know what they do or mean. After that, Claude takes over using a custom skill I built for this primer and sets up everything else for you. The tools, the connections, the configuration, the project scaffold — Claude handles it, explains what it's doing, and asks permission before each step.
+I challenged myself to simplify the setup process to the absolute minimum — five steps, and you don't need to know what they do or mean. After that, Claude takes over using a custom skill I built for this primer and sets up everything else for you. The tools, the connections, the configuration, the project scaffold — Claude handles it, explains what it's doing, and asks permission before each step.
 
-This section covers those four steps, then walks you through what happens when Claude takes the wheel. After your environment is running, we'll circle back and explain what all the pieces are and why they matter. But you'll already have a working setup by then — and that changes how the explanation feels. Instead of "learn this before you can start," it's "here's what just happened."
+This section covers those five steps, then walks you through what happens when Claude takes the wheel. After your environment is running, we'll circle back and explain what all the pieces are and why they matter. But you'll already have a working setup by then — and that changes how the explanation feels. Instead of "learn this before you can start," it's "here's what just happened."
 
 ---
 
-## The Four Steps
+## The Five Steps
 
 Open your terminal. On a Mac, that's the Terminal app — find it in Applications > Utilities, or search for "Terminal" in Spotlight. On Windows, open Windows Terminal or PowerShell. You'll see a window with a blinking cursor. That's it. That's where this starts.
 
-### 1. Install Node.js
+### 1. Install Homebrew (Mac only)
+
+Homebrew is the standard way to install developer tools on a Mac. Claude will use it throughout this guide to install and manage software for you. If you already have it, skip to step 2.
+
+The first install takes 5-10 minutes because it also downloads Apple's command-line developer tools in the background. This is normal — it's a one-time setup. Let it run, follow any prompts that appear, and wait for it to finish:
+
+```
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+
+*(Windows users: skip this step.)*
+
+### 2. Install Node.js
 
 Claude Code needs a JavaScript runtime to operate. Node.js is that runtime. You install it once and never think about it again.
 
 **Mac:**
 ```
 brew install node
-```
-
-If you don't have Homebrew (the Mac package manager), install it first — paste this and follow the prompts:
-```
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
 **Windows:**
@@ -31,9 +38,7 @@ winget install OpenJS.NodeJS.LTS
 
 **Or, on any platform:** Download the installer from [nodejs.org](https://nodejs.org) — click the big green "LTS" button, run it, click through the steps. Done.
 
-No version number to pin. These always install the current long-term support release.
-
-### 2. Install Claude Code
+### 3. Install Claude Code
 
 ```
 npm install -g @anthropic-ai/claude-code
@@ -41,7 +46,7 @@ npm install -g @anthropic-ai/claude-code
 
 Claude Code is now on your machine.
 
-### 3. Create Your Workspace and Start Claude
+### 4. Create Your Workspace and Start Claude
 
 Before starting Claude, create a home for your projects. This is the folder where all your work will live — and where you'll launch Claude from. (Tip: when you see multiple commands like below, you can copy/paste them all together - commands run in sequence)
 
@@ -73,7 +78,7 @@ You're now talking to Claude, in your workspace. Everything from here on out, yo
 
 ---
 
-## 4. Let Claude Set Up Your Environment
+## 5. Let Claude Set Up Your Environment
 
 Type this — it downloads my Claude Skill I created, which teaches Claude how to set up everything else for you and helps you as you learn:
 
@@ -222,7 +227,7 @@ Download it from [code.visualstudio.com](https://code.visualstudio.com). Open yo
 
 ## Where You Are Now
 
-You ran four commands by hand. Claude did the rest. You now have:
+You ran five steps by hand. Claude did the rest. You now have:
 
 - **Claude Code** — an AI partner in your terminal
 - **A workspace** — `~/Development`, where all your projects live

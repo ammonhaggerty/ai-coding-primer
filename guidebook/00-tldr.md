@@ -4,60 +4,98 @@ Skip the philosophy. Get building.
 
 ---
 
-**1. Sign up for Claude** → [claude.ai](https://claude.ai). Start with Pro ($20/mo). Upgrade to Max ($100/mo) when you hit usage limits.
+### 1. Sign up for Claude
 
-**2. Install Node.js**
+Go to [claude.ai](https://claude.ai) and subscribe. Start with Pro ($20/mo). Upgrade to Max ($100/mo) when you hit usage limits.
 
-Mac: `brew install node` (need Homebrew first? `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`)
+### 2. Install Homebrew (Mac only)
 
-Windows: `winget install OpenJS.NodeJS.LTS`
+Homebrew is the standard way to install developer tools on a Mac. Claude will use it throughout this guide. This is a one-time install that takes 5-10 minutes — it downloads Apple's command-line developer tools in the background. Let it run and follow any prompts:
 
-Or download from [nodejs.org](https://nodejs.org) — click the green LTS button.
+```
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
 
-**3. Install Claude Code**
+*(Windows users: skip this step.)*
+
+### 3. Install Node.js
+
+**Mac:**
+```
+brew install node
+```
+
+**Windows:**
+```
+winget install OpenJS.NodeJS.LTS
+```
+
+**Or, on any platform:** Download from [nodejs.org](https://nodejs.org) — click the green LTS button, run the installer.
+
+### 4. Install Claude Code
 
 ```
 npm install -g @anthropic-ai/claude-code
 ```
 
-**4. Create a workspace and start Claude**
+### 5. Create a workspace and start Claude
 
+**Mac:**
 ```
 mkdir -p ~/Development
 cd ~/Development
+```
+
+**Windows:**
+```
+mkdir %USERPROFILE%\Development
+cd %USERPROFILE%\Development
+```
+
+Now start Claude:
+```
 claude
 ```
 
 Sign in when prompted. You do this once.
 
-**5. Install the skill and let Claude set up everything else**
+### 6. Install the primer skill
+
+Exit Claude first (type `/exit` or press `Ctrl+C`), then run:
 
 ```
-npx degit ammonhaggerty/a-primer-skills ~/.claude/plugins/a-primer-skills
+npx -y degit ammonhaggerty/a-primer-skills ~/.claude/plugins/a-primer-skills
+```
+
+Restart Claude with the skill loaded:
+
+```
 claude --plugin-dir ~/.claude/plugins/a-primer-skills
 ```
 
-Then tell Claude: *"Use the primer setup skill to set up my development environment."*
+### 7. Let Claude set up everything else
+
+Tell Claude:
+
+*"Use the primer setup skill to set up my development environment."*
 
 Say yes to everything. Claude installs Git, Wrangler, MCP servers, and skills. Five minutes.
 
-**6. Create your first project**
+### 8. Create your first project
 
 Type: `/a-new-project`
 
 Claude scaffolds a project, sets up a database and storage on Cloudflare, initializes Git and GitHub, and starts a local dev server. You'll see your app in the browser.
 
-**7. Deploy**
+### 9. Deploy
 
 Tell Claude: *"Deploy my project to Cloudflare."*
 
-You'll need a free Cloudflare account — [dash.cloudflare.com/sign-up](https://dash.cloudflare.com/sign-up). Claude walks you through connecting it.
+You'll need a Cloudflare account (free to sign up, $5/mo Workers Paid plan recommended) — [dash.cloudflare.com/sign-up](https://dash.cloudflare.com/sign-up). Claude walks you through connecting it.
 
-Ten seconds after deploy, you have a live URL.
+### 10. Build
 
-**8. Build**
-
-Tell Claude what you want to build. Be specific:
+Tell Claude what you want. Be specific:
 
 *"Add a page where a user answers three questions about their mood and sees a personalized result. Save their response to the database so they can see a history."*
 
@@ -79,7 +117,7 @@ That's the whole loop. Everything else in this guide is context — the *why* be
 
 ---
 
-**[Part 2: Setting Up](03-setting-up.md)** — Three commands by hand, then Claude takes over. This section walks through the full environment setup — terminal, Claude Code, MCP servers, skills, CLAUDE.md, the docs/ folder, and the starter project. It explains what each piece is *after* you've installed it, so the explanation feels like context rather than homework. Also covers optional upgrades (Ghostty, VS Code) for a nicer experience.
+**[Part 2: Setting Up](03-setting-up.md)** — Five steps by hand, then Claude takes over. This section walks through the full environment setup — terminal, Claude Code, MCP servers, skills, CLAUDE.md, the docs/ folder, and the starter project. It explains what each piece is *after* you've installed it, so the explanation feels like context rather than homework. Also covers optional upgrades (Ghostty, VS Code) for a nicer experience.
 
 ---
 
