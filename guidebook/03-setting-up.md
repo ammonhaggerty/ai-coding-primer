@@ -98,7 +98,9 @@ claude --plugin-dir ~/.claude/plugins/a-primer-skills
 
 Now tell Claude:
 
-*"Use the primer setup skill to set up my development environment."*
+```
+Use the primer setup skill to set up my development environment.
+```
 
 Watch.
 
