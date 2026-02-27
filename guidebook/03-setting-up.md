@@ -112,6 +112,8 @@ Claude will start by checking your system — what's installed, what's missing, 
 
 Yes.
 
+Claude will then ask for your **Git Identity** — a name and email to label your work. This is not an account — just a tag that gets attached to each change you make. Enter your real name and any email you use. If you have a GitHub account, use the same email so your work links to your profile later. If you don't have one or aren't sure, use whatever email you like. This is easy to change later.
+
 **"I'm going to install Wrangler, which is Cloudflare's command-line tool. This is how we'll deploy your app to the internet."**
 
 Yes.

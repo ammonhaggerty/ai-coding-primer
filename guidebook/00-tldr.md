@@ -89,6 +89,8 @@ Use the primer setup skill to set up my development environment.
 
 Say yes to everything. Claude installs Git, Wrangler, MCP servers, and skills. Five minutes. You'll see red "Error" text as Claude checks your system — this is normal. Claude is exploring what's installed and what's missing. It will clearly tell you if something needs your attention.
 
+Claude will ask for your **Git Identity** — your name and email. This is just a label that gets attached to your work, not an account. Enter your real name and any email you use. If you have a GitHub account, use the same email. If you don't have one or aren't sure, use whatever email you like — it's easy to change later.
+
 ### 8. Create your first project
 
 Type: `/a-new-project`
