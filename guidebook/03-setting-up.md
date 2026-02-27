@@ -82,18 +82,20 @@ You're now talking to Claude, in your workspace. Everything from here on out, yo
 
 ## 5. Let Claude Set Up Your Environment
 
-Type this — it downloads my Claude Skill I created, which teaches Claude how to set up everything else for you and helps you as you learn:
+Now you'll install a custom skill I built for this primer. It teaches Claude how to set up everything else for you and guides you as you learn. Type these two commands inside Claude — the first adds the skill marketplace, the second installs the plugin:
 
 ```
-npx -y degit ammonhaggerty/a-primer-skills ~/.claude/plugins/a-primer-skills
+/plugin marketplace add ammonhaggerty/a-primer-skills
 ```
 
-You may see warnings in the output — ignore them. As long as you see a line that says "cloned," it worked.
+```
+/plugin install a-primer-skills@a-primer
+```
 
-Then restart Claude with the skill loaded:
+Restart Claude so the new plugin loads. Type `/exit` (or press `Ctrl+C`), then:
 
 ```
-claude --plugin-dir ~/.claude/plugins/a-primer-skills
+claude
 ```
 
 Now tell Claude:
@@ -128,7 +130,9 @@ Yes.
 
 Yes.
 
-**"Everything is set up. When you're ready to create your first project, type `/a-new-project` and I'll walk you through it."**
+**"Everything is set up. Restart Claude one more time to load all the new connections and plugins, then type `/a-new-project` to create your first project."**
+
+Restart Claude (`/exit`, then `claude`). This final restart loads all the MCP servers and plugins that were just configured. It's like refreshing a browser — Claude picks up everything new when it starts fresh.
 
 That's it. The whole process takes five to ten minutes. When it's done, you have a complete development environment: every tool installed, every connection configured, and all the skills Claude needs to do its best work. From here, you create projects with `/a-new-project` — Claude scaffolds the code, sets up the database and storage, initializes Git and GitHub, and starts the local dev server. You'll have a running app in your browser before you've written a single line of anything.
 

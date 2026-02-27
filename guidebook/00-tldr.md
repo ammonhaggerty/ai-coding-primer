@@ -65,18 +65,20 @@ If this is your first time, Claude will walk you through a short setup — choos
 
 ### 6. Install the primer skill
 
-Exit Claude first (type `/exit` or press `Ctrl+C`), then run:
+Inside Claude, type these two commands — they add my custom skill marketplace and install the primer plugin:
 
 ```
-npx -y degit ammonhaggerty/a-primer-skills ~/.claude/plugins/a-primer-skills
+/plugin marketplace add ammonhaggerty/a-primer-skills
 ```
 
-You may see warnings in the output — ignore them. As long as you see a line that says "cloned," it worked.
+```
+/plugin install a-primer-skills@a-primer
+```
 
-Restart Claude with the skill loaded:
+Now restart Claude so the new plugin loads. Type `/exit` (or press `Ctrl+C`), then:
 
 ```
-claude --plugin-dir ~/.claude/plugins/a-primer-skills
+claude
 ```
 
 ### 7. Let Claude set up everything else
@@ -92,6 +94,8 @@ Say yes to everything. Claude installs Git, Wrangler, MCP servers, and skills. F
 Claude will ask for your **Git Identity** — your name and email. This is just a label that gets attached to your work, not an account. Enter your real name and any email you use. If you have a GitHub account, use the same email. If you don't have one or aren't sure, use whatever email you like — it's easy to change later.
 
 Claude will ask you to **connect to Cloudflare**. If you already have a Cloudflare account, go ahead and sign in — a browser window will open. If you don't have one yet, skip this step for now. You'll create an account and connect it when you're ready to deploy. Everything works locally without it.
+
+When setup is done, restart Claude one more time (`/exit`, then `claude`) to load all the new connections and plugins.
 
 ### 8. Create your first project
 
