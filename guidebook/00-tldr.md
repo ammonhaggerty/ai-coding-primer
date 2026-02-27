@@ -91,13 +91,15 @@ Tell Claude:
 Use the primer setup skill to set up my development environment.
 ```
 
-Say yes to everything. Claude installs Git, Wrangler, MCP servers, and skills. Five minutes. You'll see red "Error" text as Claude checks your system — this is normal. Claude is exploring what's installed and what's missing. It will clearly tell you if something needs your attention.
+Say yes to everything. Claude installs Git, Wrangler, MCP servers, and plugins. Five to ten minutes. You'll see red "Error" text as Claude checks your system — this is normal. Claude will clearly tell you if something needs your attention.
 
-Claude will ask for your **Git Identity** — your name and email. This is just a label that gets attached to your work, not an account. Enter your real name and any email you use. If you have a GitHub account, use the same email. If you don't have one or aren't sure, use whatever email you like — it's easy to change later.
+Claude will ask for your **Git Identity** — your name and email. Just a label, not an account. If you have a GitHub account, use the same email. Otherwise, any email works — easy to change later.
 
-Claude will ask you to **connect to Cloudflare**. If you already have a Cloudflare account, go ahead and sign in — a browser window will open. If you don't have one yet, skip this step for now. You'll create an account and connect it when you're ready to deploy. Everything works locally without it.
+Claude will ask about **Cloudflare**. If you have an account, sign in. If not, skip — you'll set it up when you're ready to deploy.
 
-When setup is done, restart Claude one more time (`/exit`, then `claude`) to load all the new connections and plugins.
+Near the end, Claude will ask you to **type three plugin install commands** — these are interactive prompts it can't run for you. Type each one and choose "Install for you (user scope)." When all three are done, say "all done" so Claude can continue.
+
+When setup is done, restart Claude one more time (`/exit`, then `claude`) to load all the new connections and plugins. You may see "1 MCP server failed" — that's the Cloudflare connection, which activates on first use. Nothing is broken.
 
 ### 8. Create your first project
 

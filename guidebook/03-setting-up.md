@@ -112,29 +112,25 @@ Claude will start by checking your system — what's installed, what's missing, 
 
 **Don't be alarmed by red text.** As Claude explores your system, you'll see red "Error" messages in the output. This is normal — Claude is checking what exists and what doesn't, and missing tools show up as errors during detection. Claude will clearly tell you if something actually needs your attention.
 
-**"You don't have Git installed. I can install it for you — this is version control, which tracks every change to your project and lets you undo mistakes. Want me to go ahead?"**
+Say yes as Claude installs each tool. It will ask for your **Git Identity** — a name and email to label your work. This is not an account — just a tag that gets attached to each change you make. If you have a GitHub account, use the same email. If you don't or aren't sure, use whatever email you like — easy to change later.
 
-Yes.
+Claude will ask about **connecting to Cloudflare**. If you already have a Cloudflare account, go ahead — a browser window will open. If you don't have one yet, choose "Skip for now." You'll set that up when you're ready to deploy. Everything works locally without it.
 
-Claude will then ask for your **Git Identity** — a name and email to label your work. This is not an account — just a tag that gets attached to each change you make. Enter your real name and any email you use. If you have a GitHub account, use the same email so your work links to your profile later. If you don't have one or aren't sure, use whatever email you like. This is easy to change later.
+Then Claude will set up MCP servers — connections that let it interact with external services like documentation lookup and Cloudflare. This part is automatic.
 
-**"I'm going to install Wrangler, which is Cloudflare's command-line tool. This is how we'll deploy your app to the internet."**
+**The one part that requires you to type.** Near the end, Claude will ask you to install three plugins by typing slash commands. These are interactive prompts that Claude can't run for you. Claude will show you exactly what to type — something like `/plugin install playwright@claude-plugins-official`. Type each one, choose "Install for you (user scope)" when it asks, then tell Claude when you're done. It will look something like this:
 
-Yes.
+```
+/plugin install playwright@claude-plugins-official
+/plugin install frontend-design@claude-plugins-official
+/plugin install superpowers@claude-plugins-official
+```
 
-Claude will then ask you to **connect to Cloudflare**. A browser window will open for you to sign in. If you already have a Cloudflare account, go ahead — sign in and click "Allow" when it asks to authorize the connection, then come back to the terminal. If you don't have one yet, choose "Skip for now." You'll create an account and connect later when you're ready to deploy. Everything works locally without it.
+After all three are installed, type **"all done"** or **"all are complete"** to let Claude know it can continue.
 
-**"I'm setting up MCP connections — these let me interact directly with external services. I'll configure context7 for documentation lookup, Cloudflare for your cloud infrastructure, Playwright for browser automation and testing, and Figma if you use it for design."**
+Claude will download browser binaries for Playwright (this takes a minute), then present a final checklist of everything that was set up.
 
-Yes.
-
-**"Now I'm installing the skills that will guide different parts of your workflow — brainstorming, writing, frontend design, debugging, working with subagents, and writing plans. These teach me your patterns so I can be more effective."**
-
-Yes.
-
-**"Everything is set up. Restart Claude one more time to load all the new connections and plugins, then type `/a-new-project` to create your first project."**
-
-Restart Claude (`/exit`, then `claude`). This final restart loads all the MCP servers and plugins that were just configured. It's like refreshing a browser — Claude picks up everything new when it starts fresh.
+**Restart Claude** (`/exit`, then `claude`). This final restart loads all the new MCP servers and plugins. It's like refreshing a browser — Claude picks up everything new when it starts fresh. You may see a note that says "1 MCP server failed" — this is the Cloudflare connection, which activates automatically the first time you use it. Nothing is broken.
 
 That's it. The whole process takes five to ten minutes. When it's done, you have a complete development environment: every tool installed, every connection configured, and all the skills Claude needs to do its best work. From here, you create projects with `/a-new-project` — Claude scaffolds the code, sets up the database and storage, initializes Git and GitHub, and starts the local dev server. You'll have a running app in your browser before you've written a single line of anything.
 
