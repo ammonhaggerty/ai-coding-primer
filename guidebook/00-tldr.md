@@ -20,6 +20,8 @@ Homebrew is the standard way to install developer tools on a Mac. Claude will us
 
 ### 3. Install Node.js
 
+Another 5-10 minutes on a fresh machine.
+
 **Mac:**
 ```
 brew install node

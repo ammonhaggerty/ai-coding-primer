@@ -24,7 +24,7 @@ The first install takes 5-10 minutes because it also downloads Apple's command-l
 
 ### 2. Install Node.js
 
-Claude Code needs a JavaScript runtime to operate. Node.js is that runtime. You install it once and never think about it again.
+Claude Code needs a JavaScript runtime to operate. Node.js is that runtime. You install it once and never think about it again. This takes another 5-10 minutes on a fresh machine.
 
 **Mac:**
 ```
