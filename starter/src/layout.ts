@@ -12,11 +12,11 @@ export function layout(title: string, content: string): string {
   <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.12/css/weather-icons.min.css" rel="stylesheet" />
   <style>
     body { font-family: 'Inter', sans-serif; }
-    h1, h2, h3 { font-family: 'Instrument Serif', serif; }
+    h1, h2, h3 { font-family: 'Fraunces', serif; }
     .font-mono { font-family: 'JetBrains Mono', monospace; }
   </style>
 </head>
@@ -28,7 +28,7 @@ export function layout(title: string, content: string): string {
     localStorage.setItem('theme', this.dark ? 'forest' : 'emerald');
   }
 }" x-init="if (dark) document.documentElement.setAttribute('data-theme', 'forest')">
-  <main class="max-w-[430px] mx-auto p-5 flex flex-col gap-5">
+  <main class="max-w-[1320px] mx-auto p-5 flex flex-col gap-5">
     ${content}
   </main>
 </body>
