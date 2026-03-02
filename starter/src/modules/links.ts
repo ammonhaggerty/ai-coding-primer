@@ -51,7 +51,7 @@ export function linksCard(links: Link[]): string {
   return `
     <div class="bg-base-100 rounded-xl border border-base-300 p-4 w-full">
       <p class="text-xs font-bold tracking-widest text-base-content/70 mb-4">LINKS</p>
-      <div class="flex flex-col gap-3 sm:grid sm:grid-cols-2 lg:grid-cols-3">
+      <div class="flex flex-col gap-3">
         ${rows}
       </div>
     </div>`;
