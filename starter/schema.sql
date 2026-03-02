@@ -1,12 +1,19 @@
--- Database schema for starter
--- Add table definitions here, then apply with:
---   wrangler d1 execute starter-db --local --file=./schema.sql
---   wrangler d1 execute starter-db --remote --file=./schema.sql
+-- Links table for the link tree module
+CREATE TABLE IF NOT EXISTS links (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  icon TEXT NOT NULL,
+  label TEXT NOT NULL,
+  url TEXT NOT NULL,
+  sort_order INTEGER DEFAULT 0
+);
 
--- Example table (uncomment and modify):
--- CREATE TABLE IF NOT EXISTS items (
---   id INTEGER PRIMARY KEY AUTOINCREMENT,
---   name TEXT NOT NULL,
---   description TEXT,
---   created_at DATETIME DEFAULT CURRENT_TIMESTAMP
--- );
+-- Seed data (example links — customize these!)
+INSERT INTO links (icon, label, url, sort_order) VALUES
+  ('github', '/ammonhaggerty', 'https://github.com/ammonhaggerty', 1),
+  ('linkedin', '/ammon', 'https://linkedin.com/in/ammon', 2),
+  ('link', 'qaswa.com', 'https://qaswa.com', 3),
+  ('instagram', '/ammonhaggerty', 'https://instagram.com/ammonhaggerty', 4),
+  ('threads', '/ammonhaggerty', 'https://threads.net/@ammonhaggerty', 5),
+  ('pinterest', '/qaswa', 'https://pinterest.com/qaswa', 6),
+  ('dribbble', '/djammon', 'https://dribbble.com/djammon', 7),
+  ('bluesky', '/ammon', 'https://bsky.app/profile/ammon.bsky.social', 8);
