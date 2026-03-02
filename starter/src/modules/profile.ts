@@ -99,37 +99,36 @@ function formatTime(time: string): string {
 
 export function profileCard(name: string, location: string, weather: WeatherData | null): string {
   const weatherHtml = weather ? `
-          <div class="flex gap-5 items-end mt-1">
-            <div class="flex items-end gap-1">
-              <i class="wi ${getWeatherIcon(weather.conditionCode, weather.isDay)} text-3xl text-base-content/50"></i>
-              <span class="text-xl font-medium">${weather.tempF}&deg;F</span>
+          <div class="flex gap-[15px] items-end">
+            <i class="wi ${getWeatherIcon(weather.conditionCode, weather.isDay)} text-[30px] text-base-content/50"></i>
+            <div class="flex flex-col items-start">
+              <span class="text-[21px] font-light leading-[1em]">${weather.tempF}&deg;F</span>
+              <span class="text-[12px]"><span class="font-bold text-base-content/50">&uarr;</span>${weather.maxTempF} <span class="font-bold text-base-content/50">&darr;</span>${weather.minTempF}</span>
             </div>
-            <div class="flex flex-col text-xs text-base-content/70">
-              <span class="text-sm">&nbsp;</span>
-              <span><span class="font-bold text-base-content/40">&darr;</span>${weather.minTempF} <span class="text-base-content/20">|</span> <span class="font-bold text-base-content/40">&uarr;</span>${weather.maxTempF}</span>
+            <div class="flex flex-col items-center">
+              <i class="wi text-[16px]">&#xf046;</i>
+              <span class="text-[12px] text-base-content/60">${formatTime(weather.sunrise)}</span>
             </div>
-            <div class="flex flex-col items-center text-xs text-base-content/60 pb-0.5">
-              <i class="wi wi-sunrise text-base-content text-base"></i>
-              <span>${formatTime(weather.sunrise)}</span>
-            </div>
-            <div class="flex flex-col items-center text-xs text-base-content/60 pb-0.5">
-              <i class="wi wi-sunset text-base-content text-base"></i>
-              <span>${formatTime(weather.sunset)}</span>
+            <div class="flex flex-col items-center">
+              <i class="wi text-[16px]">&#xf047;</i>
+              <span class="text-[12px] text-base-content/60">${formatTime(weather.sunset)}</span>
             </div>
           </div>` : '';
 
   return `
-    <div class="bg-base-100 rounded-xl border border-base-300 flex gap-5 items-center p-4 w-full">
-      <div class="w-[82px] h-[82px] rounded-full border border-base-300 bg-base-200 flex-shrink-0 overflow-hidden">
-        <img src="https://api.dicebear.com/9.x/initials/svg?seed=${encodeURIComponent(name)}" alt="avatar" class="w-full h-full object-cover" />
-      </div>
-      <div class="flex flex-col gap-1.5 min-w-0 flex-1">
-        <p class="text-lg font-medium tracking-wide">I'm ${escapeHtml(name)}</p>
-        <div class="flex gap-1.5 items-center text-base-content/70">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-          <span class="text-sm">${escapeHtml(location)}</span>
+    <div class="card card-border bg-base-100 w-full">
+      <div class="card-body flex-row gap-4 p-[15px]">
+        <div class="w-[60px] h-[60px] rounded-full border border-base-300 bg-base-200 flex-shrink-0 overflow-hidden">
+          <img src="/avatar.png" alt="avatar" class="w-full h-full object-cover" />
         </div>
-        ${weatherHtml}
+        <div class="flex flex-col min-w-0 flex-1">
+          <p class="font-['Fraunces'] text-[19px] font-normal tracking-[0.38px]">I'm ${escapeHtml(name)}</p>
+          <div class="flex gap-[5px] items-center mb-[15px]">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span class="text-[14px]">${escapeHtml(location)}</span>
+          </div>
+          ${weatherHtml}
+        </div>
       </div>
     </div>`;
 }
