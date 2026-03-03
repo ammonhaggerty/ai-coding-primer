@@ -91,11 +91,13 @@ Tell Claude:
 Use the primer setup skill to set up my development environment.
 ```
 
-Say yes to everything. Claude installs Git, Wrangler, MCP servers, and plugins. Five to ten minutes. You'll see red "Error" text as Claude checks your system — this is normal. Claude will clearly tell you if something needs your attention.
+Say yes to everything. Claude installs Git, GitHub CLI, Wrangler, MCP servers, and plugins. Five to ten minutes. You'll see red "Error" text as Claude checks your system — this is normal. Claude will clearly tell you if something needs your attention.
 
-Claude will ask for your **Git Identity** — your name and email. Just a label, not an account. If you have a GitHub account, use the same email. Otherwise, any email works — easy to change later.
+Claude will ask you to **create two free accounts** — Cloudflare and GitHub. Both take two minutes in your browser. These are prerequisites — everything else depends on them.
 
-Claude will ask about **Cloudflare**. If you have an account, sign in. If not, skip — you'll set it up when you're ready to deploy. Later, when the Cloudflare connection activates for the first time, a browser window will ask you to authorize access — **choose "Workers Full Access"** (not the default Read Only) so Claude can manage your projects.
+Claude will ask for your **Git Identity** — your name and email. Use the same email you used for GitHub — it links your code changes to your profile. Then Claude connects both accounts to the terminal through browser sign-in flows.
+
+When the Cloudflare MCP connection activates for the first time, a browser window will ask you to authorize access — **choose "Workers Full Access"** (not the default Read Only) so Claude can manage your projects.
 
 Near the end, Claude will ask you to **type three plugin install commands** — these are interactive prompts it can't run for you. Type each one and choose "Install for you (user scope)." When all three are done, say "all done" so Claude can continue.
 

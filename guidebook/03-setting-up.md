@@ -112,9 +112,9 @@ Claude will start by checking your system — what's installed, what's missing, 
 
 **Don't be alarmed by red text.** As Claude explores your system, you'll see red "Error" messages in the output. This is normal — Claude is checking what exists and what doesn't, and missing tools show up as errors during detection. Claude will clearly tell you if something actually needs your attention.
 
-Say yes as Claude installs each tool. It will ask for your **Git Identity** — a name and email to label your work. This is not an account — just a tag that gets attached to each change you make. If you have a GitHub account, use the same email. If you don't or aren't sure, use whatever email you like — easy to change later.
+Claude will ask you to create two free accounts — **Cloudflare** (where your app will live on the internet) and **GitHub** (where your code is backed up). Both take about two minutes, and everything downstream depends on them. Claude will give you the signup links and wait while you create each one in your browser.
 
-Claude will ask about **connecting to Cloudflare**. If you already have a Cloudflare account, go ahead — a browser window will open. If you don't have one yet, choose "Skip for now." You'll set that up when you're ready to deploy. Everything works locally without it.
+Say yes as Claude installs each tool. It will ask for your **Git Identity** — a name and email to label your work. Use the same email you used for GitHub — this links your code changes to your GitHub profile. Claude will also install the GitHub CLI and connect it to your account, then connect your Cloudflare account to the terminal. Both connections happen through browser-based sign-in flows that Claude walks you through.
 
 Then Claude will set up MCP servers — connections that let it interact with external services like documentation lookup and Cloudflare. This part is automatic. The Cloudflare connection will activate the first time Claude uses it — a browser window will open asking you to authorize access. You'll see three permission options: Read Only, Workers Full Access, and DNS Full Access. **Click "Workers Full Access"** — Claude needs this to create and manage your Workers, databases, and storage. The default (Read Only) won't let Claude do the work for you.
 
