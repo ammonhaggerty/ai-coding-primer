@@ -20,22 +20,22 @@ Seven steps from zero to a deployed app. For the impatient.
 ### [About the Author](01-about-the-author.md)
 Who wrote this and why you should trust the perspective.
 
-### Part 1: [The Landscape](02-the-landscape.md)
+### [The Landscape](02-the-landscape.md)
 What changed, why it matters, and the mental model for building with AI. The toolkit, the costs, and what we're going to build.
 
-### Part 2: [Setting Up Your Workshop](03-setting-up.md)
+### [Setting Up Your Workshop](03-setting-up.md)
 Installing everything you need — Claude Code, the terminal, MCP servers, skills, and your first project scaffold. The goal: type one command and Claude handles the rest.
 
-### Part 3: [The Cloud](04-the-cloud.md)
+### [The Cloud](04-the-cloud.md)
 Why Cloudflare, your first deploy, and the building blocks — Workers, D1, R2, Workers AI, KV, Vectorize. Security and secrets.
 
-### Part 4: [Building](05-building.md)
+### [Building](05-building.md)
 Starting with intent, designing with Figma and Claude, the stack explained, building a feature end-to-end, working with data, and adding AI to your product.
 
-### Part 5: [The Daily Practice](06-daily-practice.md)
+### [The Daily Practice](06-daily-practice.md)
 How to think alongside Claude, what to do when things break, iterating and shipping. CLAUDE.md as a rulebook, the docs/ folder as memory, git as a journal.
 
-### Part 6: [Where This Is Going](07-where-this-is-going.md)
+### [Where This Is Going](07-where-this-is-going.md)
 AI as an abstraction layer, the coming specialization, the 50-person team, and beyond the web.
 
 ### [Appendices](08-appendices.md)

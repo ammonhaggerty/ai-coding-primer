@@ -1,4 +1,4 @@
-# Part 2: Setting Up Your Workshop
+# Setting Up Your Workshop
 
 I challenged myself to simplify the setup process to the absolute minimum — three accounts and five steps. After that, Claude takes over using a custom skill I built for this primer and sets up everything else for you. The tools, the connections, the configuration, the project scaffold — Claude handles it, explains what it's doing, and asks permission before each step.
 
@@ -273,4 +273,4 @@ This is your workshop. The next section puts it to use — we'll set up your clo
 
 ---
 
-**Next:** [Part 3: The Cloud](04-the-cloud.md)
+**Next:** [The Cloud](04-the-cloud.md)

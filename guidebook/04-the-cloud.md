@@ -1,4 +1,4 @@
-# Part 3: The Cloud — Where Your App Lives
+# The Cloud — Where Your App Lives
 
 Your project is running on your machine. You can see it in the browser at `localhost`. That's great for building, but nobody else can reach it. Your laptop isn't a server — it sleeps when you close it, it's behind your home network, and it has one job: being your computer.
 
@@ -144,4 +144,4 @@ The next section is where it gets fun. You have an environment. You have infrast
 
 ---
 
-**Next:** [Part 4: Building](05-building.md)
+**Next:** [Building](05-building.md)

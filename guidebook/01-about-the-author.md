@@ -28,4 +28,4 @@ This article comes from that experience. Not from a weekend experiment or a thou
 
 ---
 
-**Next:** [Part 1: The Landscape](02-the-landscape.md)
+**Next:** [The Landscape](02-the-landscape.md)

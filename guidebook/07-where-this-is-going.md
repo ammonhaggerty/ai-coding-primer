@@ -1,4 +1,4 @@
-# Part 6: Where This Is Going
+# Where This Is Going
 
 This article has been practical and specific — tools, costs, workflows, concrete steps. This section steps back. Not to speculate wildly, but to trace the trajectory we're on and think about what it means for people who are building this way.
 

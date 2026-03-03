@@ -22,12 +22,12 @@ Flat files in `guidebook/`, numbered for reading order:
 
 - `00-tldr.md` — TL;DR Fast Track
 - `01-about-the-author.md` — About the Author
-- `02-the-landscape.md` — Part 1: The Landscape
-- `03-setting-up.md` — Part 2: Setting Up Your Workshop
-- `04-the-cloud.md` — Part 3: The Cloud
-- `05-building.md` — Part 4: Building
-- `06-daily-practice.md` — Part 5: The Daily Practice
-- `07-where-this-is-going.md` — Part 6: Where This Is Going
+- `02-the-landscape.md` — The Landscape
+- `03-setting-up.md` — Setting Up Your Workshop
+- `04-the-cloud.md` — The Cloud
+- `05-building.md` — Building
+- `06-daily-practice.md` — The Daily Practice
+- `07-where-this-is-going.md` — Where This Is Going
 - `08-appendices.md` — Appendices
 
 ## Constraints

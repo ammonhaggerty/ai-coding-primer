@@ -1,4 +1,4 @@
-# Part 4: Building — From Idea to Working Product
+# Building — From Idea to Working Product
 
 You have a terminal, an AI partner, and cloud infrastructure waiting for code. The pieces are in place. This section is about using them — taking an idea from "what if..." to a working product with a URL, a database, and real users.
 
@@ -253,4 +253,4 @@ That's building. It's not magic. It's conversation — with a partner that happe
 
 ---
 
-**Next:** [Part 5: The Daily Practice](06-daily-practice.md)
+**Next:** [The Daily Practice](06-daily-practice.md)

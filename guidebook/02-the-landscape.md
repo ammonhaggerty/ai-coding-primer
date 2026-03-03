@@ -1,4 +1,4 @@
-# Part 1: The Landscape
+# The Landscape
 
 ## What Changed (and What Didn't)
 
@@ -70,4 +70,4 @@ The starter project is designed to be a foundation. Once it's running, you can t
 
 ---
 
-**Next:** [Part 2: Setting Up Your Workshop](03-setting-up.md)
+**Next:** [Setting Up Your Workshop](03-setting-up.md)

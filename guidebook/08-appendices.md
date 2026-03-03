@@ -27,7 +27,7 @@ These come with Claude Code out of the box. Type `/` to see the full list.
 | ★ `/clear` | Wipes the conversation and starts fresh. Your files aren't touched — just the chat history |
 | ★ `/plan` | Enters plan mode — Claude thinks through an approach and shows it to you before writing any code |
 | ★ `/init` | Creates a `CLAUDE.md` file for your project. Run this once at the start of any new project |
-| ★ `/memory` | Opens your `CLAUDE.md` for editing. Add rules and constraints — keep it lean (see Part 5) |
+| ★ `/memory` | Opens your `CLAUDE.md` for editing. Add rules and constraints — keep it lean (see [The Daily Practice](06-daily-practice.md)) |
 | `/cost` | Shows how many tokens you've used in this session |
 | `/usage` | Shows your plan limits and rate limit status |
 | `/stats` | Visualizes your daily usage, session history, and streaks |

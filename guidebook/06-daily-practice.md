@@ -1,4 +1,4 @@
-# Part 5: The Daily Practice
+# The Daily Practice
 
 Building a product isn't a single event. It's a practice — something you return to regularly, getting a little better each time. The previous sections covered the setup and the first build. This section is about the ongoing experience: how you think alongside Claude, what to do when things break, and how to develop the instincts that make each session more productive than the last.
 
@@ -172,10 +172,10 @@ When something goes wrong after a change — and it will — knowing which versi
 
 You have a practice, not just a project. You know how to plan before building, how to iterate quickly, how to recover from breakage without panic, and how to ship early and learn from real usage. Your CLAUDE.md is sharp and focused. Your commit history is a readable story. Your instincts about what to build next are informed by actual user behavior, not guesses.
 
-The tools are the same ones you set up in Part 2. The infrastructure is the same as Part 3. The building loop is the same as Part 4. What's changed is you — you're more fluent in the rhythm, more confident in the process, more willing to experiment because you know recovery is quick and iteration is cheap.
+The tools are the same ones from Setting Up. The infrastructure is the same as The Cloud. The building loop is the same as before. What's changed is you — you're more fluent in the rhythm, more confident in the process, more willing to experiment because you know recovery is quick and iteration is cheap.
 
 That's the daily practice. It compounds.
 
 ---
 
-**Next:** [Part 6: Where This Is Going](07-where-this-is-going.md)
+**Next:** [Where This Is Going](07-where-this-is-going.md)
