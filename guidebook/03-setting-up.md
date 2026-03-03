@@ -1,18 +1,20 @@
 # Part 2: Setting Up Your Workshop
 
-I challenged myself to simplify the setup process to the absolute minimum — two accounts and five steps. After that, Claude takes over using a custom skill I built for this primer and sets up everything else for you. The tools, the connections, the configuration, the project scaffold — Claude handles it, explains what it's doing, and asks permission before each step.
+I challenged myself to simplify the setup process to the absolute minimum — three accounts and five steps. After that, Claude takes over using a custom skill I built for this primer and sets up everything else for you. The tools, the connections, the configuration, the project scaffold — Claude handles it, explains what it's doing, and asks permission before each step.
 
-This section starts with the two accounts you'll need, covers the five steps, then walks you through what happens when Claude takes the wheel. After your environment is running, we'll circle back and explain what all the pieces are and why they matter. But you'll already have a working setup by then — and that changes how the explanation feels. Instead of "learn this before you can start," it's "here's what just happened."
+This section starts with the three accounts you'll need, covers the five steps, then walks you through what happens when Claude takes the wheel. After your environment is running, we'll circle back and explain what all the pieces are and why they matter. But you'll already have a working setup by then — and that changes how the explanation feels. Instead of "learn this before you can start," it's "here's what just happened."
 
 ---
 
 ## Before You Start
 
-Create two free accounts. Both take about two minutes, and everything downstream depends on them.
+Create three accounts. Everything downstream depends on them.
 
-**Cloudflare** — This is where your app will live on the internet. Sign up at [dash.cloudflare.com/sign-up](https://dash.cloudflare.com/sign-up). The free tier is enough to get started. When you're ready to build something beyond a simple demo, the Workers Paid plan ($5/mo) removes the limits that matter — more CPU time per request, significantly more database and storage capacity, and higher AI usage. The free tier caps you at 100,000 requests per day and 10 milliseconds of CPU time per request, which sounds like a lot until your app calls an AI model or does any real processing. You can upgrade anytime from your Cloudflare dashboard.
+**Claude** — This is your AI partner. Go to [claude.ai](https://claude.ai) and subscribe. This guide recommends the Max plan ($100/mo) with Opus 4.6 — it's the most capable model for coding and handles complex, multi-file projects without breaking a sweat. The Pro plan ($20/mo) works too, but you'll hit usage limits faster and won't have access to the strongest model. Start with whichever fits your budget — you can upgrade anytime.
 
-**GitHub** — This is where your code is backed up and version-tracked. Sign up at [github.com/signup](https://github.com/signup). Remember the email you use — you'll need it during setup to link your code changes to your profile.
+**Cloudflare** — This is where your app will live on the internet. Sign up at [dash.cloudflare.com/sign-up](https://dash.cloudflare.com/sign-up). The free tier is enough to get started — the starter project's AI chat, database, and file storage all work on it. When you're ready to build something beyond a simple demo, the Workers Paid plan ($5/mo) removes the limits that matter — more CPU time per request, significantly more database and storage capacity, and higher AI usage. The free tier caps you at 100,000 requests per day and 10 milliseconds of CPU time per request, which sounds like a lot until your app does anything computationally heavy. You can upgrade anytime from your Cloudflare dashboard.
+
+**GitHub** — This is where your code is backed up and version-tracked. Sign up at [github.com/signup](https://github.com/signup). Free. Remember the email you use — you'll need it during setup to link your code changes to your profile.
 
 That's it. Now the five steps.
 
@@ -84,7 +86,7 @@ Now start Claude:
 claude
 ```
 
-If this is your first time running Claude Code, it will walk you through a short setup. Choose the defaults for each prompt and say yes when it asks you to trust the folder — this lets Claude read and work with your project files. Then follow the link to sign in with your Anthropic account (Pro or Max — this guide recommends Max with Opus 4.6) and authorize the connection. This all happens once.
+If this is your first time running Claude Code, it will walk you through a short setup. Choose the defaults for each prompt and say yes when it asks you to trust the folder — this lets Claude read and work with your project files. Then follow the link to sign in with the Claude account you created earlier and authorize the connection. This all happens once.
 
 You're now talking to Claude, in your workspace. Everything from here on out, you can do in this conversation.
 
