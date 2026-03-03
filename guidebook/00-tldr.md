@@ -145,7 +145,7 @@ That's the whole loop. Everything else in this guide is context — the *why* be
 
 ---
 
-**[Part 4: Building](05-building.md)** — From idea to working product. Starts with intent ("what do you want to exist?"), moves through design with Figma and Claude, explains the stack in plain terms (Hono, HTML, Tailwind, DaisyUI, HTMX, Alpine), then walks through building a complete feature end-to-end — including the database, the UI, and adding AI. This is the longest section because it's the core of the experience.
+**[Part 4: Building](05-building.md)** — From idea to working product. Starts with intent ("what do you want to exist?"), moves through design with Figma and Claude, then explains the stack: what TypeScript is and why files end in `.ts`, how this stack compares to React/Next.js/Vercel (and why it's simpler on purpose), where the limits are (heavy compute, data science, massive scale), and each tool explained in plain terms (Hono, HTML, Tailwind, DaisyUI, HTMX, Alpine). Then walks through building a complete feature end-to-end — including the database, the UI, and adding AI. This is the longest section because it's the core of the experience.
 
 ---
 

@@ -42,6 +42,52 @@ Even without Figma, describing your UI to Claude works well. "A centered card wi
 
 ## The Stack
 
+If you've been poking around the tech world at all, you've probably heard names like React, Next.js, Vercel, TypeScript, Python, AWS. It can feel like there are a thousand tools and everyone is using different ones. Here's the short version of how it all fits together — and where this guide's choices sit in the landscape.
+
+### The language: TypeScript
+
+You'll notice every code file in your project ends in `.ts` instead of `.js`. That's TypeScript — JavaScript with guardrails. JavaScript is the language that runs in every web browser and powers most of the modern web. TypeScript adds a layer on top that catches mistakes before your code runs, like a spell-checker for programming. When Claude writes `function greet(name: string)`, that `: string` is TypeScript saying "this function expects text, not a number." If something tries to pass in a number, the error gets caught immediately instead of causing a mysterious bug later.
+
+You don't need to learn TypeScript. Claude writes it fluently, and the guardrails protect you silently. But when you see `.ts` files and occasional type annotations in the code, that's what's happening — JavaScript with safety nets.
+
+### The popular path: React and Next.js
+
+The most common stack in professional web development right now is React (a library for building user interfaces) running inside Next.js (a framework that adds routing, server rendering, and deployment) hosted on Vercel (the company that created Next.js). If you're a startup building a SaaS product with a team of engineers, this is probably what you're using. It's mature, well-documented, and has an enormous ecosystem of tools built around it.
+
+It's also complex. React introduces a mental model called "components" — self-contained pieces of UI that manage their own state and compose together like building blocks. It's powerful, but it takes time to internalize. Next.js adds server-side rendering, client-side hydration, API routes, middleware, caching strategies, and a build system that compiles everything before it runs. A basic Next.js project has a `node_modules` folder with hundreds of megabytes of dependencies and a build step that can take thirty seconds or more.
+
+None of this is bad. For teams building large, complex applications — dashboards with real-time data, multi-page apps with complex state management, platforms with dozens of interactive features — React and Next.js earn their complexity. The tools exist because the problems are real.
+
+### This guide's stack: simpler on purpose
+
+This guide takes a different path. Instead of React, you write HTML directly — the same language browsers actually understand. Instead of Next.js, you use Hono — a lightweight framework that does routing and not much else. Instead of a build system that compiles your code before it can run, everything loads from CDNs and works immediately.
+
+The tradeoff is real: you won't build a complex single-page application with this stack. You won't have React's component model for managing intricate UI state across dozens of interactive widgets. If you're building something like Figma, or Notion, or a real-time collaborative editor — you'd outgrow this stack.
+
+But for an enormous range of useful software — personal sites, landing pages, internal tools, form-based applications, content sites, dashboards, API-driven products, AI-powered tools — this stack is not only sufficient, it's better for learning. Every piece is visible. There's no compilation step hiding what your code becomes. The HTML Claude writes is the HTML the browser reads. When something goes wrong, the debugging surface is small and comprehensible.
+
+Think of it as the difference between an automatic and a manual transmission. The automatic (React/Next.js) handles a lot for you but hides the mechanics. The manual (this stack) lets you see and feel every gear. For learning how the web actually works — and for building real products quickly with AI — seeing the gears matters.
+
+### Where Cloudflare fits vs. Vercel and AWS
+
+Chapter 4 covers Cloudflare in detail, but the short version: Vercel is optimized for React and Next.js. If you're using that stack, Vercel is the natural home. AWS is the everything platform — massively powerful, massively complex, built for engineering teams with infrastructure specialists. Cloudflare sits in between: simpler than AWS, more versatile than Vercel, and everything under one roof. For the stack in this guide, Cloudflare is a perfect fit because Hono was designed for it, and the database, storage, and AI services are all native.
+
+If a friend tells you they're using Vercel with Next.js and React — great, that's a legitimate path. If someone mentions AWS — that's the industrial option, powerful but complex. This guide uses Cloudflare because it eliminates the most friction for someone building their first product with AI. You can always migrate later if your needs change. The skills you're learning — describing what you want, iterating on feedback, understanding data flow — transfer to any stack.
+
+### What this stack can't do
+
+Honest accounting. This stack runs on Cloudflare Workers, which are designed for fast, short-lived requests — someone visits a page, the server responds in milliseconds. That's perfect for web applications, APIs, and most products you'd want to build.
+
+It's not designed for heavy computation. If you need to train a machine learning model, process large datasets, render video, or run calculations that take minutes instead of milliseconds — you need a different kind of infrastructure. AWS, Google Cloud, or specialized platforms like Modal or Lambda Labs offer GPUs and long-running compute that Cloudflare Workers simply doesn't. Data science workflows — Jupyter notebooks, pandas, large-scale analytics — live in that world, not this one.
+
+The database (D1) is SQLite. It's excellent for applications with thousands or even millions of rows, but it's a single-file database, not a distributed system. If you're building something that needs to handle massive concurrent writes from millions of simultaneous users, you'd eventually move to PostgreSQL or a similar system. For everything in this guide and well beyond it, D1 is more than enough.
+
+Workers AI runs pre-trained models for inference — generating text, analyzing images, creating embeddings. It doesn't train models. If you want to fine-tune a model on your own data, you'd use a platform with GPU access. But for adding intelligence to your app — chatbots, summaries, search, recommendations — Workers AI handles it without a separate account or billing relationship.
+
+The good news: most products don't need any of the things this stack can't do. And the skills you build here — thinking in systems, describing intent clearly, iterating on feedback — are the same skills you'd use with React, with AWS, with Python data science tools. The stack is specific. The thinking is universal.
+
+### The tools, one by one
+
 Every tool in the building stack exists for a reason. You don't need to master any of them — Claude handles the syntax — but understanding what each one does helps you have better conversations about what you're building.
 
 **Hono** is the web framework. It's the skeleton that connects URLs to responses. When someone visits `/dashboard`, Hono routes that request to the right piece of code. When a form submits to `/api/submit`, Hono catches it and processes the data. Think of it as the receptionist — it directs traffic to the right place.
@@ -56,7 +102,7 @@ Every tool in the building stack exists for a reason. You don't need to master a
 
 **Alpine.js** handles small interactive bits: showing and hiding elements, toggling states, counting things. If HTMX handles the conversation between your page and the server, Alpine handles the conversation within the page itself — dropdown menus, accordion panels, character counters in text fields.
 
-**Why this stack?** No build step. You don't need a compiler, a bundler, or a twenty-minute build process. The libraries load from CDNs — URLs that serve the code directly to the browser. The HTML is readable. Claude is excellent at all of it. And most importantly, it's honest technology — there's no magic layer hiding what's happening. When you look at the code Claude writes, you can follow the logic even if you couldn't write it yourself.
+**No build step.** Unlike React-based stacks that require a compiler and bundler, these libraries load from CDNs — URLs that serve the code directly to the browser. The HTML is readable. Claude is excellent at all of it. And most importantly, it's honest technology — there's no magic layer hiding what's happening. When you look at the code Claude writes, you can follow the logic even if you couldn't write it yourself.
 
 ---
 
