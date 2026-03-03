@@ -132,6 +132,8 @@ Claude will download browser binaries for Playwright (this takes a minute), then
 
 **Restart Claude** (`/exit`, then `claude`). This final restart loads all the new MCP servers and plugins. It's like refreshing a browser — Claude picks up everything new when it starts fresh. You may see a note that says "1 MCP server failed" — this is the Cloudflare connection, which activates the first time Claude uses it (not at startup). Nothing is broken.
 
+You'll see this "MCP server failed" message from time to time — services like Cloudflare and Figma use short-lived authorization tokens that expire periodically. When that happens, type `/mcp` and press Enter. You'll see a list of your MCP servers with the ones needing attention marked. Select the one that needs re-authorization, and a browser window will open to reconnect. If it doesn't work the first time, make sure you're signed into the service in your browser (e.g., dash.cloudflare.com) before trying again — signing in and authorizing are separate steps.
+
 That's it. The whole process takes five to ten minutes. When it's done, you have a complete development environment: every tool installed, every connection configured, and all the skills Claude needs to do its best work. From here, you create projects with `/a-new-project` — Claude scaffolds the code, sets up the database and storage, initializes Git and GitHub, and starts the local dev server. You'll have a running app in your browser before you've written a single line of anything.
 
 ---
