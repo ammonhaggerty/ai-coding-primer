@@ -95,11 +95,11 @@ Say yes to everything. Claude installs Git, Wrangler, MCP servers, and plugins. 
 
 Claude will ask for your **Git Identity** — your name and email. Just a label, not an account. If you have a GitHub account, use the same email. Otherwise, any email works — easy to change later.
 
-Claude will ask about **Cloudflare**. If you have an account, sign in. If not, skip — you'll set it up when you're ready to deploy.
+Claude will ask about **Cloudflare**. If you have an account, sign in. If not, skip — you'll set it up when you're ready to deploy. Later, when the Cloudflare connection activates for the first time, a browser window will ask you to authorize access — **choose "Workers Full Access"** (not the default Read Only) so Claude can manage your projects.
 
 Near the end, Claude will ask you to **type three plugin install commands** — these are interactive prompts it can't run for you. Type each one and choose "Install for you (user scope)." When all three are done, say "all done" so Claude can continue.
 
-When setup is done, restart Claude one more time (`/exit`, then `claude`) to load all the new connections and plugins. You may see "1 MCP server failed" — that's the Cloudflare connection, which activates on first use. Nothing is broken.
+When setup is done, restart Claude one more time (`/exit`, then `claude`) to load all the new connections and plugins. You may see "1 MCP server failed" — that's the Cloudflare connection, which activates the first time Claude uses it. Nothing is broken.
 
 ### 8. Create your first project
 
