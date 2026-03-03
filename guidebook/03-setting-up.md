@@ -1,8 +1,20 @@
 # Part 2: Setting Up Your Workshop
 
-I challenged myself to simplify the setup process to the absolute minimum — five steps, and you don't need to know what they do or mean. After that, Claude takes over using a custom skill I built for this primer and sets up everything else for you. The tools, the connections, the configuration, the project scaffold — Claude handles it, explains what it's doing, and asks permission before each step.
+I challenged myself to simplify the setup process to the absolute minimum — two accounts and five steps. After that, Claude takes over using a custom skill I built for this primer and sets up everything else for you. The tools, the connections, the configuration, the project scaffold — Claude handles it, explains what it's doing, and asks permission before each step.
 
-This section covers those five steps, then walks you through what happens when Claude takes the wheel. After your environment is running, we'll circle back and explain what all the pieces are and why they matter. But you'll already have a working setup by then — and that changes how the explanation feels. Instead of "learn this before you can start," it's "here's what just happened."
+This section starts with the two accounts you'll need, covers the five steps, then walks you through what happens when Claude takes the wheel. After your environment is running, we'll circle back and explain what all the pieces are and why they matter. But you'll already have a working setup by then — and that changes how the explanation feels. Instead of "learn this before you can start," it's "here's what just happened."
+
+---
+
+## Before You Start
+
+Create two free accounts. Both take about two minutes, and everything downstream depends on them.
+
+**Cloudflare** — This is where your app will live on the internet. Sign up at [dash.cloudflare.com/sign-up](https://dash.cloudflare.com/sign-up). The free tier is enough to get started. When you're ready to build something beyond a simple demo, the Workers Paid plan ($5/mo) removes the limits that matter — more CPU time per request, significantly more database and storage capacity, and higher AI usage. The free tier caps you at 100,000 requests per day and 10 milliseconds of CPU time per request, which sounds like a lot until your app calls an AI model or does any real processing. You can upgrade anytime from your Cloudflare dashboard.
+
+**GitHub** — This is where your code is backed up and version-tracked. Sign up at [github.com/signup](https://github.com/signup). Remember the email you use — you'll need it during setup to link your code changes to your profile.
+
+That's it. Now the five steps.
 
 ---
 
@@ -112,21 +124,20 @@ Claude will start by checking your system — what's installed, what's missing, 
 
 **Don't be alarmed by red text.** As Claude explores your system, you'll see red "Error" messages in the output. This is normal — Claude is checking what exists and what doesn't, and missing tools show up as errors during detection. Claude will clearly tell you if something actually needs your attention.
 
-Claude will ask you to create two free accounts — **Cloudflare** (where your app will live on the internet) and **GitHub** (where your code is backed up). Both take about two minutes, and everything downstream depends on them. Claude will give you the signup links and wait while you create each one in your browser.
-
-Say yes as Claude installs each tool. It will ask for your **Git Identity** — a name and email to label your work. Use the same email you used for GitHub — this links your code changes to your GitHub profile. Claude will also install the GitHub CLI and connect it to your account, then connect your Cloudflare account to the terminal. Both connections happen through browser-based sign-in flows that Claude walks you through.
+Say yes as Claude installs each tool. It will ask for your **Git Identity** — a name and email to label your work. Use the same email you used for GitHub — this links your code changes to your GitHub profile. Claude will also install the GitHub CLI and connect it to your GitHub account, then connect your Cloudflare account to the terminal. Both connections happen through browser-based sign-in flows that Claude walks you through.
 
 Then Claude will set up MCP servers — connections that let it interact with external services like documentation lookup and Cloudflare. This part is automatic. The Cloudflare connection will activate the first time Claude uses it — a browser window will open asking you to authorize access. You'll see three permission options: Read Only, Workers Full Access, and DNS Full Access. **Click "Workers Full Access"** — Claude needs this to create and manage your Workers, databases, and storage. The default (Read Only) won't let Claude do the work for you.
 
-**The one part that requires you to type.** Near the end, Claude will ask you to install three plugins by typing slash commands. These are interactive prompts that Claude can't run for you. Claude will show you exactly what to type — something like `/plugin install playwright@claude-plugins-official`. Type each one, choose "Install for you (user scope)" when it asks, then tell Claude when you're done. It will look something like this:
+**The one part that requires you to type.** Near the end, Claude will ask you to type a few slash commands to install plugins. These are interactive prompts that Claude can't run for you — it'll show you exactly what to type. First you'll add the plugin marketplace, then install three plugins from it one at a time, choosing "Install for you (user scope)" when asked. It will look something like this:
 
 ```
+/plugin marketplace add anthropics/claude-plugins-official
 /plugin install playwright@claude-plugins-official
 /plugin install frontend-design@claude-plugins-official
 /plugin install superpowers@claude-plugins-official
 ```
 
-After all three are installed, type **"all done"** or **"all are complete"** to let Claude know it can continue.
+After all of them are installed, type **"all done"** or **"all are complete"** to let Claude know it can continue.
 
 Claude will download browser binaries for Playwright (this takes a minute), then present a final checklist of everything that was set up.
 

@@ -4,9 +4,13 @@ Skip the philosophy. Get building.
 
 ---
 
-### 1. Sign up for Claude
+### 1. Create your accounts
 
-Go to [claude.ai](https://claude.ai) and subscribe. Start with Pro ($20/mo). Upgrade to Max ($100/mo) when you hit usage limits.
+**Claude** — Go to [claude.ai](https://claude.ai) and subscribe. Start with Pro ($20/mo). Upgrade to Max ($100/mo) when you hit usage limits.
+
+**Cloudflare** — Sign up at [dash.cloudflare.com/sign-up](https://dash.cloudflare.com/sign-up). Free to start. The Workers Paid plan ($5/mo) lifts the limits you'll hit once your project does anything with AI or gets real traffic — upgrade anytime from your dashboard.
+
+**GitHub** — Sign up at [github.com/signup](https://github.com/signup). Free. Remember the email — you'll use it during setup.
 
 ### 2. Install Homebrew (Mac only)
 
@@ -93,13 +97,11 @@ Use the primer setup skill to set up my development environment.
 
 Say yes to everything. Claude installs Git, GitHub CLI, Wrangler, MCP servers, and plugins. Five to ten minutes. You'll see red "Error" text as Claude checks your system — this is normal. Claude will clearly tell you if something needs your attention.
 
-Claude will ask you to **create two free accounts** — Cloudflare and GitHub. Both take two minutes in your browser. These are prerequisites — everything else depends on them.
-
-Claude will ask for your **Git Identity** — your name and email. Use the same email you used for GitHub — it links your code changes to your profile. Then Claude connects both accounts to the terminal through browser sign-in flows.
+Claude will ask for your **Git Identity** — your name and email. Use the same email you used for GitHub — it links your code changes to your profile. Then Claude connects your GitHub and Cloudflare accounts to the terminal through browser sign-in flows.
 
 When the Cloudflare MCP connection activates for the first time, a browser window will ask you to authorize access — **choose "Workers Full Access"** (not the default Read Only) so Claude can manage your projects.
 
-Near the end, Claude will ask you to **type three plugin install commands** — these are interactive prompts it can't run for you. Type each one and choose "Install for you (user scope)." When all three are done, say "all done" so Claude can continue.
+Near the end, Claude will ask you to **type a few slash commands to install plugins** — these are interactive prompts it can't run for you. Type each one and choose "Install for you (user scope)" when asked. When they're all installed, say "all done" so Claude can continue.
 
 When setup is done, restart Claude one more time (`/exit`, then `claude`) to load all the new connections and plugins. You may see "1 MCP server failed" — that's the Cloudflare connection, which activates the first time Claude uses it. Nothing is broken.
 
@@ -113,7 +115,7 @@ Claude scaffolds a project, sets up a database and storage on Cloudflare, initia
 
 Tell Claude: *"Deploy my project to Cloudflare."*
 
-You'll need a Cloudflare account (free to sign up, $5/mo Workers Paid plan recommended) — [dash.cloudflare.com/sign-up](https://dash.cloudflare.com/sign-up). Claude walks you through connecting it.
+Your Cloudflare account is already connected from setup. Claude handles the deployment.
 
 ### 10. Build
 
