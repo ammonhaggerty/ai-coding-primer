@@ -6,7 +6,7 @@ Skip the philosophy. Get building.
 
 ### 1. Create your accounts
 
-You'll need admin access on your computer. If this is a brand-new user account on your Mac, restart the Mac first (macOS needs one restart to set up temp directories for new accounts).
+You'll need admin access on your computer. If this is a brand-new user account on your Mac — especially one that was created as a Standard account and later upgraded to Admin — you may hit permission errors during setup. Claude's setup skill runs a health check that detects and fixes this automatically.
 
 **Claude** — Go to [claude.ai](https://claude.ai) and subscribe. Start with Pro ($20/mo). Upgrade to Max ($100/mo) when you hit usage limits.
 

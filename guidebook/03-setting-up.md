@@ -10,7 +10,7 @@ This section starts with the three accounts you'll need, covers the five steps, 
 
 **You'll need admin access on your computer.** If this is your personal Mac, you're all set — the first account created on a Mac has admin access. If you're on a work or shared computer, you may need to ask your IT department or the computer's owner to grant you admin privileges. You'll know if you don't have it — the setup steps will ask for your password and fail if your account can't install software.
 
-**If this is a brand-new user account on your Mac** (you just created it), restart your Mac before continuing. macOS sets up temporary directories for each user on login, and a fresh account sometimes misses this step until the first restart. Without it, you'll see cryptic permission errors throughout the setup. One restart fixes it permanently.
+**If this is a brand-new user account on your Mac** — especially one that was created as a Standard account and later upgraded to Admin — you may hit permission errors during setup. Claude's setup skill runs a health check at the very beginning that detects this and walks you through a one-line fix. If you see errors about `/var/folders/zz/` or "permission denied" in temp directories, don't panic — Claude knows how to fix it.
 
 Create three accounts. Everything downstream depends on them.
 
