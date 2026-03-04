@@ -6,9 +6,11 @@ Skip the philosophy. Get building.
 
 ### 1. Create your accounts
 
+You'll need admin access on your computer. If this is a brand-new user account on your Mac, restart the Mac first (macOS needs one restart to set up temp directories for new accounts).
+
 **Claude** — Go to [claude.ai](https://claude.ai) and subscribe. Start with Pro ($20/mo). Upgrade to Max ($100/mo) when you hit usage limits.
 
-**Cloudflare** — Sign up at [dash.cloudflare.com/sign-up](https://dash.cloudflare.com/sign-up). Free to start. The Workers Paid plan ($5/mo) lifts the limits you'll hit once your project does anything with AI or gets real traffic — upgrade anytime from your dashboard.
+**Cloudflare** — Sign up at [dash.cloudflare.com/sign-up](https://dash.cloudflare.com/sign-up). After signing up, enable **R2 Object Storage** from your dashboard (left sidebar) — this requires a credit card on file, but the free tier is generous (10GB, no charge). Without R2 enabled, project creation will fail. The Workers Paid plan ($5/mo) lifts the limits you'll hit once your project does anything with AI or gets real traffic.
 
 **GitHub** — Sign up at [github.com/signup](https://github.com/signup). Free. Remember the email — you'll use it during setup.
 
@@ -21,6 +23,8 @@ Homebrew is the standard way to install developer tools on a Mac. Claude will us
 ```
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
+
+**Apple Silicon Macs:** After it finishes, Homebrew prints "Next steps" with two commands. Copy and paste both into your terminal — they make Homebrew available. Skip this and every `brew` command will fail.
 
 *(Windows users: skip this step.)*
 

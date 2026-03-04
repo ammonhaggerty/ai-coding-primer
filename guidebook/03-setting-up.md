@@ -8,11 +8,15 @@ This section starts with the three accounts you'll need, covers the five steps, 
 
 ## Before You Start
 
+**You'll need admin access on your computer.** If this is your personal Mac, you're all set — the first account created on a Mac has admin access. If you're on a work or shared computer, you may need to ask your IT department or the computer's owner to grant you admin privileges. You'll know if you don't have it — the setup steps will ask for your password and fail if your account can't install software.
+
+**If this is a brand-new user account on your Mac** (you just created it), restart your Mac before continuing. macOS sets up temporary directories for each user on login, and a fresh account sometimes misses this step until the first restart. Without it, you'll see cryptic permission errors throughout the setup. One restart fixes it permanently.
+
 Create three accounts. Everything downstream depends on them.
 
 **Claude** — This is your AI partner. Go to [claude.ai](https://claude.ai) and subscribe. This guide recommends the Max plan ($100/mo) with Opus 4.6 — it's the most capable model for coding and handles complex, multi-file projects without breaking a sweat. The Pro plan ($20/mo) works too, but you'll hit usage limits faster and won't have access to the strongest model. Start with whichever fits your budget — you can upgrade anytime.
 
-**Cloudflare** — This is where your app will live on the internet. Sign up at [dash.cloudflare.com/sign-up](https://dash.cloudflare.com/sign-up). The free tier is enough to get started — the starter project's AI chat, database, and file storage all work on it. When you're ready to build something beyond a simple demo, the Workers Paid plan ($5/mo) removes the limits that matter — more CPU time per request, significantly more database and storage capacity, and higher AI usage. The free tier caps you at 100,000 requests per day and 10 milliseconds of CPU time per request, which sounds like a lot until your app does anything computationally heavy. You can upgrade anytime from your Cloudflare dashboard.
+**Cloudflare** — This is where your app will live on the internet. Sign up at [dash.cloudflare.com/sign-up](https://dash.cloudflare.com/sign-up). After creating your account, enable R2 storage: in your dashboard, click **R2 Object Storage** in the left sidebar and follow the activation steps. This requires a credit card on file, but the free tier is generous — 10GB of storage and 10 million reads per month at no charge. R2 is where your app stores uploaded files like images, and without it enabled, project creation will fail when it tries to set up storage. The free tier is enough to get started — the starter project's AI chat, database, and file storage all work on it. When you're ready to build something beyond a simple demo, the Workers Paid plan ($5/mo) removes the limits that matter — more CPU time per request, significantly more database and storage capacity, and higher AI usage. The free tier caps you at 100,000 requests per day and 10 milliseconds of CPU time per request, which sounds like a lot until your app does anything computationally heavy. You can upgrade anytime from your Cloudflare dashboard.
 
 **GitHub** — This is where your code is backed up and version-tracked. Sign up at [github.com/signup](https://github.com/signup). Free. Remember the email you use — you'll need it during setup to link your code changes to your profile.
 
@@ -35,6 +39,8 @@ This is a one-time install. It downloads Apple's command-line developer tools in
 ```
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
+
+**Important (Apple Silicon Macs):** After the install finishes, Homebrew prints a "Next steps" section with two commands. Copy and paste both commands into your terminal and press Enter. They add Homebrew to your PATH so your terminal can find it — if you skip this, every `brew` command after this will fail with "command not found."
 
 *(Windows users: skip this step.)*
 
