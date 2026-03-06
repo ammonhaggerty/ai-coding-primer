@@ -120,17 +120,17 @@ Claude knows this rule and follows it. But understanding *why* makes you a bette
 
 **Wrangler secrets** are how you push sensitive values to Cloudflare. Claude runs `wrangler secret put API_KEY`, you paste the value, and it's securely stored on Cloudflare's servers. Your deployed app can read it, but it never exists in your project files.
 
-**`.env` files** hold secrets for local development. This file lives on your machine and contains key-value pairs (`API_KEY=sk-abc123`). The critical companion is `.gitignore` — a file that tells Git "never track this file, never commit it, pretend it doesn't exist." Your `.env` file stays local. Always.
+**Local secrets files** hold secrets for local development. In most projects you'll see this as a `.env` file; in Cloudflare projects like ours, the equivalent is `.dev.vars` — same idea, different name. The file lives on your machine and contains key-value pairs (`API_KEY=sk-abc123`). The critical companion is `.gitignore` — a file that tells Git "never track this file, never commit it, pretend it doesn't exist." Your secrets file stays local. Always.
 
 ### When Things Go Wrong
 
-At some point — not if, when — a secret will almost end up in the wrong place. Maybe you'll paste an API key into a file while debugging. Maybe a configuration template will include a placeholder that looks like a real key. Maybe you'll forget to add `.env` to `.gitignore`.
+At some point — not if, when — a secret will almost end up in the wrong place. Maybe you'll paste an API key into a file while debugging. Maybe a configuration template will include a placeholder that looks like a real key. Maybe you'll forget to add `.dev.vars` to `.gitignore`.
 
 Claude watches for this. If you're about to commit a file that contains something that looks like a credential, Claude will flag it. If Claude generates a configuration file, it uses environment variable references, never raw values.
 
 But Claude isn't perfect, and neither are you. So there's one more safety net: if a secret does get committed to Git, it can be rotated. You generate a new key from whatever service issued it, update your environment variables, and the old key becomes useless. It's not fun, but it's recoverable. The services you'll use (Cloudflare, Anthropic, etc.) all have dashboards where you can regenerate keys in seconds.
 
-The habit to build: whenever you see a long string of characters that looks like a password or key, ask yourself — "is this in a `.env` file or an environment variable?" If it's anywhere else, move it.
+The habit to build: whenever you see a long string of characters that looks like a password or key, ask yourself — "is this in a `.dev.vars` file or an environment variable?" If it's anywhere else, move it.
 
 ---
 
