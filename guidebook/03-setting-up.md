@@ -14,7 +14,7 @@ This section starts with the three accounts you'll need, covers the five steps, 
 
 Create three accounts. Everything downstream depends on them.
 
-**Claude** — This is your AI partner. Go to [claude.ai](https://claude.ai) and subscribe. This guide recommends the Max plan ($100/mo) with Opus 4.6 — it's the most capable model for coding and handles complex, multi-file projects without breaking a sweat. The Pro plan ($20/mo) works too, but you'll hit usage limits faster and won't have access to the strongest model. Start with whichever fits your budget — you can upgrade anytime.
+**Claude** — This is your AI partner. Go to [claude.ai](https://claude.ai) and subscribe. The Pro plan ($20/mo) is a perfectly fine place to start — it gives you access to all the models including Opus 4.6, which is what you want for coding. One important detail: Pro defaults to Sonnet 4.6, a faster but less capable model. You'll want to switch to Opus during setup — the setup skill walks you through it. If you find yourself running out of usage regularly, the Max plan ($100/mo) gives you significantly more capacity. But start with Pro and upgrade only if you need to.
 
 **Cloudflare** — This is where your app will live on the internet. Sign up at [dash.cloudflare.com/sign-up](https://dash.cloudflare.com/sign-up). After creating your account, enable R2 storage: in your dashboard, click **R2 Object Storage** in the left sidebar and follow the activation steps. This requires a credit card on file, but the free tier is generous — 10GB of storage and 10 million reads per month at no charge. R2 is where your app stores uploaded files like images, and without it enabled, project creation will fail when it tries to set up storage. The free tier is enough to get started — the starter project's AI chat, database, and file storage all work on it. When you're ready to build something beyond a simple demo, the Workers Paid plan ($5/mo) removes the limits that matter — more CPU time per request, significantly more database and storage capacity, and higher AI usage. The free tier caps you at 100,000 requests per day and 10 milliseconds of CPU time per request, which sounds like a lot until your app does anything computationally heavy. You can upgrade anytime from your Cloudflare dashboard.
 
@@ -147,7 +147,11 @@ Then Claude will set up MCP servers — connections that let it interact with ex
 
 After all of them are installed, type **"all done"** or **"all are complete"** to let Claude know it can continue.
 
-Claude will download browser binaries for Playwright (this takes a minute), then present a final checklist of everything that was set up.
+Claude will download browser binaries for Playwright (this takes a minute).
+
+**One important setting: your model.** Claude Code defaults to Sonnet 4.6, but this guide is built around Opus 4.6 — a more capable model that reasons more deeply, catches more edge cases, and handles complex multi-file changes with fewer mistakes. For non-coders, this difference matters especially: Opus is less likely to produce subtle bugs you wouldn't know how to spot. The setup skill will walk you through switching, but the short version is: type `/model` inside Claude, select Opus 4.6, and press Enter. Claude remembers your preference.
+
+Claude will then present a final checklist of everything that was set up.
 
 **Restart Claude** (`/exit`, then `claude`). This final restart loads all the new MCP servers and plugins. It's like refreshing a browser — Claude picks up everything new when it starts fresh. You may see a note that says "1 MCP server failed" — this is the Cloudflare connection, which activates the first time Claude uses it (not at startup). Nothing is broken.
 

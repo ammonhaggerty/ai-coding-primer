@@ -144,7 +144,7 @@ This is the AI you talk to in the terminal — your building partner. It reads y
 
 **The recommendation: use Opus 4.6 for everything.**
 
-This is why the Max plan ($100/mo or $200/mo) is worth it. Opus 4.6 is dramatically better at coding than any other model. It understands context deeper, catches edge cases other models miss, reasons through architecture more carefully, and gets things right on the first pass far more often. When you're learning, the quality of the model isn't a nice-to-have — it's the difference between a smooth experience and a frustrating one. A cheaper model that gets it wrong costs you more in time and confusion than the subscription difference.
+Opus 4.6 is dramatically better at coding than any other model. It understands context deeper, catches edge cases other models miss, reasons through architecture more carefully, and gets things right on the first pass far more often. When you're learning, the quality of the model isn't a nice-to-have — it's the difference between a smooth experience and a frustrating one. Opus is available on both the Pro plan ($20/mo) and the Max plan ($100/mo) — but Pro defaults to Sonnet, so you'll want to switch. Use `/model` in Claude Code and select Opus 4.6. If you find yourself running out of usage regularly, Max gives you significantly more capacity.
 
 Claude comes in three model tiers — Opus, Sonnet, and Haiku — but for coding with Claude Code, Opus is the one to use:
 

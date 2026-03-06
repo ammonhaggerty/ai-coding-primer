@@ -3,6 +3,7 @@
 An open-source guidebook and starter kit for building real products with Claude Code and Cloudflare — written for designers, founders, PMs, researchers, hobbyists, and anyone with ideas who's been blocked by the technical wall.
 
 [![AI Coding Primer Onboarding Video](https://github.com/user-attachments/assets/0a621b86-f898-487f-ac7d-d34a6c6aa3cc)](https://youtu.be/KPAlZ3Oni1A)
+*☝️ This video walks through the entire onboarding and sample project*
 
 I want to be clear - what I'm sharing is highly technical and the ideas shared have taken me years to learn and understand. What's changed is Claude, as helper, problem-solver, and guide, allows you to navigate nearly anything that comes your way. I tried to make the onboarding process as simple as I could, but my first dry-run was a complete failure - that said, Claude was able to figure out and correct for every issue. Once you have Claude running, just ask for help at any step. 
 

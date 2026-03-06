@@ -37,7 +37,7 @@ Flat files in `guidebook/`, numbered for reading order:
 - DaisyUI 5 via CDN — `card-border` doesn't work, use `border border-base-300`
 - Theme: `emerald`
 - Cookies: `secure: false` in local dev, `secure: true` in production
-- Opus 4.6 recommended for all coding (Max plan recommended)
+- Opus 4.6 recommended for all coding (available on Pro and Max; Pro defaults to Sonnet — switch via /model)
 - Do not recommend OpenAI for anything
 - Image generation: Google Gemini / Imagen
 - Voice: ElevenLabs, Deepgram, Cartesia
