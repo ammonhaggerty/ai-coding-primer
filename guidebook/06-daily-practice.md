@@ -110,7 +110,7 @@ You don't need to understand what DevTools is showing you. Open it, look for red
 
 Most problems in this workflow fall into a handful of categories:
 
-**Environment variable not set.** You added a new secret but forgot to push it to Cloudflare, or you're running locally and the `.env` file is missing a value. Claude checks for this.
+**Environment variable not set.** You added a new secret but forgot to push it to Cloudflare, or you're running locally and the `.dev.vars` file is missing a value. Claude checks for this.
 
 **Cookie misconfiguration.** The `secure` flag is set for production but you're testing locally (or vice versa). The fix is always one line.
 
