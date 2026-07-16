@@ -46,9 +46,17 @@ winget install OpenJS.NodeJS.LTS
 
 ### 4. Install Claude Code
 
+**Mac:**
 ```
-npm install -g @anthropic-ai/claude-code
+curl -fsSL https://claude.ai/install.sh | bash
 ```
+
+**Windows (PowerShell):**
+```
+irm https://claude.ai/install.ps1 | iex
+```
+
+*(This is Claude Code's native installer — the current recommended method, and it keeps itself updated. If you'd rather use npm, `npm install -g @anthropic-ai/claude-code` still works, but it needs Node 22+ and won't auto-update.)*
 
 ### 5. Create a workspace and start Claude
 
@@ -141,7 +149,7 @@ That's the whole loop. Everything else in this guide is context — the *why* be
 
 ---
 
-**[The Landscape](02-the-landscape.md)** — The barrier to building software was never really about code — it was the iceberg of infrastructure underneath it. AI didn't just help with the code part. It dissolved the iceberg. This section explains what changed (Claude Opus 4.6 is the specific step change), what the mental model looks like (you're the dreamer, AI is the builder), and what the complete toolkit costs. The single most important idea: the skills that matter now are imagination and curiosity, not syntax.
+**[The Landscape](02-the-landscape.md)** — The barrier to building software was never really about code — it was the iceberg of infrastructure underneath it. AI didn't just help with the code part. It dissolved the iceberg. This section explains what changed (Claude Opus 4.8 is the specific step change), what the mental model looks like (you're the dreamer, AI is the builder), and what the complete toolkit costs. The single most important idea: the skills that matter now are imagination and curiosity, not syntax.
 
 ---
 

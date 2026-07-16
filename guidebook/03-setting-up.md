@@ -14,7 +14,7 @@ This section starts with the three accounts you'll need, covers the five steps, 
 
 Create three accounts. Everything downstream depends on them.
 
-**Claude** — This is your AI partner. Go to [claude.ai](https://claude.ai) and subscribe. The Pro plan ($20/mo) is a perfectly fine place to start — it gives you access to all the models including Opus 4.6, which is what you want for coding. One important detail: Pro defaults to Sonnet 4.6, a faster but less capable model. You'll want to switch to Opus during setup — the setup skill walks you through it. If you find yourself running out of usage regularly, the Max plan ($100/mo) gives you significantly more capacity. But start with Pro and upgrade only if you need to.
+**Claude** — This is your AI partner. Go to [claude.ai](https://claude.ai) and subscribe. The Pro plan ($20/mo) is a perfectly fine place to start — it gives you access to all the models including Opus 4.8, which is what you want for coding. One important detail: Pro defaults to Sonnet 5, a faster but less capable model. You'll want to switch to Opus during setup — the setup skill walks you through it. If you find yourself running out of usage regularly, the Max plan ($100/mo) gives you significantly more capacity. But start with Pro and upgrade only if you need to.
 
 **Cloudflare** — This is where your app will live on the internet. Sign up at [dash.cloudflare.com/sign-up](https://dash.cloudflare.com/sign-up). After creating your account, enable R2 storage: in your dashboard, click **R2 Object Storage** in the left sidebar and follow the activation steps. This requires a credit card on file, but the free tier is generous — 10GB of storage and 10 million reads per month at no charge. R2 is where your app stores uploaded files like images, and without it enabled, project creation will fail when it tries to set up storage. The free tier is enough to get started — the starter project's AI chat, database, and file storage all work on it. When you're ready to build something beyond a simple demo, the Workers Paid plan ($5/mo) removes the limits that matter — more CPU time per request, significantly more database and storage capacity, and higher AI usage. The free tier caps you at 100,000 requests per day and 10 milliseconds of CPU time per request, which sounds like a lot until your app does anything computationally heavy. You can upgrade anytime from your Cloudflare dashboard.
 
@@ -62,11 +62,19 @@ winget install OpenJS.NodeJS.LTS
 
 ### 3. Install Claude Code
 
+Claude Code has a native installer that keeps itself updated — this is the recommended way to install it.
+
+**Mac:**
 ```
-npm install -g @anthropic-ai/claude-code
+curl -fsSL https://claude.ai/install.sh | bash
 ```
 
-Claude Code is now on your machine.
+**Windows (PowerShell):**
+```
+irm https://claude.ai/install.ps1 | iex
+```
+
+Claude Code is now on your machine. (If you prefer npm, `npm install -g @anthropic-ai/claude-code` still works, but it needs Node 22+ and won't update itself — the native installer is simpler.)
 
 ### 4. Create Your Workspace and Start Claude
 
@@ -149,7 +157,9 @@ After all of them are installed, type **"all done"** or **"all are complete"** t
 
 Claude will download browser binaries for Playwright (this takes a minute).
 
-**One important setting: your model.** Claude Code defaults to Sonnet 4.6, but this guide is built around Opus 4.6 — a more capable model that reasons more deeply, catches more edge cases, and handles complex multi-file changes with fewer mistakes. For non-coders, this difference matters especially: Opus is less likely to produce subtle bugs you wouldn't know how to spot. The setup skill will walk you through switching, but the short version is: type `/model` inside Claude, select Opus 4.6, and press Enter. Claude remembers your preference.
+**One important setting: your model.** Claude Code defaults to Sonnet 5, but this guide is built around Opus 4.8 — a more capable model that reasons more deeply, catches more edge cases, and handles complex multi-file changes with fewer mistakes. For non-coders, this difference matters especially: Opus is less likely to produce subtle bugs you wouldn't know how to spot. The setup skill will walk you through switching, but the short version is: type `/model` inside Claude, select Opus 4.8, and press Enter. Claude remembers your preference.
+
+While you're on the `/model` screen, you can also set the **effort level** (use the left/right arrow keys). Effort controls how hard the model works before answering. For most everyday coding, **Medium** is the sweet spot — it's noticeably faster and uses fewer tokens than the higher settings, which stretches your usage further, and Opus at Medium is still more capable than lighter models at their best. Step it up to High for genuinely hard problems — a tricky bug, a big multi-file change — then drop back to Medium for routine work.
 
 Claude will then present a final checklist of everything that was set up.
 
@@ -221,7 +231,7 @@ Claude created a project scaffold — a clean, well-designed web application wit
 - **`src/index.ts`** — Your application's entry point. This is where URLs map to responses. When someone visits your site, this file decides what they see.
 - **`src/chat.ts`** — An AI chat page powered by Cloudflare Workers AI. A working example of how to add intelligence to your app.
 - **`src/layout.ts`** — The shared page layout — navigation, fonts, styling, and the theme toggle. Every page uses this wrapper.
-- **`wrangler.toml`** — Configuration for Cloudflare. Tells Cloudflare what your project is called, what services it uses, and how to deploy it.
+- **`wrangler.jsonc`** — Configuration for Cloudflare. Tells Cloudflare what your project is called, what services it uses, and how to deploy it.
 - **`CLAUDE.md`** — Your project's rulebook, as described above.
 - **`docs/`** — A folder for your project's working memory. This is where Claude saves brainstorming notes, plans, progress updates, and design decisions.
 

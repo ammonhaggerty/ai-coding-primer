@@ -62,6 +62,14 @@ Claude writes these commit messages for you, and they're usually good. But glanc
 
 Git also gives you the ultimate undo button. If a session goes sideways — Claude introduces a bug, or a new feature breaks something that worked — you can roll back to the last good state. Claude can help with this: "Something broke after the last set of changes. Can you revert to the previous commit?" The safety net is always there.
 
+### Keeping Sessions Fast and Lean
+
+Two small habits keep Claude fast and your usage stretching further, and they're easy to forget.
+
+**Compact between major tasks.** As a conversation grows, Claude is carrying more and more context — every file it read, every change it made, every message you exchanged. That makes each new response slower and more expensive. When you finish one meaningful task and are about to start another — you shipped the history page and now you're moving on to the settings page — run `/compact`. It summarizes the conversation so far and continues from that summary instead of the full history. The result is a lighter, faster session that costs less per message. You can steer the summary if there's something specific to keep: `/compact keep the database schema decisions`. Think of it as clearing your desk between projects. (`/clear` goes further — it wipes the conversation entirely, for when you're starting something genuinely unrelated.)
+
+**Match the effort to the task.** On the `/model` screen you can set an effort level with the left/right arrows. **Medium** is the right default for most building — it's faster and uses fewer tokens than the higher settings, so a Pro or Max plan lasts noticeably longer, and Opus at Medium is still very capable. Save the higher settings for genuinely hard problems, then drop back down. Between compacting regularly and keeping effort at Medium, you'll get far more building out of the same plan.
+
 ---
 
 ## When Things Break

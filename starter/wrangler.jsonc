@@ -1,0 +1,16 @@
+{
+  // Cloudflare's recommended config format for new projects.
+  // Set compatibility_date to roughly the date you created the project.
+  "name": "starter",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-07-01",
+  "compatibility_flags": ["nodejs_compat"],
+  "assets": { "directory": "./public" },
+  "d1_databases": [
+    { "binding": "DB", "database_name": "starter-db", "database_id": "local" }
+  ],
+  "r2_buckets": [
+    { "binding": "BUCKET", "bucket_name": "starter-bucket" }
+  ],
+  "ai": { "binding": "AI" }
+}

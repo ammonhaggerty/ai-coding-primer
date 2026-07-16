@@ -22,22 +22,20 @@ These come with Claude Code out of the box. Type `/` to see the full list.
 | Command | What It Does |
 |---|---|
 | ★ `/help` | Shows all available commands and usage tips |
-| ★ `/model` | Switch between Opus, Sonnet, and Haiku mid-session. Use left/right arrows to adjust effort level |
-| ★ `/compact` | Shrinks your conversation to free up context when sessions get long. Add instructions to focus the summary: `/compact keep the database discussion` |
+| ★ `/model` | Switch between Opus, Sonnet, Haiku, and Fable mid-session. Use the left/right arrows to set the effort level — **Medium** is the sweet spot for most coding (faster, fewer tokens) |
+| ★ `/compact` | Shrinks your conversation to free up context when sessions get long. Make a habit of running it between major tasks — a leaner conversation is faster and cheaper. Add instructions to focus the summary: `/compact keep the database discussion` |
 | ★ `/clear` | Wipes the conversation and starts fresh. Your files aren't touched — just the chat history |
-| ★ `/plan` | Enters plan mode — Claude thinks through an approach and shows it to you before writing any code |
 | ★ `/init` | Creates a `CLAUDE.md` file for your project. Run this once at the start of any new project |
 | ★ `/memory` | Opens your `CLAUDE.md` for editing. Add rules and constraints — keep it lean (see [The Daily Practice](06-daily-practice.md)) |
+| `/context` | Shows how much of the context window you're currently using — a good gauge for when to `/compact` |
 | `/cost` | Shows how many tokens you've used in this session |
 | `/usage` | Shows your plan limits and rate limit status |
-| `/stats` | Visualizes your daily usage, session history, and streaks |
 
 **Session management:**
 
 | Command | What It Does |
 |---|---|
 | ★ `/resume` | Pick up a previous conversation where you left off. Sessions auto-save |
-| `/rename` | Give your session a name so you can find it later |
 | `/rewind` | Undo recent conversation turns and/or code changes |
 | `/export` | Save the conversation to a file |
 | `/copy` | Copy Claude's last response to your clipboard |
@@ -49,7 +47,6 @@ These come with Claude Code out of the box. Type `/` to see the full list.
 | `/config` | Open Claude Code settings |
 | `/permissions` | View or change what Claude is allowed to do without asking |
 | `/mcp` | Manage MCP server connections |
-| `/theme` | Change the color scheme |
 | `/status` | See your version, model, account, and connection status |
 | `/doctor` | Health check — diagnoses problems with your installation |
 | `/debug` | Reads session logs to troubleshoot issues |
@@ -59,7 +56,6 @@ These come with Claude Code out of the box. Type `/` to see the full list.
 | Command | What It Does |
 |---|---|
 | `/tasks` | List and manage background tasks Claude is running |
-| `/todos` | View your current task list |
 
 ### Keyboard Shortcuts
 
@@ -87,7 +83,7 @@ You don't need to memorize these. Learn the starred ones first; the rest you'll 
 | `Ctrl+G` | Open your message in a text editor (for long, complex prompts) |
 | `Ctrl+R` | Search your command history |
 | `Ctrl+B` | Send a running task to the background |
-| `Ctrl+F` (twice) | Kill all background tasks |
+| `Ctrl+X` `Ctrl+K` | Kill all background tasks/agents |
 | `Ctrl+V` / `Cmd+V` | Paste an image from your clipboard into the conversation |
 | `!` (at start) | Run a bash command directly and add the output to your conversation |
 | `@` | Autocomplete a file path — mention files for Claude to look at |
@@ -124,7 +120,7 @@ If you remember nothing else from this appendix:
 | Situation | What to Do |
 |---|---|
 | Starting a new project | `/a-new-project` to scaffold everything, or `/init` for just CLAUDE.md |
-| Want Claude to plan first | `/plan` or `Shift+Tab` to enter plan mode |
+| Want Claude to plan first | `Shift+Tab` to cycle into plan mode |
 | Conversation getting long | `/compact` to free up space |
 | Want to try a different model | `/model` or `Option+P` |
 | Need to undo something | `Esc Esc` to rewind |
@@ -142,19 +138,21 @@ There are two completely different contexts where AI models matter in this workf
 
 This is the AI you talk to in the terminal — your building partner. It reads your project, writes code, debugs issues, plans features, and deploys your app.
 
-**The recommendation: use Opus 4.6 for everything.**
+**The recommendation: use Opus 4.8 for everything.**
 
-Opus 4.6 is dramatically better at coding than any other model. It understands context deeper, catches edge cases other models miss, reasons through architecture more carefully, and gets things right on the first pass far more often. When you're learning, the quality of the model isn't a nice-to-have — it's the difference between a smooth experience and a frustrating one. Opus is available on both the Pro plan ($20/mo) and the Max plan ($100/mo) — but Pro defaults to Sonnet, so you'll want to switch. Use `/model` in Claude Code and select Opus 4.6. If you find yourself running out of usage regularly, Max gives you significantly more capacity.
+Opus 4.8 is dramatically better at coding than any other model. It understands context deeper, catches edge cases other models miss, reasons through architecture more carefully, and gets things right on the first pass far more often. When you're learning, the quality of the model isn't a nice-to-have — it's the difference between a smooth experience and a frustrating one. Opus is available on both the Pro plan ($20/mo) and the Max plan ($100/mo) — but Pro defaults to Sonnet, so you'll want to switch. Use `/model` in Claude Code and select Opus 4.8. If you find yourself running out of usage regularly, Max gives you significantly more capacity.
 
 Claude comes in three model tiers — Opus, Sonnet, and Haiku — but for coding with Claude Code, Opus is the one to use:
 
 | Model | Role in Coding | When to Use |
 |---|---|---|
-| **Opus 4.6** | The best. Deep reasoning, catches edge cases, handles complexity | Always — this is your default |
-| **Sonnet 4.6** | Capable, faster, cheaper usage | Only if you're hitting usage limits on Max and need to conserve |
+| **Opus 4.8** | The best. Deep reasoning, catches edge cases, handles complexity | Always — this is your default |
+| **Sonnet 5** | Capable, faster, cheaper usage | Only if you're hitting usage limits on Max and need to conserve |
 | **Haiku 4.5** | Fast but shallow | Not recommended for coding — too many misses on anything non-trivial |
 
-**How to set your model:** Use `/model` in Claude Code and select Opus 4.6. It will remember your preference.
+**How to set your model:** Use `/model` in Claude Code and select Opus 4.8. It will remember your preference.
+
+**A note on effort.** The same `/model` screen lets you set an *effort level* with the left/right arrow keys — how hard the model works before it answers. For most coding, **Medium** is the sweet spot: it's faster and uses fewer tokens than the higher settings, so your usage stretches further — and Opus at Medium still outclasses the lighter models at their best. Step it up to High for a genuinely hard problem (a stubborn bug, a large multi-file change), then drop back to Medium for routine work. This one setting is one of the easiest ways to make a Pro or Max plan last longer.
 
 ### Part 2: Models for Your Product (In-App AI)
 
@@ -168,9 +166,12 @@ If you want Claude's intelligence inside your app, you use the API. This is sepa
 
 | Model | Input | Output | Speed | Best For |
 |---|---|---|---|---|
-| **Opus 4.6** | $5.00 | $25.00 | Slowest | Complex reasoning, deep analysis — only when quality justifies the cost |
-| **Sonnet 4.6** | $3.00 | $15.00 | Fast | Best all-rounder. Chat, content generation, analysis, recommendations |
+| **Fable 5** | $10.00 | $50.00 | Slowest | The most capable model — hardest reasoning and long, autonomous tasks. Rarely needed for everyday app features |
+| **Opus 4.8** | $5.00 | $25.00 | Slow | Complex reasoning, deep analysis — when quality justifies the cost |
+| **Sonnet 5** | $3.00 | $15.00 | Fast | Best all-rounder. Chat, content generation, analysis, recommendations |
 | **Haiku 4.5** | $1.00 | $5.00 | Fastest | Classification, extraction, simple Q&A, high-volume tasks |
+
+*Sonnet 5 is at introductory pricing of $2.00 input / $10.00 output per million tokens through August 31, 2026.*
 
 **Capabilities all Claude models share:**
 
@@ -194,9 +195,9 @@ Workers AI runs models directly on Cloudflare's network — no separate API acco
 
 | What | Models | Cost |
 |---|---|---|
-| **Text generation** | Llama 3.2, GLM-4.7-Flash, DeepSeek-R1, others | Free: 10,000 Neurons/day. Then $0.011/1K Neurons |
-| **Image understanding** | Llama 3.2-Vision | Same Neuron pricing |
-| **Text-to-image** | Leonardo Phoenix, Stable Diffusion | Same Neuron pricing |
+| **Text generation** | Llama 4 Scout, gpt-oss-120b, GLM-4.7-Flash, others | Free: 10,000 Neurons/day. Then $0.011/1K Neurons |
+| **Image understanding** | Llama 4 Scout (vision) | Same Neuron pricing |
+| **Text-to-image** | FLUX.2, Leonardo Phoenix, Stable Diffusion XL | Same Neuron pricing |
 | **Speech-to-text** | Whisper | Same Neuron pricing |
 | **Text-to-speech** | Deepgram models | Same Neuron pricing |
 | **Embeddings** | bge-base, bge-large | Same Neuron pricing |
@@ -210,10 +211,10 @@ Claude doesn't generate images. For AI image generation in your products, **Goog
 
 | Model | Cost Per Image | Resolution | Notes |
 |---|---|---|---|
-| **Imagen 4 Fast** (Google) | ~$0.02 | Up to 1024×1024 | Cheapest option, fast, good quality |
-| **Gemini 2.5 Flash Image** | ~$0.04 | Up to 1024×1024 | Integrated with Gemini's text understanding |
+| **Gemini 3.1 Flash Lite Image** (Google) | ~$0.034 | Up to 1024×1024 | Cheapest option, fast, good quality |
+| **Gemini 3.1 Flash Image** | ~$0.05–$0.15 | Up to ~2048×2048 | Balanced quality and price, strong text understanding |
 | **Gemini 3 Pro Image** | ~$0.13–$0.24 | Up to 4096×4096 | Highest quality, 4K resolution |
-| **Workers AI** (Leonardo/SD) | Free tier, then Neurons | Varies | Built into Cloudflare, simplest setup |
+| **Workers AI** (FLUX/Leonardo) | Free tier, then Neurons | Varies | Built into Cloudflare, simplest setup |
 
 *Gemini Batch API gives 50% off for non-real-time generation.*
 
@@ -228,8 +229,8 @@ For voice features — text-to-speech, speech-to-text, real-time conversation �
 | Service | What It Does | Starting Cost | Standout Feature |
 |---|---|---|---|
 | **ElevenLabs** | Text-to-speech, voice cloning, conversational AI | Free tier (10K chars/mo), then $5/mo | Most natural-sounding voices, 70+ languages |
-| **Deepgram** | Speech-to-text and text-to-speech | Free tier (10 min), then $0.01–0.03/min | Fastest transcription, real-time streaming |
-| **Cartesia** | Ultra-low-latency text-to-speech | Pay-as-you-go | 40ms latency — best for real-time voice agents |
+| **Deepgram** | Speech-to-text and text-to-speech | $200 free credit, then ~$0.008–0.015/min | Fastest transcription, real-time streaming |
+| **Cartesia** | Ultra-low-latency text-to-speech (Sonic 3) | Pay-as-you-go (free credits to start) | ~40ms latency — best for real-time voice agents |
 | **Workers AI** (Whisper/Deepgram) | Speech-to-text, text-to-speech | Free tier, then Neurons | Built into Cloudflare, zero extra setup |
 
 For basic speech-to-text, Workers AI's Whisper model is free and built in. For high-quality text-to-speech voices, ElevenLabs is the current leader. For real-time voice applications (like voice agents or live conversation), Deepgram and Cartesia specialize in low-latency streaming.
@@ -239,11 +240,11 @@ For basic speech-to-text, Workers AI's Whisper model is free and built in. For h
 | Plan | Cost | What You Get | Who It's For |
 |---|---|---|---|
 | **Free** | $0 | Limited Claude access, no Claude Code | Exploring what Claude can do |
-| **Pro** | $20/mo | Claude Code + all models (incl. Opus 4.6), limited usage | Getting started, learning, small projects |
+| **Pro** | $20/mo | Claude Code + all models (incl. Opus 4.8), limited usage | Getting started, learning, small projects |
 | **Max (5×)** | $100/mo | 5× Pro usage — sustained Opus coding | Active daily building — **recommended** |
 | **Max (20×)** | $200/mo | 20× Pro usage — all-day Opus | Power users in constant build mode |
 
-**Start with Pro ($20/mo)** if you're exploring. You get access to all models including Opus 4.6 — it's not locked behind Max. But Opus is significantly more token-hungry than Sonnet (20-30% more per interaction), and Pro's usage window is tight. Expect roughly 30-60 minutes of active Opus coding per 5-hour window before hitting your limit. You can stretch this by using Sonnet for simpler tasks and saving Opus for complex work — use `/model` to switch. This is enough to learn the workflow, build small features, and experience the difference between models firsthand.
+**Start with Pro ($20/mo)** if you're exploring. You get access to all models including Opus 4.8 — it's not locked behind Max. But Opus is significantly more token-hungry than Sonnet (20-30% more per interaction), and Pro's usage window is tight. Expect roughly 30-60 minutes of active Opus coding per 5-hour window before hitting your limit. You can stretch this by using Sonnet for simpler tasks and saving Opus for complex work — use `/model` to switch. This is enough to learn the workflow, build small features, and experience the difference between models firsthand.
 
 **Move to Max ($100/mo)** when you start building seriously. Max gives you 5× the Pro allowance — several hours of sustained Opus coding per session. This is where the 80→99% promise becomes your daily reality, because you're not constantly managing a usage budget. The difference isn't just more tokens — it's uninterrupted flow. When you're deep in a build and hit a wall on Pro, the momentum breaks. Max removes that wall.
 
@@ -259,11 +260,11 @@ The $5/month Workers Paid plan is strongly recommended. The free tier works for 
 
 | Service | Free Tier | Workers Paid ($5/mo) |
 |---|---|---|
-| **Workers** (compute) | 100,000 requests/day, 10ms CPU | Unlimited requests, 30s CPU |
-| **D1** (database) | 500 MB storage, 5M rows read/day, 100K rows written/day | 10 GB/database, 25B rows read/mo, 50M rows written/mo |
+| **Workers** (compute) | 100,000 requests/day, 10ms CPU/request | 10M requests/mo included (then $0.30/M), up to 5 min CPU/request |
+| **D1** (database) | 5 GB total storage (500 MB/database), 5M rows read/day, 100K rows written/day | 10 GB/database, 25B rows read/mo, 50M rows written/mo |
 | **R2** (file storage) | 10 GB storage, 10M reads/mo, 1M writes/mo, **zero egress** | $0.015/GB storage, same zero egress |
 | **KV** (key-value) | 1 GB storage, 100K reads/day, 1K writes/day | Unlimited storage, 10M reads/mo, 1M writes/mo |
-| **Vectorize** (vector DB) | 5M stored vectors, 30M queried dimensions/mo | $0.01/M stored vectors, $0.01/M queried dimensions |
+| **Vectorize** (vector DB) | 5M stored + 30M queried vector *dimensions*/mo | $0.05/100M stored dimensions, $0.01/M queried dimensions |
 | **Workers AI** | 10,000 Neurons/day | $0.011 per 1,000 Neurons above free, plus AI Gateway access |
 
 Zero egress on R2 means you're never charged for people *reading* your files — only for storing them. This is unusually generous in the cloud storage world and means traffic spikes don't spike your bill.
@@ -400,8 +401,8 @@ Symptom-based troubleshooting from real experience. When something goes wrong, f
 
 ### "command not found: claude"
 
-**Cause:** Claude Code isn't installed, or Node.js isn't installed.
-**Fix:** Run `npm install -g @anthropic-ai/claude-code`. If `npm` isn't found either, install Node.js first.
+**Cause:** Claude Code isn't installed, or its install directory isn't on your PATH.
+**Fix:** Re-run the native installer — Mac: `curl -fsSL https://claude.ai/install.sh | bash`; Windows (PowerShell): `irm https://claude.ai/install.ps1 | iex`. Then restart your terminal so it picks up the new command. (If you installed via npm instead, run `npm install -g @anthropic-ai/claude-code`, and install Node.js first if `npm` isn't found either.)
 
 ### "command not found: npm"
 

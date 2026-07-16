@@ -10,7 +10,7 @@ Claude Code is an AI that lives in your terminal — which means it can do every
 
 If you've tried AI coding tools before — Cursor, Lovable, Bolt, Replit — and walked away frustrated, that's a normal experience. Those tools helped, but they all had the same fundamental problem: you still needed a developer's instincts running in the background. The AI would get you 80% of the way there, and the remaining 20% — edge cases, architecture decisions, platform gotchas — was yours to catch. At 80%, you need a developer in the loop.
 
-Claude Code with Opus 4.6 crosses a different line. That ratio flips to something like 99/1. The model catches the things a developer used to catch. It anticipates edge cases before you mention them. It chooses the right approach for the right reason. It flags its own uncertainty instead of confidently generating something subtly broken. At 99%, you don't need a developer in the loop. You need someone with a clear vision of what to build.
+Claude Code with Opus 4.8 crosses a different line. That ratio flips to something like 99/1. The model catches the things a developer used to catch. It anticipates edge cases before you mention them. It chooses the right approach for the right reason. It flags its own uncertainty instead of confidently generating something subtly broken. At 99%, you don't need a developer in the loop. You need someone with a clear vision of what to build.
 
 This is not a wrapper or a toy. Think of it as a sports car — serious machinery that can take you anywhere, as fast as you can think. The only limit is your imagination. You can build a web app, a mobile app, an API, a data pipeline, a game. If your computer can do it, Claude Code can help you do it.
 
@@ -48,7 +48,7 @@ Where this breaks down is when you skip the dreaming. "Build me an app" produces
 
 This is an investment in a new capability. But compared to hiring a developer, taking a bootcamp, or subscribing to a suite of SaaS tools, it's a bargain.
 
-**Getting started: ~$20/month.** Claude Pro gives you access to Claude Code and all models including Opus 4.6. Usage limits mean you'll get 30-60 minutes of active building per session before hitting the cap. That's enough to learn the workflow, build small projects, and decide if this is for you.
+**Getting started: ~$20/month.** Claude Pro gives you access to Claude Code and all models including Opus 4.8. Usage limits mean you'll get 30-60 minutes of active building per session before hitting the cap. That's enough to learn the workflow, build small projects, and decide if this is for you.
 
 **Actively building: ~$105-125/month.** Claude Max ($100/month) gives you several hours of sustained building per session — enough to stay in flow and actually finish things. Add the Cloudflare Workers Paid plan ($5/month) for generous hosting, database, file storage, and AI models under one account. Optionally add Figma ($15/month) if you want to design screens that Claude can read directly. This is the setup I recommend, and it's roughly the cost of a single SaaS subscription.
 

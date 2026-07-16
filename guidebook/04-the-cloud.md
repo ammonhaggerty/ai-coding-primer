@@ -14,7 +14,7 @@ This guide uses Cloudflare, and it's a deliberate choice.
 
 Cloudflare puts everything under one roof. Compute, storage, database, AI models, DNS, security — one account, one dashboard, one set of tools. That matters more than it sounds like it should. Every time your stack spans multiple providers, you're managing multiple accounts, multiple billing pages, multiple sets of credentials, and multiple points where things can break. With Cloudflare, when Claude needs to set up a database, it's right there. When it needs file storage, same account. When it needs to deploy your code, one command. The surface area for confusion shrinks dramatically.
 
-Cloudflare has a free tier, and it's enough to get started. But the $5/month Workers Paid plan is what I recommend from day one. It's not about needing the capacity right away — it's about removing friction. The free tier has real limits: 10ms CPU per request, daily caps that reset at midnight, and no access to some features you'll want (like longer-running Workers and higher AI quotas). The paid plan lifts all of that — unlimited requests, 30-second CPU time, higher storage and database limits, and full access to Workers AI and AI Gateway. Five dollars a month for that is genuinely remarkable. Think of it as turning on the lights in the workshop instead of working by flashlight.
+Cloudflare has a free tier, and it's genuinely enough to get started — the starter project's AI chat, database, and file storage all run on it. But once you're building something real, the $5/month Workers Paid plan is worth turning on early. It's not about needing the capacity right away — it's about removing friction. The free tier has real limits: 10ms of CPU time per request, daily caps that reset at midnight, and no access to some features you'll want (like longer-running Workers and higher AI quotas). The paid plan lifts all of that — far more generous request and CPU limits (up to several minutes of CPU per request instead of 10 milliseconds), higher storage and database limits, and full access to Workers AI and AI Gateway. Five dollars a month for that is genuinely remarkable. Think of it as turning on the lights in the workshop instead of working by flashlight.
 
 Deployments take seconds. Not minutes, not "building..." spinners that make you wonder if something broke. You run a command, and within ten seconds, your code is live on servers around the world. That speed changes how you build — you deploy constantly, after every meaningful change, because there's no penalty for it.
 
@@ -24,7 +24,7 @@ Personal context: I spent four years building on Vercel. It's an excellent platf
 
 ## Your First Deploy
 
-If the setup skill ran successfully, Wrangler is already installed and your Cloudflare account is connected. Your starter project has a `wrangler.toml` file — that's the configuration that tells Cloudflare about your project: what it's called, what services it uses, how it should be deployed.
+If the setup skill ran successfully, Wrangler is already installed and your Cloudflare account is connected. Your starter project has a `wrangler.jsonc` file — that's the configuration that tells Cloudflare about your project: what it's called, what services it uses, how it should be deployed.
 
 Tell Claude:
 

@@ -7,6 +7,23 @@ An open-source guidebook and starter kit for building real products with Claude 
 
 I want to be clear - what I'm sharing is highly technical and the ideas shared have taken me years to learn and understand. What's changed is Claude, as helper, problem-solver, and guide, allows you to navigate nearly anything that comes your way. I tried to make the onboarding process as simple as I could, but my first dry-run was a complete failure - that said, Claude was able to figure out and correct for every issue. Once you have Claude running, just ask for help at any step. 
 
+---
+
+> ### 🔄 Updated July 2026
+>
+> The guide was refreshed to keep every model, price, command, and version current. Highlights:
+>
+> - **Models:** now built around **Claude Opus 4.8** (coding) and **Sonnet 5**; API-pricing appendix adds **Fable 5** and Sonnet 5's introductory pricing.
+> - **Install:** Claude Code now uses the **native installer** (`curl … | bash` / PowerShell), with npm kept as a fallback.
+> - **New guidance:** set **Medium effort** for most coding (faster, fewer tokens), and use **`/compact` between major tasks** to keep sessions fast and cheap.
+> - **Claude Code reference:** corrected the slash-command and keyboard-shortcut lists to match current Claude Code.
+> - **Cloudflare:** starter migrated to **`wrangler.jsonc`** (Cloudflare's recommended format); refreshed free-tier limits, Workers AI models (Llama 4, FLUX.2), and Vectorize pricing.
+> - **Third-party:** updated Google image-model and Deepgram/Cartesia pricing.
+>
+> Full change log: [`docs/2026-07-refresh-findings.md`](docs/2026-07-refresh-findings.md).
+
+---
+
 ## Start Reading
 
 **[Read the guidebook →](guidebook/)**
@@ -42,7 +59,7 @@ ai-coding-primer/
 
 This guide teaches one specific, opinionated stack:
 
-- **Claude Code** (Opus 4.6) — Your AI coding partner, in the terminal
+- **Claude Code** (Opus 4.8) — Your AI coding partner, in the terminal
 - **Cloudflare Workers** — Where your code runs (free tier gets you far)
 - **Hono** — Web framework for the edge
 - **Tailwind + DaisyUI** — Styling without writing CSS
@@ -53,7 +70,7 @@ This guide teaches one specific, opinionated stack:
 
 ## Status
 
-The guidebook is in **active drafting**. All chapters have first drafts. The skill and starter template are in development.
+The guidebook, the `a-primer-skills` plugin, and the starter template are all live and in active use. Content is kept current as the tools evolve — see `docs/` for recent update notes. Corrections and contributions welcome.
 
 ## Contributing
 
