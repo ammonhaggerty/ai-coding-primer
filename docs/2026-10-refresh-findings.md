@@ -68,6 +68,6 @@ DaisyUI 5, Tailwind 4, HTMX 2, Alpine 3, Hono 4, GSAP 3 (100% free), wrangler 4 
 Applied: A (all items; author anecdote kept as history), B, E, F, H price, README banner, new CHANGELOG.md, CLAUDE.md rules, a-primer-skills primer-setup Step 8.
 
 Open:
-- Starter chat model `@cf/meta/llama-3.2-3b-instruct` (`starter/src/modules/chat.ts:111`, mirrored in `a-new-project.md:451,637`). Swapping to glm-4.7-flash needs a test run — response shape may differ from Llama's `{ response }`.
+- ✅ DONE: starter chat → `@cf/meta/llama-4-scout-17b-16e-instruct` (same `{ response }` shape; ~1–2s; ~85 neurons/msg ≈ 115 msgs/day free). Rejected glm-4.7-flash: reasoning model, 9–12s/reply; `chat_template_kwargs.enable_thinking:false` gets ~1s but is undocumented. Also bumped wrangler 4.69→^4.149 + workers-types ^5 (4.69 fails "Could not create remote preview session", breaking AI in local dev); fixed a-new-project fallback template pins.
 - Figma MCP free tier (20 calls/mo) not yet mentioned in the guide.
 - Workers Paid "recommended from day one" (`starter/src/system-prompt.ts`, Appendix C intro) still conflicts with the free-tier-first stance (July finding K1).

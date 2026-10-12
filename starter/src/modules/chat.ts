@@ -108,7 +108,7 @@ export async function handleChat(c: Context): Promise<Response> {
     ];
 
     const ai = c.env.AI as Ai;
-    const response = await ai.run('@cf/meta/llama-3.2-3b-instruct', {
+    const response = await ai.run('@cf/meta/llama-4-scout-17b-16e-instruct', {
       messages,
     }) as { response: string };
 

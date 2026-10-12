@@ -45,6 +45,11 @@ The expired Sonnet 5 introductory-pricing note was removed.
 - Cartesia: the model is now Sonic 3.6. It has a free tier (20K credits/mo) and paid plans from $5/mo. The latency claim was softened to sub-100ms.
 - Figma: $15 → $16/mo.
 
+### Starter project
+- **The AI chat now uses Llama 4 Scout** instead of Llama 3.2 3B. It gives noticeably better answers and still responds in about 1–2 seconds. It costs more per message, so the free Workers AI allowance covers roughly 100 chat messages a day, which is plenty for building and demos. (GLM-4.7-Flash was also tested, but it "thinks" before every reply and took 9–12 seconds.)
+- **Wrangler upgraded to 4.149 and `@cloudflare/workers-types` to v5.** The previously locked Wrangler 4.69 could no longer connect to Workers AI during local development (`npm run dev`), so the chat failed with "Something went wrong."
+- Companion plugin: the `/a-new-project` fallback template now uses the same versions. With the old `^4` pins, `npm install` failed on a dependency conflict.
+
 ### Verified unchanged
 Claude plan prices (Pro $20, Max $100 / $200), Cloudflare Workers / D1 / R2 / KV / Vectorize limits and pricing, Workers AI Neuron pricing, and major versions of DaisyUI 5, Tailwind 4, HTMX 2, Alpine 3, Hono 4, GSAP 3, and Wrangler 4.
 
