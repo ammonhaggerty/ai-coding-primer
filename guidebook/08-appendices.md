@@ -138,21 +138,21 @@ There are two completely different contexts where AI models matter in this workf
 
 This is the AI you talk to in the terminal — your building partner. It reads your project, writes code, debugs issues, plans features, and deploys your app.
 
-**The recommendation: use Opus 4.8 for everything.**
+**The recommendation: Sonnet 5.5 for most coding, Opus 5.5 when you need more.**
 
-Opus 4.8 is dramatically better at coding than any other model. It understands context deeper, catches edge cases other models miss, reasons through architecture more carefully, and gets things right on the first pass far more often. When you're learning, the quality of the model isn't a nice-to-have — it's the difference between a smooth experience and a frustrating one. Opus is available on both the Pro plan ($20/mo) and the Max plan ($100/mo) — but Pro defaults to Sonnet, so you'll want to switch. Use `/model` in Claude Code and select Opus 4.8. If you find yourself running out of usage regularly, Max gives you significantly more capacity.
+Sonnet 5.5 is fast, capable, and easy on your usage limits. For the day-to-day work of building — adding features, fixing bugs, adjusting layouts, wiring up a database — it gets things right the vast majority of the time, and it does it quickly enough that you stay in flow. It's also the default on the Pro plan, so most people won't need to change anything.
 
-Claude comes in three model tiers — Opus, Sonnet, and Haiku — but for coding with Claude Code, Opus is the one to use:
+Opus 5.5 is the step up. It reasons more deeply, catches more edge cases, and handles big multi-file changes and tricky architecture decisions with fewer mistakes. The trade-off is that it uses more of your plan's capacity per task. On Pro, that means you'll hit your limit sooner. On Max, there's enough headroom to make Opus your everyday model if you prefer — and many people on Max do.
 
 | Model | Role in Coding | When to Use |
 |---|---|---|
-| **Opus 4.8** | The best. Deep reasoning, catches edge cases, handles complexity | Always — this is your default |
-| **Sonnet 5** | Capable, faster, cheaper usage | Only if you're hitting usage limits on Max and need to conserve |
-| **Haiku 4.5** | Fast but shallow | Not recommended for coding — too many misses on anything non-trivial |
+| **Sonnet 5.5** | Fast and capable — the everyday workhorse | Your default for most building |
+| **Opus 5.5** | The deepest reasoning. Catches edge cases, handles complexity | Hard problems, big changes, or as your daily driver on Max |
+| **Haiku 5.5** | Very fast but shallow | Not recommended for coding — too many misses on anything non-trivial |
 
-**How to set your model:** Use `/model` in Claude Code and select Opus 4.8. It will remember your preference.
+**How to check your model:** Type `/model` in Claude Code. You should see Sonnet selected — if not, select it. When a problem is genuinely hard (a stubborn bug that Sonnet keeps circling, a large restructuring), switch to Opus with `/model` or `Option+P`, then switch back when you're done. Claude remembers your choice between sessions.
 
-**A note on effort.** The same `/model` screen lets you set an *effort level* with the left/right arrow keys — how hard the model works before it answers. For most coding, **Medium** is the sweet spot: it's faster and uses fewer tokens than the higher settings, so your usage stretches further — and Opus at Medium still outclasses the lighter models at their best. Step it up to High for a genuinely hard problem (a stubborn bug, a large multi-file change), then drop back to Medium for routine work. This one setting is one of the easiest ways to make a Pro or Max plan last longer.
+**A note on effort.** The same `/model` screen lets you set an *effort level* with the left/right arrow keys — how hard the model works before it answers. For most coding, **Medium** is the sweet spot: it's faster and uses fewer tokens than the higher settings, so your usage stretches further. Pro should already be on Medium, but check while you're there. Step it up to High for a genuinely hard problem, then drop back to Medium for routine work. Between choosing the right model and the right effort, you have two simple dials for trading speed and cost against depth.
 
 ### Part 2: Models for Your Product (In-App AI)
 
@@ -166,12 +166,12 @@ If you want Claude's intelligence inside your app, you use the API. This is sepa
 
 | Model | Input | Output | Speed | Best For |
 |---|---|---|---|---|
-| **Fable 5** | $10.00 | $50.00 | Slowest | The most capable model — hardest reasoning and long, autonomous tasks. Rarely needed for everyday app features |
-| **Opus 4.8** | $5.00 | $25.00 | Slow | Complex reasoning, deep analysis — when quality justifies the cost |
-| **Sonnet 5** | $3.00 | $15.00 | Fast | Best all-rounder. Chat, content generation, analysis, recommendations |
-| **Haiku 4.5** | $1.00 | $5.00 | Fastest | Classification, extraction, simple Q&A, high-volume tasks |
+| **Fable 5.1** | $10.00 | $50.00 | Slowest | The most capable model — hardest reasoning and long, autonomous tasks. Rarely needed for everyday app features |
+| **Opus 5.5** | $4.00 | $20.00 | Slow | Complex reasoning, deep analysis — when quality justifies the cost |
+| **Sonnet 5.5** | $2.00 | $10.00 | Fast | Best all-rounder. Chat, content generation, analysis, recommendations |
+| **Haiku 5.5** | $0.10 | $0.50 | Fastest | Classification, extraction, simple Q&A, high-volume tasks — remarkably cheap |
 
-*Sonnet 5 is at introductory pricing of $2.00 input / $10.00 output per million tokens through August 31, 2026.*
+*Haiku 5.5 pricing applies to prompts up to 100K tokens; longer prompts cost $0.50 input / $2.50 output.*
 
 **Capabilities all Claude models share:**
 
@@ -197,7 +197,7 @@ Workers AI runs models directly on Cloudflare's network — no separate API acco
 |---|---|---|
 | **Text generation** | Llama 4 Scout, gpt-oss-120b, GLM-4.7-Flash, others | Free: 10,000 Neurons/day. Then $0.011/1K Neurons |
 | **Image understanding** | Llama 4 Scout (vision) | Same Neuron pricing |
-| **Text-to-image** | FLUX.2, Leonardo Phoenix, Stable Diffusion XL | Same Neuron pricing |
+| **Text-to-image** | FLUX.2, Leonardo Phoenix, Lucid Origin | Same Neuron pricing |
 | **Speech-to-text** | Whisper | Same Neuron pricing |
 | **Text-to-speech** | Deepgram models | Same Neuron pricing |
 | **Embeddings** | bge-base, bge-large | Same Neuron pricing |
@@ -207,12 +207,13 @@ Workers AI is best for: features where you need decent quality at minimal cost a
 
 #### Image Generation
 
-Claude doesn't generate images. For AI image generation in your products, **Google's Gemini and Imagen models** are the strongest options.
+Claude doesn't generate images. For AI image generation in your products, **Google's Gemini image models (nicknamed "Nano Banana")** are the strongest options.
 
 | Model | Cost Per Image | Resolution | Notes |
 |---|---|---|---|
-| **Gemini 3.1 Flash Lite Image** (Google) | ~$0.034 | Up to 1024×1024 | Cheapest option, fast, good quality |
-| **Gemini 3.1 Flash Image** | ~$0.05–$0.15 | Up to ~2048×2048 | Balanced quality and price, strong text understanding |
+| **Nano Banana 2.1** (Google) | ~$0.034–$0.11 | Up to 4096×4096 | Newest model — the recommended starting point. Cheap at 1K, scales to 4K |
+| **Gemini 3.1 Flash Lite Image** | ~$0.034 | Up to 1024×1024 | Cheapest option, fast, good quality |
+| **Gemini 3.1 Flash Image** | ~$0.045–$0.15 | Up to ~2048×2048 | Balanced quality and price, strong text understanding |
 | **Gemini 3 Pro Image** | ~$0.13–$0.24 | Up to 4096×4096 | Highest quality, 4K resolution |
 | **Workers AI** (FLUX/Leonardo) | Free tier, then Neurons | Varies | Built into Cloudflare, simplest setup |
 
@@ -228,9 +229,9 @@ For voice features — text-to-speech, speech-to-text, real-time conversation �
 
 | Service | What It Does | Starting Cost | Standout Feature |
 |---|---|---|---|
-| **ElevenLabs** | Text-to-speech, voice cloning, conversational AI | Free tier (10K chars/mo), then $5/mo | Most natural-sounding voices, 70+ languages |
-| **Deepgram** | Speech-to-text and text-to-speech | $200 free credit, then ~$0.008–0.015/min | Fastest transcription, real-time streaming |
-| **Cartesia** | Ultra-low-latency text-to-speech (Sonic 3) | Pay-as-you-go (free credits to start) | ~40ms latency — best for real-time voice agents |
+| **ElevenLabs** | Text-to-speech, voice cloning, conversational AI | Free tier (10K credits/mo, about 10K characters), then $6/mo | Most natural-sounding voices, 70+ languages |
+| **Deepgram** | Speech-to-text and text-to-speech | $200 free credit, then ~$0.004–0.008/min | Fastest transcription, real-time streaming |
+| **Cartesia** | Ultra-low-latency text-to-speech (Sonic 3.6) | Free tier (20K credits/mo), then from $5/mo | Sub-100ms latency — best for real-time voice agents |
 | **Workers AI** (Whisper/Deepgram) | Speech-to-text, text-to-speech | Free tier, then Neurons | Built into Cloudflare, zero extra setup |
 
 For basic speech-to-text, Workers AI's Whisper model is free and built in. For high-quality text-to-speech voices, ElevenLabs is the current leader. For real-time voice applications (like voice agents or live conversation), Deepgram and Cartesia specialize in low-latency streaming.
@@ -240,13 +241,13 @@ For basic speech-to-text, Workers AI's Whisper model is free and built in. For h
 | Plan | Cost | What You Get | Who It's For |
 |---|---|---|---|
 | **Free** | $0 | Limited Claude access, no Claude Code | Exploring what Claude can do |
-| **Pro** | $20/mo | Claude Code + all models (incl. Opus 4.8), limited usage | Getting started, learning, small projects |
-| **Max (5×)** | $100/mo | 5× Pro usage — sustained Opus coding | Active daily building — **recommended** |
-| **Max (20×)** | $200/mo | 20× Pro usage — all-day Opus | Power users in constant build mode |
+| **Pro** | $20/mo | Claude Code + all models, limited usage. Defaults to Sonnet | Getting started, learning, small projects |
+| **Max (5×)** | $100/mo | 5× Pro usage — room to use Opus freely | Active daily building — **recommended** |
+| **Max (20×)** | $200/mo | 20× Pro usage — all-day building, Opus included | Power users in constant build mode |
 
-**Start with Pro ($20/mo)** if you're exploring. You get access to all models including Opus 4.8 — it's not locked behind Max. But Opus is significantly more token-hungry than Sonnet (20-30% more per interaction), and Pro's usage window is tight. Expect roughly 30-60 minutes of active Opus coding per 5-hour window before hitting your limit. You can stretch this by using Sonnet for simpler tasks and saving Opus for complex work — use `/model` to switch. This is enough to learn the workflow, build small features, and experience the difference between models firsthand.
+**Start with Pro ($20/mo)** if you're exploring. Pro defaults to Sonnet 5.5, which is the model this guide recommends for most building, so you're set up well from the first session. Pro's usage window is still tight — expect to hit your limit during long building sessions, and Opus will use it up noticeably faster than Sonnet. Use Opus for the occasional hard problem rather than all day. This is enough to learn the workflow, build small features, and decide whether this is for you.
 
-**Move to Max ($100/mo)** when you start building seriously. Max gives you 5× the Pro allowance — several hours of sustained Opus coding per session. This is where the 80→99% promise becomes your daily reality, because you're not constantly managing a usage budget. The difference isn't just more tokens — it's uninterrupted flow. When you're deep in a build and hit a wall on Pro, the momentum breaks. Max removes that wall.
+**Move to Max ($100/mo)** when you start building seriously. Max gives you 5× the Pro allowance — several hours of sustained building per session, with enough headroom to reach for Opus whenever you want it (or use it as your everyday model). The difference isn't just more tokens — it's uninterrupted flow. When you're deep in a build and hit a wall on Pro, the momentum breaks. Max removes that wall.
 
 **Max at $200/mo** is for people building all day. Some power users run two or three $200 accounts to maintain uninterrupted workflow across multiple projects. Monitor your usage and upgrade when limits start slowing you down.
 

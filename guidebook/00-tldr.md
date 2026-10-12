@@ -8,7 +8,7 @@ Skip the philosophy. Get building.
 
 You'll need admin access on your computer. If this is a brand-new user account on your Mac — especially one that was created as a Standard account and later upgraded to Admin — you may hit permission errors during setup. Claude's setup skill runs a health check that detects and fixes this automatically.
 
-**Claude** — Go to [claude.ai](https://claude.ai) and subscribe. Start with Pro ($20/mo). Upgrade to Max ($100/mo) when you hit usage limits.
+**Claude** — Go to [claude.ai](https://claude.ai) and subscribe. Start with Pro ($20/mo). Upgrade to Max ($100/mo) when you hit usage limits. Pro defaults to Sonnet 5.5 at Medium effort, which is the setup this guide recommends — once Claude Code is installed, type `/model` to confirm. Switch to Opus 5.5 for genuinely hard problems.
 
 **Cloudflare** — Sign up at [dash.cloudflare.com/sign-up](https://dash.cloudflare.com/sign-up). After signing up, enable **R2 Object Storage** from your dashboard (left sidebar) — this requires a credit card on file, but the free tier is generous (10GB, no charge). Without R2 enabled, project creation will fail. The Workers Paid plan ($5/mo) lifts the limits you'll hit once your project does anything with AI or gets real traffic.
 
@@ -149,7 +149,7 @@ That's the whole loop. Everything else in this guide is context — the *why* be
 
 ---
 
-**[The Landscape](02-the-landscape.md)** — The barrier to building software was never really about code — it was the iceberg of infrastructure underneath it. AI didn't just help with the code part. It dissolved the iceberg. This section explains what changed (Claude Opus 4.8 is the specific step change), what the mental model looks like (you're the dreamer, AI is the builder), and what the complete toolkit costs. The single most important idea: the skills that matter now are imagination and curiosity, not syntax.
+**[The Landscape](02-the-landscape.md)** — The barrier to building software was never really about code — it was the iceberg of infrastructure underneath it. AI didn't just help with the code part. It dissolved the iceberg. This section explains what changed (the Opus 4.8 generation of Claude models was the specific step change), what the mental model looks like (you're the dreamer, AI is the builder), and what the complete toolkit costs. The single most important idea: the skills that matter now are imagination and curiosity, not syntax.
 
 ---
 

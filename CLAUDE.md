@@ -11,6 +11,7 @@ ai-coding-primer/
 ├── assets/              # Images and diagrams
 ├── docs/                # Working notes, plans, progress (project memory)
 ├── _authoring/          # Editorial materials (outlines, research, notes — not reader-facing)
+├── CHANGELOG.md         # Reader-facing record of guide updates
 ├── CLAUDE.md            # This file
 ├── CONTRIBUTING.md      # Contributor guide
 └── README.md            # Project overview
@@ -37,10 +38,10 @@ Flat files in `guidebook/`, numbered for reading order:
 - DaisyUI 5 via CDN — `card-border` doesn't work, use `border border-base-300`
 - Theme: `emerald`
 - Cookies: `secure: false` in local dev, `secure: true` in production
-- Opus 4.8 recommended for all coding (available on Pro and Max; Pro defaults to Sonnet — switch via /model)
+- Sonnet 5.5 recommended for most coding (Pro default); Opus 5.5 for hard problems or as daily driver on Max. Encourage checking via /model
 - Recommend `medium` effort for most coding tasks (faster, fewer tokens; step up for hard problems)
 - Do not recommend OpenAI for anything
-- Image generation: Google Gemini / Imagen
+- Image generation: Google Gemini (Nano Banana) — Imagen is shut down, don't recommend it
 - Voice: ElevenLabs, Deepgram, Cartesia
 
 ## Writing Tone

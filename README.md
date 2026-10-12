@@ -9,18 +9,13 @@ I want to be clear - what I'm sharing is highly technical and the ideas shared h
 
 ---
 
-> ### 🔄 Updated July 2026
+> ### 🔄 Updated October 2026
 >
-> The guide was refreshed to keep every model, price, command, and version current. Highlights:
+> **New model recommendation: Sonnet 5.5 for most coding.** It's fast, capable, and easy on your usage limits — and it's the default on the Pro plan, so most people won't need to change anything. **Opus 5.5** is still the step up for hard problems, and a great everyday choice if you're on Max. Check your setup with `/model` in Claude Code: you want **Sonnet** at **Medium** effort.
 >
-> - **Models:** now built around **Claude Opus 4.8** (coding) and **Sonnet 5**; API-pricing appendix adds **Fable 5** and Sonnet 5's introductory pricing.
-> - **Install:** Claude Code now uses the **native installer** (`curl … | bash` / PowerShell), with npm kept as a fallback.
-> - **New guidance:** set **Medium effort** for most coding (faster, fewer tokens), and use **`/compact` between major tasks** to keep sessions fast and cheap.
-> - **Claude Code reference:** corrected the slash-command and keyboard-shortcut lists to match current Claude Code.
-> - **Cloudflare:** starter migrated to **`wrangler.jsonc`** (Cloudflare's recommended format); refreshed free-tier limits, Workers AI models (Llama 4, FLUX.2), and Vectorize pricing.
-> - **Third-party:** updated Google image-model and Deepgram/Cartesia pricing.
+> Also refreshed: Claude API pricing (Opus 5.5, Sonnet 5.5, Haiku 5.5, Fable 5.1), Google image models (Imagen is retired, so the guide now recommends Nano Banana), voice pricing, and Figma pricing.
 >
-> Full change log: [`docs/2026-07-refresh-findings.md`](docs/2026-07-refresh-findings.md).
+> Full details: [`CHANGELOG.md`](CHANGELOG.md).
 
 ---
 
@@ -59,7 +54,7 @@ ai-coding-primer/
 
 This guide teaches one specific, opinionated stack:
 
-- **Claude Code** (Opus 4.8) — Your AI coding partner, in the terminal
+- **Claude Code** (Sonnet 5.5, with Opus 5.5 for hard problems) — Your AI coding partner, in the terminal
 - **Cloudflare Workers** — Where your code runs (free tier gets you far)
 - **Hono** — Web framework for the edge
 - **Tailwind + DaisyUI** — Styling without writing CSS
