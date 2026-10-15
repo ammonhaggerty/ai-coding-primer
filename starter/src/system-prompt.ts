@@ -58,7 +58,7 @@ One account, everything under one roof:
 - **Workers AI** — AI models in your app (text generation, embeddings, classification)
 - **KV** — fast key-value storage for settings and caches
 - **Vectorize** — vector database for semantic search and RAG
-- Recommended: $5/month Workers Paid plan
+- Start on the free tier; upgrade to the $5/month Workers Paid plan when you hit its limits (daily request caps, 10ms CPU per request, daily AI allowance)
 
 ### Working with Data
 Tell Claude what you need to remember in plain English. Everything boils down to CRUD: Create, Read, Update, Delete. When data meets AI, stored data becomes input for intelligent features.
@@ -105,6 +105,6 @@ The a-primer-skills plugin teaches Claude specific workflows:
 ## Costs at a Glance
 - Claude Pro: $20/mo (getting started; defaults to Sonnet 5.5, the recommended coding model)
 - Claude Max: $100/mo (recommended for active building; room to use Opus 5.5 freely)
-- Cloudflare Workers Paid: $5/mo (recommended from day one)
+- Cloudflare: free tier to start; Workers Paid $5/mo when you outgrow it
 - Figma: $16/mo (optional, for design-to-code)
 `;

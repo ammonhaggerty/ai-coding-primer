@@ -50,6 +50,9 @@ The expired Sonnet 5 introductory-pricing note was removed.
 - **Wrangler upgraded to 4.149 and `@cloudflare/workers-types` to v5.** The previously locked Wrangler 4.69 could no longer connect to Workers AI during local development (`npm run dev`), so the chat failed with "Something went wrong."
 - Companion plugin: the `/a-new-project` fallback template now uses the same versions. With the old `^4` pins, `npm install` failed on a dependency conflict.
 
+### Cloudflare: free tier first, consistently
+The guide gave mixed advice. Some chapters said to start free, while The Cloud, Appendix C, and the starter's built-in assistant said to buy the $5/mo Workers Paid plan "from day one." All of them now say the same thing: **start on the free tier, and upgrade when you outgrow it.** The signs that you have are requests failing after a busy day, CPU-time errors, or AI features stopping until the daily allowance resets.
+
 ### Verified unchanged
 Claude plan prices (Pro $20, Max $100 / $200), Cloudflare Workers / D1 / R2 / KV / Vectorize limits and pricing, Workers AI Neuron pricing, and major versions of DaisyUI 5, Tailwind 4, HTMX 2, Alpine 3, Hono 4, GSAP 3, and Wrangler 4.
 

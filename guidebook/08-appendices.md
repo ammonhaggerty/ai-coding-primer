@@ -257,7 +257,7 @@ For basic speech-to-text, Workers AI's Whisper model is free and built in. For h
 
 ## Appendix C: Cloudflare Free Tier at a Glance
 
-The $5/month Workers Paid plan is strongly recommended. The free tier works for initial exploration, but the paid plan removes limits that will slow you down quickly — especially CPU time per request, daily request caps, and restricted access to Workers AI features. For five dollars, the upgrade is significant.
+Start on the free tier — it runs the starter project and is enough to learn on and build your first projects. Upgrade to the $5/month Workers Paid plan when you outgrow it: requests failing after a busy day, CPU-time errors when your app does heavy work, or AI features stopping until the daily allowance resets (midnight UTC). For five dollars, the upgrade is significant.
 
 | Service | Free Tier | Workers Paid ($5/mo) |
 |---|---|---|

@@ -70,4 +70,4 @@ Applied: A (all items; author anecdote kept as history), B, E, F, H price, READM
 Open:
 - ✅ DONE: starter chat → `@cf/meta/llama-4-scout-17b-16e-instruct` (same `{ response }` shape; ~1–2s; ~85 neurons/msg ≈ 115 msgs/day free). Rejected glm-4.7-flash: reasoning model, 9–12s/reply; `chat_template_kwargs.enable_thinking:false` gets ~1s but is undocumented. Also bumped wrangler 4.69→^4.149 + workers-types ^5 (4.69 fails "Could not create remote preview session", breaking AI in local dev); fixed a-new-project fallback template pins.
 - Figma MCP free tier (20 calls/mo) not yet mentioned in the guide.
-- Workers Paid "recommended from day one" (`starter/src/system-prompt.ts`, Appendix C intro) still conflicts with the free-tier-first stance (July finding K1).
+- ✅ DONE: free-vs-paid contradiction resolved to "free tier first, $5 when you outgrow it" (04-the-cloud.md, Appendix C intro, starter system prompt).
